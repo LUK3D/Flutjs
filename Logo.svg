@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1100" height="342" viewBox="0 0 1100 342">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.34" y1="-0.171" x2="0.914" y2="0.824" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6a1010"/>
+      <stop offset="1" stop-color="#7b1212" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Logo">
+      <rect width="1100" height="342"/>
+    </clipPath>
+  </defs>
+  <g id="Logo" clip-path="url(#clip-Logo)">
+    <rect width="1100" height="342" fill="#fff"/>
+    <g id="Logo-2" data-name="Logo" transform="translate(125.938 -7.001)">
+      <g id="Group_1" data-name="Group 1" transform="translate(-107.55 -8.436) rotate(-22)">
+        <path id="Path_4" data-name="Path 4" d="M0,0H65l2.134,182.242L0,158.492Z" transform="translate(98 249)" fill="#cf9a30"/>
+        <path id="Path_2" data-name="Path 2" d="M0,58.169,56.239,0V242.239H0Z" transform="translate(340.343 154.156) rotate(90)" fill="#f3d021"/>
+        <path id="Path_1" data-name="Path 1" d="M0,62.451,59.887,0V210.49H0Z" transform="translate(308.49 236.113) rotate(90)" fill="#f3d021"/>
+        <path id="Path_3" data-name="Path 3" d="M98,191l65.065,46.426V191Z" transform="translate(0 105)" opacity="0.27" fill="url(#linear-gradient)"/>
+        <rect id="Rectangle_4" data-name="Rectangle 4" width="65" height="59.385" transform="translate(98 236.615)" fill="#cf9a30" opacity="0.28"/>
+      </g>
+      <text id="Flutjs" transform="translate(361 254)" fill="#757575" font-size="199" font-family="Corbel"><tspan x="0" y="0">Flutjs</tspan></text>
+    </g>
+  </g>
+</svg>
