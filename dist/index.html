@@ -8,5 +8,40 @@
 </head>
 <body>
     <script type="module" src="./flutjs.js"></script>
+
+    <script defer type="module">
+
+        var Flutjs = window.Flutjs;
+
+        new Flutjs.ExtendedWidget({
+            tagName: "div",
+            children: [
+            new Flutjs.Widget({ tagName: "div" , text:"Teste basico!!"}),
+            new Flutjs.Widget({ tagName: "p" }),
+            new Flutjs.ExtendedWidget({
+                tagName: "div",
+                children: [
+                new Flutjs.Widget({
+                    tagName: "textarea",
+                    text:"LUK3D",
+                }),
+                new Flutjs.Widget({
+                    tagName: "div",
+                    child: new Flutjs.ExtendedWidget({
+                    tagName: "nav",
+                    children: [
+                        new Flutjs.Widget({ tagName: "a", text:"Vamos la ver se funciona" }),
+                        new Flutjs.Widget({ tagName: "a" }),
+                        new Flutjs.Widget({ tagName: "a" }),
+                        new Flutjs.Widget({ tagName: "a" }),
+                    ],
+                    }),
+                }),
+                ],
+            }),
+            ],
+        });
+
+    </script>
 </body>
 </html>

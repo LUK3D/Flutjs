@@ -1,6 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const framework_1 = require("./widgets/framework");
+// new Widget({tagName:"div"});
+module.exports = {
+    Widget: framework_1.Widget,
+    ExtendedWidget: framework_1.ExtendedWidget,
+};
+window.Flutjs = {
+    Widget: framework_1.Widget,
+    ExtendedWidget: framework_1.ExtendedWidget,
+};
+//** THIS IS AN EXAMPLE CODE */
 new framework_1.ExtendedWidget({
     tagName: "div",
     children: [
@@ -29,8 +39,3 @@ new framework_1.ExtendedWidget({
         }),
     ],
 });
-// new Widget({tagName:"div"});
-module.exports = {
-    Widget: framework_1.Widget,
-    ExtendedWidget: framework_1.ExtendedWidget,
-};
