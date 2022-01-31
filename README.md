@@ -14,21 +14,30 @@ import  { Column, Container, MaterialApp, Scaffold} from './material'
 import { ThemeData } from './painting/themeData' //Futuramente só a sua estância será referenciada...
 
 // This widget is the root of your application.
+
+import { Column, Container, MaterialApp, Scaffold } from './material'
+import { ThemeData } from './painting/themeData'
+
 MaterialApp(
     {
-        title:"Flutjs Demo",
+        title: "Flutjs Demo 😎",
         theme: new ThemeData(
         ),
-        home:Scaffold({
-            body:Container({child:Column({
-                children:[
-
-                ]
-            })})
-        }
-        )
+        home: Scaffold({
+            body: Container({
+                child: Column({
+                    children: [
+                        //Here wi can put any widget we want 😁
+                    ]
+                },
+                ),
+            },
+            ),
+        },
+        ),
     }
-)
+);
+
 
 ```
 

@@ -1,18 +1,22 @@
-import  { Column, Container, MaterialApp, Scaffold} from './material'
+import { Column, Container, MaterialApp, Scaffold } from './material'
 import { ThemeData } from './painting/themeData'
 
 MaterialApp(
     {
-        title:"App de teste",
+        title: "Flutjs Demo 😎",
         theme: new ThemeData(
         ),
-        home:Scaffold({
-            body:Container({child:Column({
-                children:[
-
-                ]
-            })})
-        }
-        )
+        home: Scaffold({
+            body: Container({
+                child: Column({
+                    children: [
+                        //Here wi can put any widget we want 😁
+                    ]
+                },
+                ),
+            },
+            ),
+        },
+        ),
     }
-)
+);
