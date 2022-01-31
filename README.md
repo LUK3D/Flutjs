@@ -10,14 +10,12 @@ As the name suggests, Flutejs is based on Flutter for its simplicity and easy le
 ## Example code:
 
 ```js
-import  { Column, Container, MaterialApp, Scaffold} from './material'
-import { ThemeData } from './painting/themeData' //Futuramente só a sua estância será referenciada...
 
-// This widget is the root of your application.
 
 import { Column, Container, MaterialApp, Scaffold } from './material'
 import { ThemeData } from './painting/themeData'
 
+// This widget is the root of your application.
 MaterialApp(
     {
         title: "Flutjs Demo 😎",
@@ -27,7 +25,7 @@ MaterialApp(
             body: Container({
                 child: Column({
                     children: [
-                        //Here wi can put any widget we want 😁
+                        //Here we can put any widget we want 😁
                     ]
                 },
                 ),
