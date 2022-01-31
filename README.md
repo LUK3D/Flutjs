@@ -4,7 +4,7 @@
 
 
 Flutjs is a javascript framework for creating beautiful, fast and lightweight websites.
-As the name suggests, Flutes is based on Flutter for its simplicity and easy learning curve and the ability to easily extend.
+As the name suggests, Flutejs is based on Flutter for its simplicity and easy learning curve and the ability to easily extend.
 
 
 ## Example code:
