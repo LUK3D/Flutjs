@@ -1,3 +1,4 @@
+import { ThemeData } from "../painting/themeData";
 import {ExtendedWidget, Widget} from "../widgets/framework";
 import { Scaffold } from "./scaffold";
 
@@ -8,17 +9,22 @@ enum ThemeMode{
 }
 
 
-class MaterialApp extends Widget{
-    
-    home?:ExtendedWidget|Widget|Scaffold;
-
-    constructor(args:{home:Widget,}){
-        super({tagName:"div",child:args.home,})
-        this.home = new Widget({tagName:"div"});
+function MaterialApp (
+    args:{
+        title?:string,
+        theme?:ThemeData,
+        home?:Widget|ExtendedWidget
     }
+):Widget{
+    return new Widget({
+        tagName:"div",
+        child:args.home
+        
 
-
+    })
 }
+
+
 
 
 

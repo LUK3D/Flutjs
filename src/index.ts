@@ -1,15 +1,16 @@
-import { Widget, ExtendedWidget } from "./widgets/framework";
-import {MaterialApp} from "./material/app";
-import {Scaffold} from "./material/scaffold";
+import { Widget, ExtendedWidget} from "./widgets/framework";
+
 
 // new Widget({tagName:"div"});
 
-let widgets = {
+let Flutjs = {
   Widget,
   ExtendedWidget,
-  MaterialApp
 };
-module.exports = widgets;
+export{
+  ExtendedWidget,
+  Widget,
+};
 
-(<any>window).Flutjs = widgets;
+(<any>window).Flutjs = Flutjs;
 

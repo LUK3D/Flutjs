@@ -83,7 +83,25 @@ class ExtendedWidget extends Widget{
         
     }
 }
+
+
+
+
+function Column(args:{children?:Array<Widget|ExtendedWidget>}){
+    return new ExtendedWidget({
+        tagName:"div",
+        children:args.children
+    });
+}
+
+function Container(args:{child?:Widget|ExtendedWidget}):Widget{
+    return new Widget({tagName:"div",child:args.child});
+}
+
+
 export{
     Widget,
-    ExtendedWidget
+    ExtendedWidget,
+    Column,
+    Container
 }

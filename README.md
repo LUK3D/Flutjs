@@ -10,35 +10,25 @@ As the name suggests, Flutejs is based on Flutter for its simplicity and easy le
 ## Example code:
 
 ```js
-new ExtendedWidget({
-  tagName: "div",
-  children: [
-    new Widget({ tagName: "div" , text:"Teste basico!!"}),
-    new Widget({ tagName: "p" }),
-    new ExtendedWidget({
-      tagName: "div",
-      children: [
-        new Widget({
-          tagName: "textarea",
-          text:"LUK3D",
-        }),
-        new Widget({
-          tagName: "div",
-          child: new ExtendedWidget({
-            tagName: "nav",
-            children: [
-              new Widget({ tagName: "a", text:"Vamos la ver se funciona" }),
-              new Widget({ tagName: "a" }),
-              new Widget({ tagName: "a" }),
-              new Widget({ tagName: "a" }),
-            ],
-          }),
-        }),
-      ],
-    }),
-  ],
-});
+import  { Column, Container, MaterialApp, Scaffold} from './material'
+import { ThemeData } from './painting/themeData' //Futuramente só a sua estância será referenciada...
 
+// This widget is the root of your application.
+MaterialApp(
+    {
+        title:"Flutjs Demo",
+        theme: new ThemeData(
+        ),
+        home:Scaffold({
+            body:Container({child:Column({
+                children:[
+
+                ]
+            })})
+        }
+        )
+    }
+)
 
 ```
 
