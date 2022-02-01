@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExtendedWidget = exports.Widget = void 0;
+exports.Container = exports.Column = exports.ExtendedWidget = exports.Widget = void 0;
 const uuid_1 = __importDefault(require("../utils/uuid"));
 /**
  * Flutjs class to generate a new Widget
@@ -71,3 +71,14 @@ class ExtendedWidget extends Widget {
     }
 }
 exports.ExtendedWidget = ExtendedWidget;
+function Column(args) {
+    return new ExtendedWidget({
+        tagName: "div",
+        children: args.children
+    });
+}
+exports.Column = Column;
+function Container(args) {
+    return new Widget({ tagName: "div", child: args.child });
+}
+exports.Container = Container;

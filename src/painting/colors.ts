@@ -1,10 +1,11 @@
 
 
-interface ARGB {
+interface Color {
     a?:number;
     r:number;
     g:number;
     b:number;
+    value?:string;
 }
 
 interface hexToRgbInterface{
@@ -14,11 +15,7 @@ interface hexToRgbInterface{
 
 export default class Colors {
 
-    red:number = 0;
-    green:number = 0;
-    blue:number = 0;
-    alpha:number = 0;
-    value:string = "#ffffff";
+    color:Color;
 
     /** An immutable 32 bit color value in ARGB format.
 *
@@ -51,8 +48,8 @@ export default class Colors {
 *   [Colors](https://api.flutter.dev/flutter/material/Colors-class.html), which
 *    defines the colors found in the Material Design specification.
 **/
-    constructor(){
-         
+    constructor({ a=1, r, g, b}:Color){
+         this.color = this.fromARGB({a:a,r:r,g:g,b:b}).color;
     }
 
     /**  Construct a color from 3 or 4 float numbers.
@@ -72,13 +69,13 @@ export default class Colors {
     *
     * Out of range values are brought into range using modulo 255.
     **/
-    fromARGB({ a=1, r, g, b}:ARGB):Colors{
-        this.value = `rgb(${r}, ${g}, ${b}, ${a})`;
+    fromARGB({ a=1, r, g, b}:Color):Colors{
+        this.color.value = `rgb(${r}, ${g}, ${b}, ${a})`;
         /** Red chanel of this color */
-        this.red = r;
-        this.blue = b;
-        this.green = g;
-        this.blue = b;
+        this.color.r = r;
+        this.color.g = g;
+        this.color.b = b;
+        this.color.a = a;
         return this;
     }
 
@@ -110,7 +107,7 @@ export default class Colors {
       */
      withAlpha(a:number) {
         // var vals = this.value.replace("rgb(","").replace(")","").split(",").map(x=>parseFloat(x));
-        return  this.fromARGB({r:this.red, g:this.green, b:this.blue,a:a});
+        return  this.fromARGB({r:this.color.r, g:this.color.g, b:this.color.b,a:a});
       }
     
       /** Returns a new color that matches this color with the alpha channel
@@ -119,8 +116,8 @@ export default class Colors {
       * Out of range values will have unexpected effects.
       **/
       withOpacity(opacity:number) {
-        var vals = this.value.replace("rgb(","").replace(")","").split(",").map(x=>parseFloat(x));
-        return  this.fromARGB({r:this.red, g:this.green, b:this.blue,a:Math.round(255.0 * opacity)});
+        var vals = this.color.value?.replace("rgb(","").replace(")","").split(",").map(x=>parseFloat(x));
+        return  this.fromARGB({r:this.color.r, g:this.color.g, b:this.color.b,a:Math.round(255.0 * opacity)});
       }
     
       /** Returns a new color that matches this color with the red channel replaced
@@ -129,7 +126,7 @@ export default class Colors {
       * Out of range values will have unexpected effects.
       * */
       withRed(r:number) {
-        return this.fromARGB({a:this.alpha, r:r, g:this.green, b:this.blue});
+        return this.fromARGB({a:this.color.a, r:r, g:this.color.g, b:this.color.b});
       }
     
       /** Returns a new color that matches this color with the green channel
@@ -138,7 +135,7 @@ export default class Colors {
       * Out of range values will have unexpected effects.
       **/
       withGreen(g:number) {
-        return this.fromARGB({a:this.alpha, r:this.red, g:g, b:this.blue});
+        return this.fromARGB({a:this.color.a, r:this.color.r, g:g, b:this.color.b});
       }
     
       /** Returns a new color that matches this color with the blue channel replaced
@@ -147,16 +144,17 @@ export default class Colors {
       * Out of range values will have unexpected effects.
       * */
        withBlue(b:number) {
-        return this.fromARGB({a:this.alpha, r:this.red, g:this.green, b:b});
+        return this.fromARGB({a:this.color.a, r:this.color.r, g:this.color.g, b:b});
       }
 
       fromUtil(className:string){
-          return this.value =className;
+          return this.color.value =className;
           return this;
       }
 }
   
 
   export {
-    Colors
+    Colors,
+    Color
   };

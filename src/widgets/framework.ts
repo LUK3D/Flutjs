@@ -62,11 +62,13 @@ class ExtendedWidget extends Widget{
     children?:Array<Widget|ExtendedWidget>;
     mainAxisAlignment?: MainAxisAlignment;
     crossAxisAlignment?: CrossAxisAlignment;
+    
 
     constructor(args:{tagName:string,children?:Array<Widget|ExtendedWidget>}){
         super({tagName:args.tagName});
 
         this.buildChilds({children:args.children});
+
     }
 
     addStyle(){

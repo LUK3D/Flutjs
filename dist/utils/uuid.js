@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Key = void 0;
 class Key {
     /**
      * Generates a uuid
@@ -13,6 +14,4 @@ class Key {
     }
 }
 exports.default = Key;
-exports = {
-    Key
-};
+exports.Key = Key;

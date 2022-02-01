@@ -28,3 +28,7 @@ class ClassDecoration{
     // background?: string;
     // background?: string;
 }
+
+export{
+    ClassDecoration
+}

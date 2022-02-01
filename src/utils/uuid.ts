@@ -15,6 +15,6 @@ export default class Key{
     }
 }
 
-exports = {
+export{
     Key
 };

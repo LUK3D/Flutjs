@@ -6,3 +6,7 @@ class BoxDecation {
 
 }
 
+export{
+    BoxDecation
+}
+
