@@ -4,8 +4,11 @@ import { ThemeData } from './painting/themeData'
 MaterialApp(
     {
         title: "Flutjs Demo 😎",
-        theme: new ThemeData(
-        ),
+        // theme: new ThemeData(
+        //     {
+                
+        //     }
+        // ),
         home: Scaffold({
             body: Container({
                 child: Column({

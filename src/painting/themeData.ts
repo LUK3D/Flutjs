@@ -1,100 +1,47 @@
-import { Color } from "./colors";
+import { Colors, Color } from "./colors";
 
 class ThemeData {
-    constructor(
-        args:{
-             // GENERAL CONFIGURATION
-             androidOverscrollIndicator: AndroidOverscrollIndicator,
-             applyElevationOverlayColor: boolean,
-             cupertinoOverrideTheme: NoDefaultCupertinoThemeData,
-             inputDecorationTheme: InputDecorationTheme,
-             materialTapTargetSize: MaterialTapTargetSize,
-             pageTransitionsTheme: PageTransitionsTheme,
-             platform: TargetPlatform,
-             scrollbarTheme: ScrollbarThemeData,
-             splashFactory: InteractiveInkFeatureFactory,
-             visualDensity: VisualDensity,
-             useMaterial3: boolean,
+  colorPrimary?: Color;
+  colorPrimaryVariant?: Color;
+  colorOnPrimary?: Color;
+  colorSecondary?: Color;
+  colorSecondaryVariant?: Color;
+  colorOnSecondary?: Color;
+  colorSurface?: Color;
+  colorOnSurface?: Color;
+  chrome?: Color;
+  colorOnBackground?: Color;
+  colorError?: Color;
+  colorOnError?: Color;
 
-            // COLOR
-            
-             colorScheme: ColorScheme,
-             colorSchemeSeed: Color,
-             brightness: Brightness,
-             primarySwatch: MaterialColor,
-             primaryColor: Color,
-             primaryColorLight: Color,
-             primaryColorDark: Color,
-             focusColor: Color,
-             hoverColor: Color,
-             shadowColor: Color,
-             canvasColor: Color,
-             scaffoldBackgroundColor: Color,
-             bottomAppBarColor: Color,
-             cardColor: Color,
-             dividerColor: Color,
-             highlightColor: Color,
-             splashColor: Color,
-             selectedRowColor: Color,
-             unselectedWidgetColor: Color,
-             disabledColor: Color,
-             secondaryHeaderColor: Color,
-             backgroundColor: Color,
-             dialogBackgroundColor: Color,
-             indicatorColor: Color,
-             hintColor: Color,
-             errorColor: Color,
-             toggleableActiveColor: Color,
+  constructor(args:{
+    colorPrimary?:Color,
+    colorPrimaryVariant?:Color,
+    colorOnPrimary:Color,
+    colorSecondary?:Color,
+    colorSecondaryVariant?:Color,
+    colorOnSecondary?:Color,
+    colorSurface?:Color,
+    colorOnSurface?:Color,
+    chrome?:Color,
+    colorOnBackground?:Color,
+    colorError?:Color,
+    colorOnError?:Color,
+  }) {
+    this.colorPrimary = args.colorPrimary || Colors.Blue[200];
+    this.colorPrimaryVariant = args.colorPrimaryVariant ||Colors.Blue[700];
+    this.colorOnPrimary = args.colorOnPrimary || Colors.Gray[50];
+    this.colorSecondary = args.colorSecondary || Colors.Green[400];
+    this.colorSecondaryVariant = args.colorSecondaryVariant||Colors.Green[700];
+    this.colorOnSecondary = args.colorOnSecondary || Colors.Gray[50];
+    this.colorSurface = args.colorSurface || Colors.Gray[50];
+    this.colorOnSurface = args.colorOnSurface || Colors.Gray[800];
+    this.chrome = args.chrome || Colors.Yellow[600];
+    this.colorOnBackground = args.colorOnBackground || Colors.Gray[800];
+    this.colorError = args.colorError || Colors.Red[400];
+    this.colorOnError = args.colorOnError || Colors.Gray[50];
 
-
-
-            //TYPOGRAPHY & ICONOGRAPHY
-             fontFamily: String,
-             typography: Typography,
-             textTheme: TextTheme,
-             primaryTextTheme: TextTheme,
-             iconTheme: IconThemeData,
-             primaryIconTheme: IconThemeData,
-
-            //COMPONENT THEMES
-             appBarTheme: AppBarTheme,
-             bannerTheme: MaterialBannerThemeData,
-             bottomAppBarTheme: BottomAppBarTheme,
-             bottomNavigationBarTheme: BottomNavigationBarThemeData,
-             bottomSheetTheme: BottomSheetThemeData,
-             buttonBarTheme: ButtonBarThemeData,
-             buttonTheme: ButtonThemeData,
-             cardTheme: CardTheme,
-             checkboxTheme: CheckboxThemeData,
-             chipTheme: ChipThemeData,
-             dataTableTheme: DataTableThemeData,
-             dialogTheme: DialogTheme,
-             dividerTheme: DividerThemeData,
-             drawerTheme: DrawerThemeData,
-             elevatedButtonTheme: ElevatedButtonThemeData,
-             floatingActionButtonTheme: FloatingActionButtonThemeData,
-             listTileTheme: ListTileThemeData,
-             navigationBarTheme: NavigationBarThemeData,
-             navigationRailTheme: NavigationRailThemeData,
-             outlinedButtonTheme: OutlinedButtonThemeData,
-             popupMenuTheme: PopupMenuThemeData,
-             progressIndicatorTheme: ProgressIndicatorThemeData,
-             radioTheme: RadioThemeData,
-             sliderTheme: SliderThemeData,
-             snackBarTheme: SnackBarThemeData,
-             switchTheme: SwitchThemeData,
-             tabBarTheme: TabBarTheme,
-             textButtonTheme: TextButtonThemeData,
-             textSelectionTheme: TextSelectionThemeData,
-             timePickerTheme: TimePickerThemeData,
-             toggleButtonsTheme: ToggleButtonsThemeData,
-             tooltipTheme: TooltipThemeData,
-        }
-    ) {
-        
-    }
+  }
 }
 
-export{
-    ThemeData
-}
+export { ThemeData };

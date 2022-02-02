@@ -1,4 +1,4 @@
-
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ThemeData = exports.Widget = exports.ExtendedWidget = void 0;
 const framework_1 = require("./widgets/framework");

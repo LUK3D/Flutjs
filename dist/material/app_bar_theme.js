@@ -1,12 +1,9 @@
+"use strict";
 // Copyright 2022 The Flutjs Author. All rights reserved.
 // Use of this source code is governed by a license that can be
 // found in the LICENSE file.
-
-import { TargetPlatform } from "../foundation/platform";
-import { Color } from "../painting/colors";
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AppTheme = void 0;
 /** Configures the tap target and layout size of certain Material widgets.
 *
 * Changing the value in [ThemeData.materialTapTargetSize] will affect the
@@ -34,19 +31,18 @@ import { Color } from "../painting/colors";
 *   * [Switch]
 *   * [Checkbox]
 */
-enum MaterialTapTargetSize {
+var MaterialTapTargetSize;
+(function (MaterialTapTargetSize) {
     /// Expands the minimum tap target size to 48px by 48px.
     ///
     /// This is the default value of [ThemeData.materialTapTargetSize] and the
     /// recommended size to conform to Android accessibility scanner
     /// recommendations.
-    padded,
-  
+    MaterialTapTargetSize[MaterialTapTargetSize["padded"] = 0] = "padded";
     /// Shrinks the tap target size to the minimum provided by the Material
     /// specification.
-    shrinkWrap,
-  }
-
+    MaterialTapTargetSize[MaterialTapTargetSize["shrinkWrap"] = 1] = "shrinkWrap";
+})(MaterialTapTargetSize || (MaterialTapTargetSize = {}));
 /** Overrides the default values of visual properties for descendant
 * [AppBar] widgets.
 *
@@ -61,13 +57,6 @@ enum MaterialTapTargetSize {
 * compute its own default values, typically based on the overall theme's
 * [ThemeData.colorScheme], [ThemeData.textTheme], and [ThemeData.iconTheme].
 */
-
 class AppTheme {
-
-
 }
-
-
-export{
-    AppTheme
-}
+exports.AppTheme = AppTheme;
