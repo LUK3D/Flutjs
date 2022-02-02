@@ -1,8 +1,8 @@
 import { Colors, Color } from "./colors";
 
 class ThemeData {
-  colorPrimary?: Color;
-  colorPrimaryVariant?: Color;
+  primaryColor?: Color;
+  primaryColorVariant?: Color;
   colorOnPrimary?: Color;
   colorSecondary?: Color;
   colorSecondaryVariant?: Color;
@@ -14,9 +14,40 @@ class ThemeData {
   colorError?: Color;
   colorOnError?: Color;
 
+   focusColor?:Color;
+   hoverColor?:Color;
+   shadowColor?:Color;
+   canvasColor?:Color;
+   scaffoldBackgroundColor?:Color;
+   bottomAppBarColor?:Color;
+   cardColor?:Color;
+   dividerColor?:Color;
+   highlightColor?:Color;
+   splashColor?:Color;
+   selectedRowColor?:Color;
+   unselectedWidgetColor?:Color;
+   disabledColor?:Color;
+   secondaryHeaderColor?:Color;
+   backgroundColor?:Color;
+   dialogBackgroundColor?:Color;
+   indicatorColor?:Color;
+   hintColor?:Color;
+   errorColor?:Color;
+   toggleableActiveColor?:Color;
+
+
+      // TYPOGRAPHY & ICONOGRAPHY
+       fontFamily?:String;
+       typography?:Typography;
+       textTheme?:TextTheme;
+       primaryTextTheme?:TextTheme;
+       iconTheme?:IconThemeData;
+       primaryIconTheme?:IconThemeData;
+
+
   constructor(args:{
-    colorPrimary?:Color,
-    colorPrimaryVariant?:Color,
+    primaryColor?:Color,
+    primaryColorVariant?:Color,
     colorOnPrimary:Color,
     colorSecondary?:Color,
     colorSecondaryVariant?:Color,
@@ -28,8 +59,8 @@ class ThemeData {
     colorError?:Color,
     colorOnError?:Color,
   }) {
-    this.colorPrimary = args.colorPrimary || Colors.Blue[200];
-    this.colorPrimaryVariant = args.colorPrimaryVariant ||Colors.Blue[700];
+    this.primaryColor = args.primaryColor || Colors.Blue[200];
+    this.primaryColorVariant = args.primaryColorVariant ||Colors.Blue[700];
     this.colorOnPrimary = args.colorOnPrimary || Colors.Gray[50];
     this.colorSecondary = args.colorSecondary || Colors.Green[400];
     this.colorSecondaryVariant = args.colorSecondaryVariant||Colors.Green[700];
