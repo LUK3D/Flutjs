@@ -13,6 +13,7 @@ export default class Widget{
      child?:Widget;
      parent?:HTMLElement|Widget;
      textContent?:string;
+     
  
      constructor(args:{tagName:string, child?:Widget, parent?:HTMLElement|Widget,text?:string}){
          this.child = args.child;

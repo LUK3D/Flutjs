@@ -1,4 +1,5 @@
 import { TextTheme } from "../material/text_theme";
+import { IconThemeData } from "../widgets/icon_theme_data";
 import { Colors, Color } from "./colors";
 import { Typography } from "./typography";
 
