@@ -1,5 +1,4 @@
 import { Column, Container, MaterialApp, Scaffold } from './material'
-import { ThemeData } from './painting/themeData'
 
 MaterialApp(
     {
