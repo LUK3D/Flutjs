@@ -27,5 +27,6 @@
   "bugs": {
     "url": "https://github.com/LUK3D/Flutjs/issues"
   },
-  "homepage": "https://github.com/LUK3D/Flutjs#readme"
+  "homepage": "https://github.com/LUK3D/Flutjs#readme",
+  "dependencies": {}
 }
