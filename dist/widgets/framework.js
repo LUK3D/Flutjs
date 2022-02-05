@@ -2,9 +2,9 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Container = exports.Column = exports.ExtendedWidget = exports.Widget = void 0;
-const uuid_1 = __importDefault(require("../utils/uuid"));
+
+import {uuid} from "../utils/uuid.js";
+const uuid_1 = __importDefault(require(""));
 /**
  * Flutjs class to generate a new Widget
  */
@@ -14,15 +14,21 @@ class Widget {
          * widget Id, when rendered, it will generate am id
          */
         this.key = new uuid_1.default().uuidv4();
+        this.width = "auto";
+        this.height = "auto";
         this.child = args.child;
         this.parent = args.parent;
         this.render({ tagName: args.tagName });
         this.addTextContent({ text: args.text });
+        this.width = args.width || this.width;
+        this.height = args.height || this.height;
         return this;
     }
     render(args) {
         this.tag = document.createElement(args.tagName);
         this.tag.id = this.key;
+        this.tag.style.width = `${this.width}`;
+        this.tag.style.height = `${this.height}`;
         if (this.child) {
             this.tag.appendChild(this.child.tag);
         }
@@ -71,14 +77,3 @@ class ExtendedWidget extends Widget {
     }
 }
 exports.ExtendedWidget = ExtendedWidget;
-function Column(args) {
-    return new ExtendedWidget({
-        tagName: "div",
-        children: args.children
-    });
-}
-exports.Column = Column;
-function Container(args) {
-    return new Widget({ tagName: "div", child: args.child });
-}
-exports.Container = Container;

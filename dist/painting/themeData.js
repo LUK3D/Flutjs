@@ -4,11 +4,12 @@ exports.ThemeData = void 0;
 const colors_1 = require("./colors");
 class ThemeData {
     constructor(args) {
-        this.colorPrimary = args.colorPrimary || colors_1.Colors.Blue[200];
-        this.colorPrimaryVariant = args.colorPrimaryVariant || colors_1.Colors.Blue[700];
+        this.primaryColor = args.primaryColor || colors_1.Colors.Blue[200];
+        this.primaryColorVariant = args.primaryColorVariant || colors_1.Colors.Blue[700];
         this.colorOnPrimary = args.colorOnPrimary || colors_1.Colors.Gray[50];
         this.colorSecondary = args.colorSecondary || colors_1.Colors.Green[400];
-        this.colorSecondaryVariant = args.colorSecondaryVariant || colors_1.Colors.Green[700];
+        this.colorSecondaryVariant =
+            args.colorSecondaryVariant || colors_1.Colors.Green[700];
         this.colorOnSecondary = args.colorOnSecondary || colors_1.Colors.Gray[50];
         this.colorSurface = args.colorSurface || colors_1.Colors.Gray[50];
         this.colorOnSurface = args.colorOnSurface || colors_1.Colors.Gray[800];
