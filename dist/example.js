@@ -1,10 +1,4 @@
 "use strict";
-
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-global.document = new JSDOM(`<body><body>`).window.document; 
-
-
 Object.defineProperty(exports, "__esModule", { value: true });
 const material_1 = require("./material");
 var el = material_1.MaterialApp({

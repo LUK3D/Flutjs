@@ -14,8 +14,8 @@ var el = MaterialApp(
                 
         //     }
         // ),
-        home: 
-             Container({
+        home: Scaffold({
+            body: Container({
                 child: Column({
                     children: [
                         Text("LUK3D",{}),
@@ -25,6 +25,8 @@ var el = MaterialApp(
                 },
                 ),
             },
+            ),
+        },
         ),
     }
 );

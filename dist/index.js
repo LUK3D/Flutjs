@@ -1,5 +1,7 @@
-
-import "./widgets/framework.js";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ThemeData = exports.Widget = exports.ExtendedWidget = void 0;
+const framework_1 = require("./widgets/framework");
 Object.defineProperty(exports, "Widget", { enumerable: true, get: function () { return framework_1.Widget; } });
 Object.defineProperty(exports, "ExtendedWidget", { enumerable: true, get: function () { return framework_1.ExtendedWidget; } });
 const themeData_1 = require("./painting/themeData");
