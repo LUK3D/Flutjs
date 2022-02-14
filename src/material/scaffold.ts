@@ -18,18 +18,18 @@ function Scaffold(
     }
 ):ExtendedWidget{
 
-    var children = [];
+    // var children = [];
 
-    if(args.appBar){
-        children.push(args.appBar);
-    }
-    if(args.body){
-        children.push(args.body);
-    }
+    // if(args.appBar){
+    //     children.push(args.appBar);
+    // }
+    // if(args.body){
+    //     children.push(args.body);
+    // }
 
     return new ExtendedWidget({
         tagName:"div",
-        children:children
+        children:[args.body!]
     })
 }
 

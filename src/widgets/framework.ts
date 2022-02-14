@@ -9,7 +9,7 @@ export default class Widget{
     /**
      * widget Id, when rendered, it will generate am id
      */
-     key = new Key().uuidv4();
+     key:Key|string;
 
      width:number|string = "auto";
      height:number|string = "auto";
@@ -21,19 +21,21 @@ export default class Widget{
      decoration?:ThemeData
 
  
-     constructor(args:{tagName:string, child?:Widget, parent?:HTMLElement|Widget,text?:string,decoration?:ThemeData,width?:string|number,height?:string|number}){
+     constructor(args:{key?:Key|string, tagName:string, child?:Widget, parent?:HTMLElement|Widget,text?:string,decoration?:ThemeData,width?:string|number,height?:string|number}){
          this.child = args.child;
          this.parent = args.parent;
          this.render({tagName:args.tagName});
          this.addTextContent({text:args.text});
          this.width = args.width || this.width;
          this.height = args.height || this.height;
+         this.key = args.key || new Key().uuidv4();
+
          return this;
      }
  
      render(args:{tagName:string}){
          this.tag =  document.createElement(args.tagName);
-         this.tag.id = this.key;
+         this.tag.id = (this.key ||  new Key().uuidv4()).toString();
          this.tag.style.width = `${this.width}`;
          this.tag.style.height = `${this.height}`;
          

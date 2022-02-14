@@ -11,7 +11,6 @@ As the name suggests, Flutejs is based on Flutter for its simplicity and easy le
 
 ```js
 
-
 import { Column, Container, MaterialApp, Scaffold } from './material'
 import { ThemeData } from './painting/themeData'
 
@@ -56,4 +55,11 @@ MaterialApp(
 
 
 
+<!-- 
 
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+global.document = new JSDOM(`<body><body>`).window.document; 
+
+
+-->

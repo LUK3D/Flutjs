@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MaterialApp = exports.ThemeMode = void 0;
-const framework_1 = require("../widgets/framework");
+const app_1 = require("../widgets/app");
 var ThemeMode;
 (function (ThemeMode) {
     ThemeMode[ThemeMode["system"] = 0] = "system";
@@ -10,9 +10,10 @@ var ThemeMode;
 })(ThemeMode || (ThemeMode = {}));
 exports.ThemeMode = ThemeMode;
 function MaterialApp(args) {
-    return new framework_1.Widget({
-        tagName: "div",
-        child: args.home
-    });
+    return new app_1.App({
+        title: args.title,
+        theme: args.theme,
+        home: args.home
+    }).build();
 }
 exports.MaterialApp = MaterialApp;

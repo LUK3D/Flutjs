@@ -4,7 +4,8 @@
   "description": "Javascript framework for flutter lovers",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsc && npx webpack --config webpack.config.js"
+    "dev": "tsc && npx webpack --config webpack.config.js",
+    "dev_w": "node \"C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\4.2\\tsc.js\" && npx webpack --config webpack.config.js"
   },
   "keywords": [
     "Flutterjs",
