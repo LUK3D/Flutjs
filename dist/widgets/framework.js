@@ -1,10 +1,7 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Widget = void 0;
-const uuid_1 = __importDefault(require("../utils/uuid"));
+const validator_1 = require("../utils/validator");
 /**
  * Flutjs class to generate a new Widget
  */
@@ -18,13 +15,24 @@ class Widget {
         this.render({ tagName: args.tagName, text: args.text });
         this.width = args.width || this.width;
         this.height = args.height || this.height;
-        this.key = args.key || new uuid_1.default().uuidv4();
+        if (args.key) {
+            this.key = args.key;
+        }
+        this.classes = args.classes;
+        if ((0, validator_1.isNumber)(args.width)) {
+            this.tag.style.width = args.width.toString() + "%";
+        }
+        if ((0, validator_1.isNumber)(args.height)) {
+            this.tag.style.height = args.height.toString() + "%";
+        }
         return this;
     }
     render(args) {
         this.tag = document.createElement(args.tagName);
         document.body.appendChild(this.tag);
-        this.tag.id = (this.key || new uuid_1.default().uuidv4()).toString();
+        if (this.classes) {
+            this.tag.classList.add(this.classes.join(" "));
+        }
         //  this.tag.style.width = `${this.width}`;
         //  this.tag.style.height = `${this.height}`;
         this.addTextContent({ text: args.text });

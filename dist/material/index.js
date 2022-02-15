@@ -1,12 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Text = exports.Scaffold = exports.MaterialApp = exports.Container = exports.Column = void 0;
+exports.AppBar = exports.Text = exports.Scaffold = exports.MaterialApp = exports.Container = exports.Column = void 0;
 const container_1 = require("../widgets/container");
 Object.defineProperty(exports, "Container", { enumerable: true, get: function () { return container_1.Container; } });
 const column_1 = require("../widgets/column");
 Object.defineProperty(exports, "Column", { enumerable: true, get: function () { return column_1.Column; } });
 const app_1 = require("./app");
 Object.defineProperty(exports, "MaterialApp", { enumerable: true, get: function () { return app_1.MaterialApp; } });
+const app_bar_1 = require("./app_bar");
+Object.defineProperty(exports, "AppBar", { enumerable: true, get: function () { return app_bar_1.AppBar; } });
 const scaffold_1 = require("./scaffold");
 Object.defineProperty(exports, "Scaffold", { enumerable: true, get: function () { return scaffold_1.Scaffold; } });
 const Text_1 = require("../widgets/Text");

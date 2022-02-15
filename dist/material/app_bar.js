@@ -17,7 +17,7 @@ class _AppBar extends framework_1.default {
         if (args.actions) {
             children = [...children, ...args.actions];
         }
-        super({ tagName: "div", children: children });
+        super({ tagName: "div", children: children, width: 100, height: 50 });
     }
 }
 exports._AppBar = _AppBar;

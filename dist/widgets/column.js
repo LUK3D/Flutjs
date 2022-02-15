@@ -9,11 +9,11 @@ class _Column extends framework_1.default {
     constructor(args) {
         super({
             tagName: "div",
-            children: args.children
+            children: args.children,
         });
     }
 }
 function Column(args) {
-    return new _Column({ children: args.children });
+    return new _Column(args);
 }
 exports.Column = Column;

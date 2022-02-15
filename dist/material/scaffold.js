@@ -12,7 +12,9 @@ function Scaffold(args) {
     }
     return new framework_1.Widget({
         tagName: "div",
-        children: children
+        children: children,
+        width: 100,
+        height: 100,
     });
 }
 exports.Scaffold = Scaffold;

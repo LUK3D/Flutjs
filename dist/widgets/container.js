@@ -4,11 +4,11 @@ exports.Container = void 0;
 const framework_1 = require("./framework");
 class _Container extends framework_1.Widget {
     constructor(args) {
-        super({ tagName: "div", child: args.child, key: args.key });
+        super(Object.assign({ tagName: "div" }, args));
         return this;
     }
 }
 function Container(args) {
-    return new _Container({ child: args.child, key: args.key });
+    return new _Container(args);
 }
 exports.Container = Container;

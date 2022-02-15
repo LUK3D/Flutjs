@@ -11,6 +11,8 @@ class _App extends framework_1.default {
         this.title = args.title;
         this.theme = args.theme;
         this.home = args.home;
+        this.tag.style.width = "100vw";
+        this.tag.style.height = "100vh";
         // this.tag = document.createElement("div");
         // this.tag.id  = "baseApp";
     }

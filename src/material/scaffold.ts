@@ -30,7 +30,9 @@ function Scaffold(
 
     return new Widget({
         tagName:"div",
-        children:children
+        children:children,
+        width:100,
+        height:100,
     })
 }
 
