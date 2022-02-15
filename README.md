@@ -36,7 +36,7 @@ MaterialApp(
                                 ]
                             }),
                         }),
-                        //Here wi can put any widget we want 😁
+                        //Here we can put any widget we want 😁
                     ]
                 },
                 ),
