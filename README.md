@@ -15,7 +15,6 @@ import { Column, Container, MaterialApp, Scaffold } from './material'
 import { ThemeData } from './painting/themeData'
 
 // This widget is the root of your application.
-import { Column, Container, MaterialApp, Scaffold,Text } from './material'
 
 MaterialApp(
     {
@@ -32,10 +31,11 @@ MaterialApp(
                         Text("LUK3D",{}),
                         Text("Vamos la ver se iras funcionar 😍",{}),
                         Container({child:Column({
-                            children:[
-                                Text("Aparentemente tudo vai funcionar")
-                            ]
-                        })})
+                                children:[
+                                    Text("Aparentemente tudo vai funcionar")
+                                ]
+                            }),
+                        }),
                         //Here wi can put any widget we want 😁
                     ]
                 },
