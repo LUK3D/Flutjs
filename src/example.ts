@@ -20,6 +20,11 @@ var el = MaterialApp(
                     children: [
                         Text("LUK3D",{}),
                         Text("Vamos la ver se iras funcionar 😍",{}),
+                        Container({child:Column({
+                            children:[
+                                Text("Aparentemente tudo vai funcionar")
+                            ]
+                        })})
                         //Here wi can put any widget we want 😁
                     ]
                 },

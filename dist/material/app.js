@@ -10,7 +10,7 @@ var ThemeMode;
 })(ThemeMode || (ThemeMode = {}));
 exports.ThemeMode = ThemeMode;
 function MaterialApp(args) {
-    return (0, app_1.App)({
+    return app_1.App({
         title: args.title,
         theme: args.theme,
         home: args.home

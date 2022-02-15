@@ -15,7 +15,7 @@ class _App extends framework_1.default {
         // this.tag.id  = "baseApp";
     }
     build() {
-        return this.home.tag.outerHTML;
+        return document.body.outerHTML;
     }
 }
 function App(args) {

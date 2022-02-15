@@ -3,7 +3,7 @@ import {Widget } from "./framework";
 
 class  _Container extends Widget {
     constructor(args:{child?:Widget, key?:Key|string}){
-        super({tagName:"div", key:args.key});
+        super({tagName:"div",child:args.child, key:args.key});
         return this;
     }
 }

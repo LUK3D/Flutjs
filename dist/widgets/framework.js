@@ -15,8 +15,7 @@ class Widget {
         this.child = args.child;
         this.children = args.children;
         this.parent = args.parent;
-        this.render({ tagName: args.tagName });
-        this.addTextContent({ text: args.text });
+        this.render({ tagName: args.tagName, text: args.text });
         this.width = args.width || this.width;
         this.height = args.height || this.height;
         this.key = args.key || new uuid_1.default().uuidv4();
@@ -24,49 +23,33 @@ class Widget {
     }
     render(args) {
         this.tag = document.createElement(args.tagName);
+        document.body.appendChild(this.tag);
         this.tag.id = (this.key || new uuid_1.default().uuidv4()).toString();
         this.tag.style.width = `${this.width}`;
         this.tag.style.height = `${this.height}`;
+        this.addTextContent({ text: args.text });
         if (this.child) {
-            this.tag.appendChild(this.child.tag);
+            this.appendChild(this.child.tag);
         }
-        else if (this.children) {
+        if (this.children) {
             let ctx = this;
             this.children.map((widget) => {
-                var _a;
                 widget.parent = ctx.tag;
-                console.log("TAGS: ", widget.tag.tagName);
-                ctx.tag.appendChild(widget.tag);
-                console.log("TAGS->: ", (_a = ctx.tag) === null || _a === void 0 ? void 0 : _a.outerHTML);
+                this.appendChild(widget.tag);
             });
-        }
-        else {
-            // console.log("No parent: ",this.tag);
-            // this.addParent(this.tag);
-        }
-    }
-    addParent(el) {
-        if (this.parent) {
-            console.log("NO_BODY->: ", el.outerHTML);
-            this.tag.appendChild(el);
-        }
-        else {
-            console.log("BODY->: ", el.outerHTML);
-            document.body.appendChild(el);
         }
     }
     addTextContent(args) {
-        var _a;
         if (args.text) {
             if (args.text.length > 0) {
-                let textEl = document.createTextNode(args.text);
-                (_a = this.tag) === null || _a === void 0 ? void 0 : _a.appendChild(textEl);
+                // let textEl = document.createTextNode(args.text);
+                this.tag.textContent = args.text;
             }
         }
     }
     appendChild(el) {
-        console.log("Parent: ", this.tag.tagName, " Child: ", el.tagName);
-        this.tag.appendChild(el);
+        var _a;
+        (_a = this.tag) === null || _a === void 0 ? void 0 : _a.appendChild(el);
     }
 }
 exports.default = Widget;

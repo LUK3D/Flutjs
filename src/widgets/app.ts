@@ -18,7 +18,7 @@ class _App extends Widget{
     }
 
     build(){
-        return this.home.tag!.outerHTML;
+        return document.body.outerHTML;
     }
 }
 

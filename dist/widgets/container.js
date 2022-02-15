@@ -4,7 +4,7 @@ exports.Container = void 0;
 const framework_1 = require("./framework");
 class _Container extends framework_1.Widget {
     constructor(args) {
-        super({ tagName: "div", key: args.key });
+        super({ tagName: "div", child: args.child, key: args.key });
         return this;
     }
 }

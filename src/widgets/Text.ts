@@ -8,7 +8,7 @@ class  _Text extends Widget {
     }
 }
 
-function Text(value:string,args:{}){
+function Text(value:string,args?:{}){
     return new _Text({text:value});
 }
 
