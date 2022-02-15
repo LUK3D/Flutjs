@@ -1,10 +1,11 @@
 import {Widget } from "../widgets/framework"
+import { _AppBar } from "./app_bar";
 
 
 function Scaffold(
     args:{
         body?:Widget,
-        appBar?:Widget,
+        appBar?:_AppBar,
         bodyScrim?:Widget,
         bottomSheet?:Widget,
         snackBar?:Widget,
@@ -18,18 +19,18 @@ function Scaffold(
     }
 ):Widget{
 
-    // var children = [];
+    var children = [];
 
-    // if(args.appBar){
-    //     children.push(args.appBar);
-    // }
-    // if(args.body){
-    //     children.push(args.body);
-    // }
+    if(args.appBar){
+        children.push(args.appBar);
+    }
+    if(args.body){
+        children.push(args.body);
+    }
 
     return new Widget({
         tagName:"div",
-        children:[args.body!]
+        children:children
     })
 }
 

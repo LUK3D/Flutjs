@@ -58,8 +58,7 @@ MaterialApp(
 ```html
 <div id="0ddecf13-c692-419a-bc61-609c2a2acfe9" style="width: auto; height: auto;">
     <div id="d7032671-baf0-44fa-bad9-4458152c0c45" style="width: auto; height: auto;">
-        <div id="735b31c3-6b07-478b-aba7-12a793371f01" style="width: auto; 
-    height: auto;">
+        <div id="735b31c3-6b07-478b-aba7-12a793371f01" style="width: auto; height: auto;">
             <div id="0331a7d5-250c-4dee-9118-e1c91882e5c2" style="width: auto; height: auto;">
                 <p id="60a33660-755f-497a-ba9b-88b40aaf6f38" style="width: auto; height: auto;">LUK3D</p>
                 <p id="82959955-ebbd-4d5e-ae66-25d6e1500c49" style="width: auto; height: auto;">Vamos la ver se iras

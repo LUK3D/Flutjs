@@ -4,6 +4,7 @@ const { JSDOM } = jsdom;
 global.document = new JSDOM(`<body><body>`).window.document; 
 Object.defineProperty(exports, "__esModule", { value: true });
 const material_1 = require("./material");
+const app_bar_1 = require("./material/app_bar");
 var el = material_1.MaterialApp({
     title: "Flutjs Demo 😎",
     // theme: new ThemeData(
@@ -11,6 +12,9 @@ var el = material_1.MaterialApp({
     //     }
     // ),
     home: material_1.Scaffold({
+        appBar: app_bar_1.AppBar({
+            title: material_1.Text("---Titulo da aplicação---")
+        }),
         body: material_1.Container({
             child: material_1.Column({
                 children: [

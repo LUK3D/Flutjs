@@ -4,6 +4,7 @@
 
 
 import { Column, Container, MaterialApp, Scaffold,Text } from './material'
+import { AppBar } from './material/app_bar';
 import Key from './utils/uuid';
 
 var el = MaterialApp(
@@ -15,6 +16,9 @@ var el = MaterialApp(
         //     }
         // ),
         home: Scaffold({
+            appBar:AppBar({
+                title:Text("---Titulo da aplicação---")
+            }),
             body: Container({
                 child: Column({
                     children: [
