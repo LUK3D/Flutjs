@@ -25,8 +25,8 @@ class Widget {
         this.tag = document.createElement(args.tagName);
         document.body.appendChild(this.tag);
         this.tag.id = (this.key || new uuid_1.default().uuidv4()).toString();
-        this.tag.style.width = `${this.width}`;
-        this.tag.style.height = `${this.height}`;
+        //  this.tag.style.width = `${this.width}`;
+        //  this.tag.style.height = `${this.height}`;
         this.addTextContent({ text: args.text });
         if (this.child) {
             this.appendChild(this.child.tag);
