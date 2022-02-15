@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExtendedWidget = exports.Widget = void 0;
+exports.Widget = void 0;
 const uuid_1 = __importDefault(require("../utils/uuid"));
 /**
  * Flutjs class to generate a new Widget
@@ -13,6 +13,7 @@ class Widget {
         this.width = "auto";
         this.height = "auto";
         this.child = args.child;
+        this.children = args.children;
         this.parent = args.parent;
         this.render({ tagName: args.tagName });
         this.addTextContent({ text: args.text });
@@ -29,15 +30,28 @@ class Widget {
         if (this.child) {
             this.tag.appendChild(this.child.tag);
         }
+        else if (this.children) {
+            let ctx = this;
+            this.children.map((widget) => {
+                var _a;
+                widget.parent = ctx.tag;
+                console.log("TAGS: ", widget.tag.tagName);
+                ctx.tag.appendChild(widget.tag);
+                console.log("TAGS->: ", (_a = ctx.tag) === null || _a === void 0 ? void 0 : _a.outerHTML);
+            });
+        }
         else {
-            this.addParent(this.tag);
+            // console.log("No parent: ",this.tag);
+            // this.addParent(this.tag);
         }
     }
     addParent(el) {
         if (this.parent) {
+            console.log("NO_BODY->: ", el.outerHTML);
             this.tag.appendChild(el);
         }
         else {
+            console.log("BODY->: ", el.outerHTML);
             document.body.appendChild(el);
         }
     }
@@ -51,26 +65,9 @@ class Widget {
         }
     }
     appendChild(el) {
+        console.log("Parent: ", this.tag.tagName, " Child: ", el.tagName);
         this.tag.appendChild(el);
     }
 }
 exports.default = Widget;
 exports.Widget = Widget;
-class ExtendedWidget extends Widget {
-    constructor(args) {
-        super({ tagName: args.tagName });
-        this.buildChilds({ children: args.children });
-    }
-    addStyle() {
-        var _a;
-        (_a = this.tag) === null || _a === void 0 ? void 0 : _a.classList.add("flex");
-    }
-    buildChilds(args) {
-        if (args.children) {
-            args.children.forEach(element => {
-                this.appendChild(element.tag);
-            });
-        }
-    }
-}
-exports.ExtendedWidget = ExtendedWidget;

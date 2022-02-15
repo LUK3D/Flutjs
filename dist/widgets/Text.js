@@ -4,7 +4,7 @@ exports.Text = void 0;
 const framework_1 = require("./framework");
 class _Text extends framework_1.Widget {
     constructor(args) {
-        super({ tagName: "div", key: args.key, text: args.text });
+        super({ tagName: "p", key: args.key, text: args.text });
         return this;
     }
 }

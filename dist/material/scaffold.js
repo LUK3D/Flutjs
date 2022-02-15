@@ -10,7 +10,7 @@ function Scaffold(args) {
     // if(args.body){
     //     children.push(args.body);
     // }
-    return new framework_1.ExtendedWidget({
+    return new framework_1.Widget({
         tagName: "div",
         children: [args.body]
     });

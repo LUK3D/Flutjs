@@ -1,6 +1,6 @@
 import { ThemeData } from "../painting/themeData";
 import { App } from "../widgets/app";
-import {ExtendedWidget, Widget} from "../widgets/framework";
+import { Widget} from "../widgets/framework";
 import { Scaffold } from "./scaffold";
 
 enum ThemeMode{
@@ -14,14 +14,14 @@ function MaterialApp (
     args:{
         title?:string,
         theme?:ThemeData,
-        home:Widget|ExtendedWidget
+        home:Widget
     }
 ){
-    return new App({
+    return  App({
         title: args.title,
         theme: args.theme,
         home: args.home
-    }).build();
+    });
 }
 
 

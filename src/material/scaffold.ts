@@ -1,22 +1,22 @@
-import {Widget, ExtendedWidget } from "../widgets/framework"
+import {Widget } from "../widgets/framework"
 
 
 function Scaffold(
     args:{
-        body?:ExtendedWidget|Widget,
-        appBar?:Widget|ExtendedWidget,
-        bodyScrim?:Widget|ExtendedWidget,
-        bottomSheet?:Widget|ExtendedWidget,
-        snackBar?:Widget|ExtendedWidget,
-        materialBanner?:Widget|ExtendedWidget,
-        persistentFooter?:Widget|ExtendedWidget,
-        bottomNavigationBar?:Widget|ExtendedWidget,
-        floatingActionButton?:Widget|ExtendedWidget,
-        drawer?:Widget|ExtendedWidget,
-        endDrawer?:Widget|ExtendedWidget,
-        statusBar?:Widget|ExtendedWidget,
+        body?:Widget,
+        appBar?:Widget,
+        bodyScrim?:Widget,
+        bottomSheet?:Widget,
+        snackBar?:Widget,
+        materialBanner?:Widget,
+        persistentFooter?:Widget,
+        bottomNavigationBar?:Widget,
+        floatingActionButton?:Widget,
+        drawer?:Widget,
+        endDrawer?:Widget,
+        statusBar?:Widget,
     }
-):ExtendedWidget{
+):Widget{
 
     // var children = [];
 
@@ -27,7 +27,7 @@ function Scaffold(
     //     children.push(args.body);
     // }
 
-    return new ExtendedWidget({
+    return new Widget({
         tagName:"div",
         children:[args.body!]
     })

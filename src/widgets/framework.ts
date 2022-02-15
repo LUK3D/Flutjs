@@ -16,13 +16,16 @@ export default class Widget{
 
      tag?: HTMLElement;
      child?:Widget;
-     parent?:HTMLElement|Widget;
+     children?:Array<Widget>;
+     parent?:HTMLElement;
      textContent?:string;
      decoration?:ThemeData
-
+    mainAxisAlignment?: MainAxisAlignment;
+    crossAxisAlignment?: CrossAxisAlignment;
  
-     constructor(args:{key?:Key|string, tagName:string, child?:Widget, parent?:HTMLElement|Widget,text?:string,decoration?:ThemeData,width?:string|number,height?:string|number}){
+     constructor(args:{key?:Key|string, tagName:string, child?:Widget, children?:Array<Widget>, parent?:HTMLElement,text?:string,decoration?:ThemeData,width?:string|number,height?:string|number}){
          this.child = args.child;
+         this.children = args.children;
          this.parent = args.parent;
          this.render({tagName:args.tagName});
          this.addTextContent({text:args.text});
@@ -39,18 +42,36 @@ export default class Widget{
          this.tag.style.width = `${this.width}`;
          this.tag.style.height = `${this.height}`;
          
+        
          if(this.child){
              this.tag.appendChild(this.child.tag!);
-         }else{
+         }else  if(this.children){
+             let ctx = this;
+             this.children.map((widget)=>{
+
+                widget.parent = ctx.tag;
+                console.log("TAGS: ", widget.tag!.tagName);
+                
+                ctx.tag!.appendChild(widget.tag!);
+                console.log("TAGS->: ", ctx.tag?.outerHTML);
+
+             });
+        }
+        else{
+            
+            // console.log("No parent: ",this.tag);
             this.addParent(this.tag);
          }
      }
      
  
      addParent(el:HTMLElement){
+         
          if(this.parent){
+             console.log("NO_BODY->: ", el.outerHTML);
              this.tag!.appendChild(el);
          }else{
+            console.log("BODY->: ", el.outerHTML);
              document.body.appendChild(el);
          }
      }
@@ -67,49 +88,14 @@ export default class Widget{
      }
 
      appendChild(el:HTMLElement){
+        console.log("Parent: ", this.tag!.tagName," Child: ",el.tagName);
         this.tag!.appendChild(el);
     }
 }
-
-
-class ExtendedWidget extends Widget{
-    children?:Array<Widget|ExtendedWidget>;
-    mainAxisAlignment?: MainAxisAlignment;
-    crossAxisAlignment?: CrossAxisAlignment;
-    
-
-    constructor(args:{
-        tagName:string,
-        children?:Array<Widget|ExtendedWidget>}){
-        super({tagName:args.tagName});
-
-        this.buildChilds({children:args.children});
-
-    }
-
-    addStyle(){
-        this.tag?.classList.add("flex");
-
-    }
-
-    buildChilds(args:{children?:Array<Widget|ExtendedWidget>}){
-        if(args.children){
-            args.children.forEach(element => {
-                this.appendChild(element.tag!);
-            });
-        }
-        
-    }
-}
-
-
-
-
 
 
 
 
 export{
     Widget,
-    ExtendedWidget,
 }

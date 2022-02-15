@@ -1,7 +1,7 @@
-import Widget, { ExtendedWidget } from "./framework";
+import Widget from "./framework";
 
-class  _Column extends ExtendedWidget {
-    constructor(args:{children?:Array<Widget|ExtendedWidget>}) {
+class  _Column extends Widget {
+    constructor(args:{children?:Array<Widget>}) {
         super({
             tagName:"div",
             children:args.children
@@ -9,7 +9,7 @@ class  _Column extends ExtendedWidget {
     }
 }
 
-function Column(args:{children?:Array<Widget|ExtendedWidget>}){
+function Column(args:{children?:Array<Widget>}){
     return new _Column({children:args.children});
 }
 export {

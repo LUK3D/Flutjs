@@ -1,6 +1,6 @@
 
 
-import { Widget, ExtendedWidget} from "./widgets/framework";
+import { Widget} from "./widgets/framework";
 import {ThemeData} from "./painting/themeData"
 
 
@@ -8,11 +8,9 @@ import {ThemeData} from "./painting/themeData"
 
 let Flutjs = {
   Widget,
-  ExtendedWidget,
   ThemeData
 };
 export{
-  ExtendedWidget,
   Widget,
   ThemeData
 };
