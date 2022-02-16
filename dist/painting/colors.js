@@ -1,6 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Colors = void 0;
+exports.Color = exports.Colors = void 0;
+class Color {
+    constructor(args) {
+        this.a = args.a;
+        this.r = args.r;
+        this.g = args.g;
+        this.b = args.b;
+        this.value = args.value;
+        this.withAlpha = args.withAlpha;
+        this.withOpacity = args.withOpacity;
+        this.withRed = args.withRed;
+        this.withGreen = args.withGreen;
+        this.withBlue = args.withBlue;
+    }
+}
+exports.Color = Color;
 /** {@tool snippet}
 *
 * To select a specific color from one of the swatches, index into the swatch
@@ -326,6 +341,7 @@ class Colors {
             800: this.hexToRgb({ hex: "1e293b" }),
             900: this.hexToRgb({ hex: "0f172a" }),
         };
+        this.color = new Color({ r: 0, g: 0, b: 0, a: 1 });
         this.color = this.fromARGB({ a: a, r: r, g: g, b: b });
         this.color.withAlpha = this.withAlpha;
         this.color.withOpacity = this.withOpacity;
@@ -355,10 +371,7 @@ class Colors {
             this.color.value = `rgb(${r}, ${g}, ${b}, ${a})`;
         }
         /** Red chanel of this color */
-        this.color.r = r;
-        this.color.g = g;
-        this.color.b = b;
-        this.color.a = a;
+        this.color = new Color({ r, g, b, a });
         return this.color;
     }
     /** Converts an Hex value to RGB color

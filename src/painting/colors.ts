@@ -1,6 +1,6 @@
 
 
-interface Color {
+class Color {
     a?:number;
     r?:number;
     g?:number;
@@ -11,6 +11,30 @@ interface Color {
     withRed?:Function;
     withGreen?:Function;
     withBlue?:Function;
+
+    constructor(args:{
+      a?:number,
+      r?:number,
+      g?:number,
+      b?:number,
+      value?:string,
+      withAlpha?:Function,
+      withOpacity?:Function,
+      withRed?:Function,
+      withGreen?:Function,
+      withBlue?:Function,
+    }){
+      this.a = args.a;
+      this.r = args.r;
+      this.g = args.g;
+      this.b = args.b;
+      this.value = args.value;
+      this.withAlpha = args.withAlpha;
+      this.withOpacity = args.withOpacity;
+      this.withRed = args.withRed;
+      this.withGreen = args.withGreen;
+      this.withBlue = args.withBlue;
+    }
 
 }
 
@@ -382,7 +406,7 @@ export default class Colors {
 
 
 
-    color:Color;
+    color:Color = new Color({r:0,g:0,b:0,a:1});
 
     /** An immutable 32 bit color value in ARGB format.
 *
@@ -448,10 +472,8 @@ export default class Colors {
         this.color.value = `rgb(${r}, ${g}, ${b}, ${a})`;
       }
         /** Red chanel of this color */
-        this.color.r = r;
-        this.color.g = g;
-        this.color.b = b;
-        this.color.a = a;
+        this.color = new Color({r,g,b,a});
+        
         return this.color;
     }
 
