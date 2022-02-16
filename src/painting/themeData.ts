@@ -49,7 +49,7 @@ class ThemeData {
   constructor(args: {
     primaryColor?: Color;
     primaryColorVariant?: Color;
-    colorOnPrimary: Color;
+    colorOnPrimary?: Color;
     colorSecondary?: Color;
     colorSecondaryVariant?: Color;
     colorOnSecondary?: Color;

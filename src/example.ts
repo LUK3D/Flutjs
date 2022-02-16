@@ -10,19 +10,18 @@ import { Expanded } from './widgets/exapnded';
 var el = MaterialApp(
     {
         title: "Flutjs Demo 😎",
-        // theme: new ThemeData(
-        //     {
+        theme: new ThemeData(
+        {
 
-        //     }
-        // ),
+        }),
         home: Scaffold({
             appBar: AppBar({
                 title: Text("---Titulo da aplicação---"),
             }),
             body: Expanded(
                 {
-                    child:Container({
-                        width:200,
+                    child: Container({
+                        width: 200,
                         child: Column({
                             children: [
                                 Text("LUK3D", {}),

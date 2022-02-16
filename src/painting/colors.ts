@@ -444,7 +444,9 @@ export default class Colors {
     * Out of range values are brought into range using modulo 255.
     **/
     fromARGB({ a=1, r, g, b}:Color):Color{
+      if(this.color){
         this.color.value = `rgb(${r}, ${g}, ${b}, ${a})`;
+      }
         /** Red chanel of this color */
         this.color.r = r;
         this.color.g = g;

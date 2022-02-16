@@ -12,6 +12,9 @@ class _Expanded extends framework_1.default {
             tagName: "div",
             child: args.child
         });
+        if (this.child) {
+            this.tag = this.child.tag;
+        }
         this.tag.style.width = "100%";
         this.tag.style.height = "100%";
         args.child.tag.style.width = "100%";

@@ -5,7 +5,7 @@
 Flutjs is a javascript framework for creating beautiful, fast and lightweight websites.
 As the name suggests, Flutejs is based on Flutter for its simplicity and easy learning curve and the ability to easily extend.
 
-## Flutjs Example:
+## Flutjs Example: ⚡
 
 ```js
 import { Column,  Container,  MaterialApp,  Scaffold,  Text,  AppBar, } from "./material";
@@ -42,32 +42,41 @@ MaterialApp({
 
 > NOTE: Just like in Flutter, every thing here is a widget...
 
-## HTML OUTPUT
+### The above Flutjs code produces the following html output: ⚡
 
 ```html
 <div style="width: 100vw; height: 100vh;">
-  <div style="width: 100%; height: 100%;">
-    <div style="width: 100%; height: 50%;">
-      <p>---Titulo da aplicação---</p>
-    </div>
     <div style="width: 100%; height: 100%;">
-      <div style="width: 100%; height: 100%;">
-        <div>
-          <p>LUK3D</p>
-          <p>Vamos la ver se iras funcionar 😍</p>
-          <div>
-            <div>
-              <p>Aparentemente tudo vai funcionar</p>
-            </div>
-          </div>
+        <div style="width: 100%; height: 50%;">
+            <p>---Titulo da aplicação---</p>
         </div>
-      </div>
+        <div style="width: 100%; height: 100%;">
+            <div>
+                <p>LUK3D</p>
+                <p>Vamos la ver se iras funcionar 😍</p>
+                <div>
+                    <div>
+                        <p>Aparentemente tudo vai funcionar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 ```
 
-## Under Development:
+
+## UPDATES TABLE 🚀
+
+Date | Updates|
+-|-|
+ 16-02-2022| The `Extended Widget` now replaces himself with his child once compiled |
+ 16-02-2022| The `Width` and `Height`  Where added on the widget constructor. |
+ 16-02-2022| The Html output improvement |
+
+  
+
+## Under Development:🚧
 
 - A Set of widgets like Material Design components.
 - Route management

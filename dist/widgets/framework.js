@@ -19,10 +19,10 @@ class Widget {
             this.key = args.key;
         }
         this.classes = args.classes;
-        if ((0, validator_1.isNumber)(args.width)) {
+        if (validator_1.isNumber(args.width)) {
             this.tag.style.width = args.width.toString() + "%";
         }
-        if ((0, validator_1.isNumber)(args.height)) {
+        if (validator_1.isNumber(args.height)) {
             this.tag.style.height = args.height.toString() + "%";
         }
         return this;
