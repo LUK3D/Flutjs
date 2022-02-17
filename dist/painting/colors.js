@@ -368,7 +368,7 @@ class Colors {
     **/
     fromARGB({ a = 1, r, g, b }) {
         if (this.color) {
-            this.color.value = `rgb(${r}, ${g}, ${b}, ${a})`;
+            this.color.value = `rgba(${r}, ${g}, ${b}, ${a})`;
         }
         /** Red chanel of this color */
         this.color = new Color({ r, g, b, a });

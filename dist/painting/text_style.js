@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TextStyle = void 0;
-class TextStyle {
+exports.TextStyle = exports._TextStyle = void 0;
+class _TextStyle {
     constructor(args) {
         this.inherit = args.inherit || this.inherit;
         this.color = args.color || this.color;
@@ -32,5 +32,35 @@ class TextStyle {
         this.package = args.package || this.package;
         this.overflow = args.overflow || this.overflow;
     }
+}
+exports._TextStyle = _TextStyle;
+function TextStyle(args) {
+    return new _TextStyle({
+        inherit: args.inherit,
+        color: args.color,
+        backgroundColor: args.backgroundColor,
+        fontSize: args.fontSize,
+        fontWeight: args.fontWeight,
+        fontStyle: args.fontStyle,
+        letterSpacing: args.letterSpacing,
+        wordSpacing: args.wordSpacing,
+        textBaseline: args.textBaseline,
+        height: args.height,
+        leadingDistribution: args.leadingDistribution,
+        locale: args.locale,
+        foreground: args.foreground,
+        background: args.background,
+        shadows: args.shadows,
+        fontFeatures: args.fontFeatures,
+        decoration: args.decoration,
+        decorationColor: args.decorationColor,
+        decorationStyle: args.decorationStyle,
+        decorationThickness: args.decorationThickness,
+        debugLabel: args.debugLabel,
+        fontFamily: args.fontFamily,
+        fontFamilyFallback: args.fontFamilyFallback,
+        package: args.package,
+        overflow: args.overflow,
+    });
 }
 exports.TextStyle = TextStyle;

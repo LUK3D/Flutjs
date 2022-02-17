@@ -1,13 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Key = void 0;
-class Key {
+exports.Key = exports._Key = void 0;
+class _Key {
     /**
      * Generates a uuid
      * @returns `string`
      */
     constructor() {
-        this.uuidv4();
     }
     fromValue(val) {
         return val;
@@ -28,6 +27,13 @@ class Key {
             return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
         });
     }
+    uid() {
+        return Math.round(Math.random() * Math.pow(36, 6)).toString(36);
+    }
 }
-exports.default = Key;
+exports.default = _Key;
+exports._Key = _Key;
+function Key() {
+    return new _Key().uid();
+}
 exports.Key = Key;

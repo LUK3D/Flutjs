@@ -469,7 +469,7 @@ export default class Colors {
     **/
     fromARGB({ a=1, r, g, b}:Color):Color{
       if(this.color){
-        this.color.value = `rgb(${r}, ${g}, ${b}, ${a})`;
+        this.color.value = `rgba(${r}, ${g}, ${b}, ${a})`;
       }
         /** Red chanel of this color */
         this.color = new Color({r,g,b,a});

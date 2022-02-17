@@ -1,10 +1,10 @@
-import Key from "../utils/uuid";
+import _Key from "../utils/uuid";
 import { isNumber } from "../utils/validator";
 import {Widget } from "./framework";
 
 class  _Container extends Widget {
     constructor(args:{
-        key?:Key|string,
+        key?:_Key|string,
         child?:Widget, 
         width?:number,
         height?:number
@@ -17,7 +17,7 @@ class  _Container extends Widget {
 }
 
 function Container(args:{
-    key?:Key|string,
+    key?:_Key|string,
     child?:Widget,
     width?:number,
     height?:number

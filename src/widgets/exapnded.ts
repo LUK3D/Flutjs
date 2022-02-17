@@ -1,10 +1,10 @@
-import Key from "../utils/uuid";
+import _Key from "../utils/uuid";
 import Widget from "./framework";
 
 class _Expanded extends Widget{
 
     constructor(args:{
-        key?:Key,
+        key?:_Key,
         child:Widget
     }){
         super({
@@ -23,7 +23,7 @@ class _Expanded extends Widget{
 }
 
 function Expanded(args:{
-    key?:Key,
+    key?:_Key,
     child:Widget,
 }){
     return new _Expanded(args);

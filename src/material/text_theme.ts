@@ -1,68 +1,68 @@
-import { TextStyle } from "../painting/text_style";
+import { _TextStyle } from "../painting/text_style";
 
 class TextTheme {
 
 
-      displayLarge?:TextStyle;
-      displayMedium?:TextStyle;
-      displaySmall?:TextStyle;
-      headlineLarge?:TextStyle;
-      headlineMedium?:TextStyle;
-      headlineSmall?:TextStyle;
-      titleLarge?:TextStyle;
-      titleMedium?:TextStyle;
-      titleSmall?:TextStyle;
-      bodyLarge?:TextStyle;
-      bodyMedium?:TextStyle;
-      bodySmall?:TextStyle;
-      labelLarge?:TextStyle;
-      labelMedium?:TextStyle;
-      labelSmall?:TextStyle;
-      headline1?:TextStyle;
-      headline2?:TextStyle;
-      headline3?:TextStyle;
-      headline4?:TextStyle;
-      headline5?:TextStyle;
-      headline6?:TextStyle;
-      subtitle1?:TextStyle;
-      subtitle2?:TextStyle;
-      bodyText1?:TextStyle;
-      bodyText2?:TextStyle;
-      caption?:TextStyle;
-      button?:TextStyle;
-      overline?:TextStyle;
+      displayLarge?:_TextStyle;
+      displayMedium?:_TextStyle;
+      displaySmall?:_TextStyle;
+      headlineLarge?:_TextStyle;
+      headlineMedium?:_TextStyle;
+      headlineSmall?:_TextStyle;
+      titleLarge?:_TextStyle;
+      titleMedium?:_TextStyle;
+      titleSmall?:_TextStyle;
+      bodyLarge?:_TextStyle;
+      bodyMedium?:_TextStyle;
+      bodySmall?:_TextStyle;
+      labelLarge?:_TextStyle;
+      labelMedium?:_TextStyle;
+      labelSmall?:_TextStyle;
+      headline1?:_TextStyle;
+      headline2?:_TextStyle;
+      headline3?:_TextStyle;
+      headline4?:_TextStyle;
+      headline5?:_TextStyle;
+      headline6?:_TextStyle;
+      subtitle1?:_TextStyle;
+      subtitle2?:_TextStyle;
+      bodyText1?:_TextStyle;
+      bodyText2?:_TextStyle;
+      caption?:_TextStyle;
+      button?:_TextStyle;
+      overline?:_TextStyle;
 
       
     constructor(
       args:{
-        displayLarge?:TextStyle;
-        displayMedium?:TextStyle;
-        displaySmall?:TextStyle;
-       headlineLarge?:TextStyle;
-        headlineMedium?:TextStyle;
-        headlineSmall?:TextStyle;
-        titleLarge?:TextStyle;
-        titleMedium?:TextStyle;
-        titleSmall?:TextStyle;
-        bodyLarge?:TextStyle;
-        bodyMedium?:TextStyle;
-        bodySmall?:TextStyle;
-        labelLarge?:TextStyle;
-       labelMedium?:TextStyle;
-        labelSmall?:TextStyle;
-        headline1?:TextStyle;
-        headline2?:TextStyle;
-        headline3?:TextStyle;
-        headline4?:TextStyle;
-        headline5?:TextStyle;
-        headline6?:TextStyle;
-        subtitle1?:TextStyle;
-        subtitle2?:TextStyle;
-        bodyText1?:TextStyle;
-        bodyText2?:TextStyle;
-        caption?:TextStyle;
-        button?:TextStyle;
-        overline?:TextStyle;
+        displayLarge?:_TextStyle;
+        displayMedium?:_TextStyle;
+        displaySmall?:_TextStyle;
+       headlineLarge?:_TextStyle;
+        headlineMedium?:_TextStyle;
+        headlineSmall?:_TextStyle;
+        titleLarge?:_TextStyle;
+        titleMedium?:_TextStyle;
+        titleSmall?:_TextStyle;
+        bodyLarge?:_TextStyle;
+        bodyMedium?:_TextStyle;
+        bodySmall?:_TextStyle;
+        labelLarge?:_TextStyle;
+       labelMedium?:_TextStyle;
+        labelSmall?:_TextStyle;
+        headline1?:_TextStyle;
+        headline2?:_TextStyle;
+        headline3?:_TextStyle;
+        headline4?:_TextStyle;
+        headline5?:_TextStyle;
+        headline6?:_TextStyle;
+        subtitle1?:_TextStyle;
+        subtitle2?:_TextStyle;
+        bodyText1?:_TextStyle;
+        bodyText2?:_TextStyle;
+        caption?:_TextStyle;
+        button?:_TextStyle;
+        overline?:_TextStyle;
      }
 
 

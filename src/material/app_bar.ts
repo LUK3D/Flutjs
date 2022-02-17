@@ -1,11 +1,11 @@
 import { Color } from "../painting/colors";
-import Key from "../utils/uuid";
+import _Key from "../utils/uuid";
 import Widget from "../widgets/framework";
 
 class _AppBar extends Widget {
 
     constructor(args: {
-        key?: Key,
+        key?: _Key,
         leading?: Widget,
         automaticallyImplyLeading?: boolean,
         title?: Widget,
@@ -47,7 +47,7 @@ class _AppBar extends Widget {
 */
 function AppBar(
     args: {
-        key?: Key,
+        key?: _Key,
         leading?: Widget,
         automaticallyImplyLeading?: boolean,
         title?: Widget,

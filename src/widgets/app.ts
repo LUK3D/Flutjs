@@ -18,13 +18,13 @@ class _App extends Widget {
   }
 
   build() {
-    return document.body.outerHTML;
+    return document.body.outerHTML ;
   }
 }
 
 function App(args: { title?: string; theme?: ThemeData; home: Widget,width?:number|string, height?:number|string }) {
   var app = new _App({ title: args.title, theme: args.theme, home: args.home });
-  return app.tag?.outerHTML;
+  return app.tag?.outerHTML + `\n\n<style>\n${app.style}\n</style>`;
 }
 
 export { App };

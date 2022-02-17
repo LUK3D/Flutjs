@@ -1,11 +1,4 @@
-import {
-  Column,
-  Container,
-  MaterialApp,
-  Scaffold,
-  Text,
-  AppBar,
-} from "./material";
+import { Column, Container, MaterialApp, Scaffold, Text, AppBar } from "./material";
 import { Colors } from "./painting/colors";
 import { TextStyle } from "./painting/text_style";
 import { ThemeData } from "./painting/themeData";
@@ -23,8 +16,8 @@ var el = MaterialApp({
         width: 200,
         child: Column({
           children: [
-            Text("LUK3D", {textStyle: new TextStyle({color: Colors.Red[200].value})}),
-            Text("Vamos la ver se iras funcionar 😍", {}),
+            Text("LUK3D", {textStyle: TextStyle({color: Colors.Red[200].value})}),
+            Text("Vamos la ver se iras funcionar 😍"),
             Container({
               child: Column({
                 children: [Text("Aparentemente tudo vai funcionar")],

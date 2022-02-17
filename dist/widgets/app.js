@@ -23,6 +23,6 @@ class _App extends framework_1.default {
 function App(args) {
     var _a;
     var app = new _App({ title: args.title, theme: args.theme, home: args.home });
-    return (_a = app.tag) === null || _a === void 0 ? void 0 : _a.outerHTML;
+    return ((_a = app.tag) === null || _a === void 0 ? void 0 : _a.outerHTML) + `\n\n<style>\n${app.style}\n</style>`;
 }
 exports.App = App;

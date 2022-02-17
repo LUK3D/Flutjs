@@ -9,91 +9,91 @@ class Typography {
     constructor() {
         /// This [TextTheme] provides color but not geometry (font size, weight, etc).
         this.blackMountainView = new text_theme_1.TextTheme({
-            displayLarge: new text_style_1.TextStyle({
+            displayLarge: new text_style_1._TextStyle({
                 debugLabel: "blackMountainView displayLarge",
                 fontFamily: "Roboto",
                 color: colors_1.Colors.Gray[50].value,
                 decoration: new text_1.TextDecoration({}).none,
             }),
-            displayMedium: new text_style_1.TextStyle({
+            displayMedium: new text_style_1._TextStyle({
                 debugLabel: "blackMountainView displayMedium",
                 fontFamily: "Roboto",
                 color: colors_1.Colors.Gray[50].value,
                 decoration: new text_1.TextDecoration({}).none,
             }),
-            displaySmall: new text_style_1.TextStyle({
+            displaySmall: new text_style_1._TextStyle({
                 debugLabel: "blackMountainView displaySmall",
                 fontFamily: "Roboto",
                 color: colors_1.Colors.Gray[50].value,
                 decoration: new text_1.TextDecoration({}).none,
             }),
-            headlineLarge: new text_style_1.TextStyle({
+            headlineLarge: new text_style_1._TextStyle({
                 debugLabel: "blackMountainView headlineLarge",
                 fontFamily: "Roboto",
                 color: colors_1.Colors.Gray[50].value,
                 decoration: new text_1.TextDecoration({}).none,
             }),
-            headlineMedium: new text_style_1.TextStyle({
+            headlineMedium: new text_style_1._TextStyle({
                 debugLabel: "blackMountainView headlineMedium",
                 fontFamily: "Roboto",
                 color: colors_1.Colors.Gray[50].value,
                 decoration: new text_1.TextDecoration({}).none,
             }),
-            headlineSmall: new text_style_1.TextStyle({
+            headlineSmall: new text_style_1._TextStyle({
                 debugLabel: "blackMountainView headlineSmall",
                 fontFamily: "Roboto",
                 color: colors_1.Colors.Gray[100].value,
                 decoration: new text_1.TextDecoration({}).none,
             }),
-            titleLarge: new text_style_1.TextStyle({
+            titleLarge: new text_style_1._TextStyle({
                 debugLabel: "blackMountainView titleLarge",
                 fontFamily: "Roboto",
                 color: colors_1.Colors.Gray[100].value,
                 decoration: new text_1.TextDecoration({}).none,
             }),
-            titleMedium: new text_style_1.TextStyle({
+            titleMedium: new text_style_1._TextStyle({
                 debugLabel: "blackMountainView titleMedium",
                 fontFamily: "Roboto",
                 color: colors_1.Colors.Gray[100].value,
                 decoration: new text_1.TextDecoration({}).none,
             }),
-            titleSmall: new text_style_1.TextStyle({
+            titleSmall: new text_style_1._TextStyle({
                 debugLabel: "blackMountainView titleSmall",
                 fontFamily: "Roboto",
                 color: colors_1.Colors.Gray[800].value,
                 decoration: new text_1.TextDecoration({}).none,
             }),
-            bodyLarge: new text_style_1.TextStyle({
+            bodyLarge: new text_style_1._TextStyle({
                 debugLabel: "blackMountainView bodyLarge",
                 fontFamily: "Roboto",
                 color: colors_1.Colors.Gray[100].value,
                 decoration: new text_1.TextDecoration({}).none,
             }),
-            bodyMedium: new text_style_1.TextStyle({
+            bodyMedium: new text_style_1._TextStyle({
                 debugLabel: "blackMountainView bodyMedium",
                 fontFamily: "Roboto",
                 color: colors_1.Colors.Gray[100].value,
                 decoration: new text_1.TextDecoration({}).none,
             }),
-            bodySmall: new text_style_1.TextStyle({
+            bodySmall: new text_style_1._TextStyle({
                 debugLabel: "blackMountainView bodySmall",
                 fontFamily: "Roboto",
                 color: colors_1.Colors.Gray[50].value,
                 decoration: new text_1.TextDecoration({}).none,
             }),
-            labelLarge: new text_style_1.TextStyle({
+            labelLarge: new text_style_1._TextStyle({
                 debugLabel: "blackMountainView labelLarge",
                 fontFamily: "Roboto",
                 color: colors_1.Colors.Gray[100].value,
                 decoration: new text_1.TextDecoration({}).none,
             }),
-            labelMedium: new text_style_1.TextStyle({
+            labelMedium: new text_style_1._TextStyle({
                 debugLabel: "blackMountainView labelMedium",
                 fontFamily: "Roboto",
                 color: colors_1.Colors.Gray[800].value,
                 decoration: new text_1.TextDecoration({}).none,
             }),
-            labelSmall: new text_style_1.TextStyle({
+            labelSmall: new text_style_1._TextStyle({
                 debugLabel: "blackMountainView labelSmall",
                 fontFamily: "Roboto",
                 color: colors_1.Colors.Gray[800].value,

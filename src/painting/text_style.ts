@@ -1,4 +1,4 @@
-class TextStyle {
+class _TextStyle {
   inherit?: string;
   color?: string;
   backgroundColor?: string;
@@ -83,4 +83,65 @@ class TextStyle {
   }
 }
 
-export { TextStyle };
+function TextStyle(
+  args: {
+    inherit?: string;
+    color?: string;
+    backgroundColor?: string;
+    fontSize?: string;
+    fontWeight?: string;
+    fontStyle?: string;
+    letterSpacing?: string;
+    wordSpacing?: string;
+    textBaseline?: string;
+    height?: string;
+    leadingDistribution?: string;
+    locale?: string;
+    foreground?: string;
+    background?: string;
+    shadows?: string;
+    fontFeatures?: string;
+    decoration?: string;
+    decorationColor?: string;
+    decorationStyle?: string;
+    decorationThickness?: string;
+    debugLabel?: string;
+    fontFamily?: string;
+    fontFamilyFallback?: Array<string>;
+    package?: string;
+    overflow?: string;
+  }
+){
+
+  return new _TextStyle(
+    {
+      inherit: args.inherit,
+      color: args.color,
+      backgroundColor: args.backgroundColor,
+      fontSize: args.fontSize,
+      fontWeight: args.fontWeight,
+      fontStyle: args.fontStyle,
+      letterSpacing: args.letterSpacing,
+      wordSpacing: args.wordSpacing,
+      textBaseline: args.textBaseline,
+      height: args.height,
+      leadingDistribution: args.leadingDistribution,
+      locale: args.locale,
+      foreground: args.foreground,
+      background: args.background,
+      shadows: args.shadows,
+      fontFeatures: args.fontFeatures,
+      decoration: args.decoration,
+      decorationColor: args.decorationColor,
+      decorationStyle: args.decorationStyle,
+      decorationThickness: args.decorationThickness,
+      debugLabel: args.debugLabel,
+      fontFamily: args.fontFamily,
+      fontFamilyFallback: args.fontFamilyFallback,
+      package: args.package,
+      overflow: args.overflow,
+    }
+  );
+}
+
+export { _TextStyle,TextStyle };

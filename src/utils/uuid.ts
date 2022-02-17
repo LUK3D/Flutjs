@@ -1,18 +1,17 @@
-export default class Key{
+export default class _Key{
 
     /**
      * Generates a uuid
      * @returns `string`
      */
     constructor(){
-        this.uuidv4();
+       
     }
 
     fromValue(val:string){
         return val;
     }
-
-    uuidv4() { // Public Domain/MIT
+    uuidv4(): string { // Public Domain/MIT
         var d = new Date().getTime();//Timestamp
         var d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -27,6 +26,9 @@ export default class Key{
             return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
         });
     }
+    uid(): string {
+    return Math.round(Math.random() * 36 ** 6).toString(36);
+    }
     
 
     //  uuidv4() {
@@ -36,6 +38,10 @@ export default class Key{
     // }
 }
 
+function Key(){
+    return new _Key().uid();
+}
 export{
+    _Key,
     Key
 };
