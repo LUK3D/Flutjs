@@ -7,6 +7,7 @@ const material_1 = require("./material");
 const colors_1 = require("./painting/colors");
 const text_style_1 = require("./painting/text_style");
 const themeData_1 = require("./painting/themeData");
+const text_1 = require("./ui/text");
 const exapnded_1 = require("./widgets/exapnded");
 var el = (0, material_1.MaterialApp)({
     title: "Flutjs Demo 😎",
@@ -20,7 +21,13 @@ var el = (0, material_1.MaterialApp)({
                 width: 200,
                 child: (0, material_1.Column)({
                     children: [
-                        (0, material_1.Text)("LUK3D", { textStyle: (0, text_style_1.TextStyle)({ color: colors_1.Colors.Red[200].value }) }),
+                        (0, material_1.Text)("LUK3D", {
+                            textStyle: (0, text_style_1.TextStyle)({
+                                color: colors_1.Colors.Red[200].value,
+                                fontWeight: text_1.FontWeight.w800,
+                                fontSize: 200,
+                            })
+                        }),
                         (0, material_1.Text)("Vamos la ver se iras funcionar 😍"),
                         (0, material_1.Container)({
                             child: (0, material_1.Column)({

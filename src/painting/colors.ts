@@ -38,6 +38,7 @@ class Color {
 
 }
 
+
 interface hexToRgbInterface{
     hex:string;
     alpha?:number
@@ -295,6 +296,7 @@ export default class Colors {
     800: this.hexToRgb({hex:"9a3412"}),
     900: this.hexToRgb({hex:"7c2d12"}),
    }
+   
 
 
    Red = {

@@ -47,18 +47,21 @@ class Widget {
         this.addTextContent({ text: args.text });
         if (this.child) {
             this.appendChild(this.child.tag);
-            this.addStyle(this.child);
+            this.extactStyle(this.child);
         }
         if (this.children) {
             let ctx = this;
             this.children.map((widget) => {
                 widget.parent = ctx.tag;
-                this.addStyle(widget);
+                this.extactStyle(widget);
                 this.appendChild(widget.tag);
             });
         }
     }
-    addStyle(widget) {
+    //So.., because we want to generate beautiful websites, we need to extract the inline  css for each element.
+    //TODO: Finish removing the inline css
+    // For now its just extracting the last element css..
+    extactStyle(widget) {
         if (!this.style) {
             this.style = this.tag.getAttribute("style") || "";
         }

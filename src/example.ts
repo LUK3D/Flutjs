@@ -2,6 +2,7 @@ import { Column, Container, MaterialApp, Scaffold, Text, AppBar } from "./materi
 import { Colors } from "./painting/colors";
 import { TextStyle } from "./painting/text_style";
 import { ThemeData } from "./painting/themeData";
+import { FontWeight } from "./ui/text";
 import { Expanded } from "./widgets/exapnded";
 
 var el = MaterialApp({
@@ -16,7 +17,13 @@ var el = MaterialApp({
         width: 200,
         child: Column({
           children: [
-            Text("LUK3D", {textStyle: TextStyle({color: Colors.Red[200].value})}),
+            Text("LUK3D", { 
+              textStyle: TextStyle(
+                { 
+                  color: Colors.Red[100].value, 
+                  fontWeight: FontWeight.w800, 
+                  fontSize: 200, 
+                }) }),
             Text("Vamos la ver se iras funcionar 😍"),
             Container({
               child: Column({

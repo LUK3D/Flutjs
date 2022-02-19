@@ -70,9 +70,10 @@ MaterialApp({
 
 Date | Updates|
 -|-|
+ 19-02-2022| `Text Widget` now supports `textStyle` property. Once compiled all values added on the textStyle attr will be translated to css attr of the text element |
  16-02-2022| The `App Widget` now fills the width and height of the screen by using 100% of `vw` and `vh` `css` units |
  16-02-2022| The `Extended Widget` now replaces himself with his child once compiled |
- 16-02-2022| The `Width` and `Height`  Where added on the widget constructor. |
+ 16-02-2022| `Width` and `Height`  Where added on the widget constructor. |
  16-02-2022| Html output improvement |
 
   

@@ -4,7 +4,7 @@ exports.Typography = void 0;
 const text_theme_1 = require("../material/text_theme");
 const colors_1 = require("./colors");
 const text_style_1 = require("./text_style");
-const text_1 = require("./text");
+const text_1 = require("../ui/text");
 class Typography {
     constructor() {
         /// This [TextTheme] provides color but not geometry (font size, weight, etc).

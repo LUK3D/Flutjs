@@ -1,3 +1,5 @@
+import { _FontWeight,FontWeight } from "../ui/text";
+
 class _TextStyle {
   inherit?: string;
   color?: string;
@@ -29,8 +31,8 @@ class _TextStyle {
     inherit?: string;
     color?: string;
     backgroundColor?: string;
-    fontSize?: string;
-    fontWeight?: string;
+    fontSize?: number;
+    fontWeight?: FontWeight;
     fontStyle?: string;
     letterSpacing?: string;
     wordSpacing?: string;
@@ -52,11 +54,13 @@ class _TextStyle {
     package?: string;
     overflow?: string;
   }) {
+    ;
+
     this.inherit = args.inherit || this.inherit;
     this.color = args.color || this.color;
     this.backgroundColor = args.backgroundColor || this.backgroundColor;
-    this.fontSize = args.fontSize || this.fontSize;
-    this.fontWeight = args.fontWeight || this.fontWeight;
+    this.fontSize = `${args.fontSize}pt` || this.fontSize;
+    (args.fontWeight) && (this.fontWeight = new _FontWeight(args.fontWeight).value)
     this.fontStyle = args.fontStyle || this.fontStyle;
     this.letterSpacing = args.letterSpacing || this.letterSpacing;
     this.wordSpacing = args.wordSpacing || this.wordSpacing;
@@ -88,8 +92,8 @@ function TextStyle(
     inherit?: string;
     color?: string;
     backgroundColor?: string;
-    fontSize?: string;
-    fontWeight?: string;
+    fontSize?: number;
+    fontWeight?: FontWeight;
     fontStyle?: string;
     letterSpacing?: string;
     wordSpacing?: string;

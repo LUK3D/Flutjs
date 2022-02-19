@@ -1,13 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TextStyle = exports._TextStyle = void 0;
+const text_1 = require("../ui/text");
 class _TextStyle {
     constructor(args) {
+        ;
         this.inherit = args.inherit || this.inherit;
         this.color = args.color || this.color;
         this.backgroundColor = args.backgroundColor || this.backgroundColor;
-        this.fontSize = args.fontSize || this.fontSize;
-        this.fontWeight = args.fontWeight || this.fontWeight;
+        this.fontSize = `${args.fontSize}pt` || this.fontSize;
+        (args.fontWeight) && (this.fontWeight = new text_1._FontWeight(args.fontWeight).value);
         this.fontStyle = args.fontStyle || this.fontStyle;
         this.letterSpacing = args.letterSpacing || this.letterSpacing;
         this.wordSpacing = args.wordSpacing || this.wordSpacing;

@@ -9,7 +9,7 @@ import { isNumber } from "../utils/validator";
  */
 export default class Widget {
   /**
-   * widget Id, when rendered, it will generate am id
+   * widget key, when rendered, it will generate a key atribute to be used to track the element state.
    */
   key?: _Key | string;
 
@@ -63,6 +63,7 @@ export default class Widget {
     return this;
   }
 
+  
   setKey(key?:_Key|string){
     if (key) {
         this.tag?.setAttribute("key",key.toString());
@@ -85,20 +86,23 @@ export default class Widget {
 
     if (this.child) {
       this.appendChild(this.child.tag!);
-      this.addStyle(this.child);
+      this.extactStyle(this.child);
       
     }
     if (this.children) {
       let ctx = this;
       this.children.map((widget) => {
         widget.parent = ctx.tag;
-        this.addStyle(widget);
+        this.extactStyle(widget);
         this.appendChild(widget.tag!);
       });
     }
   }
-
-  addStyle(widget:Widget){
+  //So.., because we want to generate beautiful websites, we need to extract the inline  css for each element.
+  //TODO: Finish removing the inline css
+  // For now its just extracting the last element css..
+  extactStyle(widget:Widget){
+    
       if(!this.style){
         this.style = this.tag!.getAttribute("style")||"";
       }

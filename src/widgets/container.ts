@@ -26,5 +26,6 @@ function Container(args:{
 }
 
 export{
-    Container
+    Container,
+    _Container
 }   
