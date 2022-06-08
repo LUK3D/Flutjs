@@ -1,6 +1,6 @@
 {
   "name": "@luk3d/flutjs",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Javascript framework for flutter lovers",
   "scripts": {
     "dev": "yarn tsc && npx webpack --config webpack.config.js",
