@@ -14,3 +14,4 @@ var IconThemeData = /** @class */ (function () {
     return IconThemeData;
 }());
 export { IconThemeData };
+//# sourceMappingURL=icon_theme_data.js.map

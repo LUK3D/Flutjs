@@ -34,3 +34,4 @@ function Key() {
     return new _Key().uid();
 }
 export { _Key, Key };
+//# sourceMappingURL=uuid.js.map

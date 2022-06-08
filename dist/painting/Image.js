@@ -9,3 +9,4 @@ function Image(args) {
     return new _Image({ url: args.url });
 }
 export { Image, _Image };
+//# sourceMappingURL=Image.js.map

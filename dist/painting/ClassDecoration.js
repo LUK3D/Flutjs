@@ -4,3 +4,4 @@ var ClassDecoration = /** @class */ (function () {
     return ClassDecoration;
 }());
 export { ClassDecoration };
+//# sourceMappingURL=ClassDecoration.js.map

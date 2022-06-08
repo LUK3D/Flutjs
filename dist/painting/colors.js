@@ -443,3 +443,4 @@ var Colors = /** @class */ (function () {
 export default Colors;
 var c = new Colors({});
 export { c as Colors, Color };
+//# sourceMappingURL=colors.js.map

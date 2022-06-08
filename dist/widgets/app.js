@@ -38,3 +38,4 @@ function App(args) {
     return ((_a = app.tag) === null || _a === void 0 ? void 0 : _a.outerHTML) + "\n\n<style>\n".concat(app.style, "\n</style>");
 }
 export { App };
+//# sourceMappingURL=app.js.map

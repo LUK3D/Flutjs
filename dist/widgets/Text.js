@@ -54,3 +54,4 @@ function Text(value, args) {
     return new _Text({ text: value, textStyle: args === null || args === void 0 ? void 0 : args.textStyle });
 }
 export { Text };
+//# sourceMappingURL=Text.js.map

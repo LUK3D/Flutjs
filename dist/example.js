@@ -31,3 +31,4 @@ var el = WindiApp({
     }),
 });
 console.log(el);
+//# sourceMappingURL=example.js.map

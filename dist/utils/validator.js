@@ -19,3 +19,4 @@ function isNumber(val) {
     return new _Validator().isNumber(val);
 }
 export { isNumber };
+//# sourceMappingURL=validator.js.map

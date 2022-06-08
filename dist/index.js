@@ -7,3 +7,4 @@ var Flutjs = {
 };
 export { Widget, ThemeData };
 window.Flutjs = Flutjs;
+//# sourceMappingURL=index.js.map

@@ -61,3 +61,4 @@ var _Background = /** @class */ (function () {
     return _Background;
 }());
 export { _Background, BackgroundScrollBehaviour, BackgroundClip, BackgroundOrigin, BackgroundPosition, BackgroundRepeat, BackgroundSize, };
+//# sourceMappingURL=background.js.map

@@ -17,3 +17,4 @@ var TargetPlatform;
     TargetPlatform[TargetPlatform["windows"] = 5] = "windows";
 })(TargetPlatform || (TargetPlatform = {}));
 export { TargetPlatform };
+//# sourceMappingURL=platform.js.map
