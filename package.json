@@ -1,40 +1,27 @@
 {
-  "name": "@luk3d/flutjs",
-  "version": "0.1.0",
-  "description": "Javascript framework for flutter lovers",
+  "name": "flutjs_examples",
+  "version": "0.0.1",
+  "description": "Flutjs Examples",
+  "main": "index.js",
   "scripts": {
-    "dev": "yarn tsc && npx webpack --config webpack.config.js",
-    "dev_w": "yarn tsc && npx webpack --config webpack.config.js",
-    "build": "yarn tsc -p tsconfig.browser.json",
-    "watch": "onchange ./src/example.ts -- yarn build  && echo 'DONE!' "
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "Flutterjs",
-    "flutjs",
-    "Flutjs",
-    "javascript",
-    "framework"
-  ],
-  "files": [
-    "dist"
-  ],
-  
-  "author": "LUK3D",
-  "license": "MIT",
-  "devDependencies": {
-    "ts-node": "^10.8.1",
-    "typescript": "^4.7.3",
-    "webpack": "^5.67.0",
-    "webpack-cli": "^4.9.2"
-  },
-  "main": "./dist/flutjs.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LUK3D/Flutjs.git"
   },
+  "keywords": [
+    "flutjs",
+    "flutjs",
+    "examples"
+  ],
+  "author": "luk3d",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/LUK3D/Flutjs/issues"
   },
   "homepage": "https://github.com/LUK3D/Flutjs#readme",
-  "dependencies": {}
+  "dependencies": {
+    "@luk3d/flutjs": "^0.1.1"
+  }
 }
