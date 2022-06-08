@@ -5,11 +5,11 @@ var ThemeMode;
     ThemeMode[ThemeMode["light"] = 1] = "light";
     ThemeMode[ThemeMode["dark"] = 2] = "dark";
 })(ThemeMode || (ThemeMode = {}));
-function MaterialApp(args) {
+function WindiApp(args) {
     return App({
         title: args.title,
         theme: args.theme,
         home: args.home
     });
 }
-export { ThemeMode, MaterialApp };
+export { ThemeMode, WindiApp };

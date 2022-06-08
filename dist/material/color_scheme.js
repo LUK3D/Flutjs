@@ -1,4 +1,3 @@
-"use strict";
 /// A set of 25 colors based on the
 /// [Material spec](https://m3.material.io/styles/color/the-color-system/color-roles)
 /// that can be used to configure the color properties of most components.
@@ -32,9 +31,10 @@
 /// The [Theme] has a color scheme, [ThemeData.colorScheme], which can either be
 /// passed in as a parameter to the constructor or by using 'brightness' and
 /// 'colorSchemeSeed' parameters (which are used to generate a scheme with
-Object.defineProperty(exports, "__esModule", { value: true });
 /// [ColorScheme.fromSeed]).
-class ColorScheme {
-    constructor(args) {
+var ColorScheme = /** @class */ (function () {
+    function ColorScheme(args) {
     }
-}
+    return ColorScheme;
+}());
+export {};

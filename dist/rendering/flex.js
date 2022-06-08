@@ -1,6 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.CrossAxisAlignment = exports.MainAxisAlignment = void 0;
 /** How the children should be placed along the main axis in a flex layout.
 *
 * See also:
@@ -41,7 +38,6 @@ var MainAxisAlignment;
     * */
     MainAxisAlignment[MainAxisAlignment["spaceEvenly"] = 5] = "spaceEvenly";
 })(MainAxisAlignment || (MainAxisAlignment = {}));
-exports.MainAxisAlignment = MainAxisAlignment;
 var CrossAxisAlignment;
 (function (CrossAxisAlignment) {
     /** Place the children as close to the start of the main axis as possible.
@@ -75,9 +71,10 @@ var CrossAxisAlignment;
     * */
     CrossAxisAlignment[CrossAxisAlignment["spaceEvenly"] = 5] = "spaceEvenly";
 })(CrossAxisAlignment || (CrossAxisAlignment = {}));
-exports.CrossAxisAlignment = CrossAxisAlignment;
-class Flex {
-    constructor(args) {
+var Flex = /** @class */ (function () {
+    function Flex(args) {
         args.el.style.display = "flex";
     }
-}
+    return Flex;
+}());
+export { MainAxisAlignment, CrossAxisAlignment };

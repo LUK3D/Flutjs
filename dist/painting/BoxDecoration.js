@@ -1,6 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.BoxDecation = void 0;
-class BoxDecation {
-}
-exports.BoxDecation = BoxDecation;
+var BoxDecation = /** @class */ (function () {
+    function BoxDecation() {
+    }
+    return BoxDecation;
+}());
+export { BoxDecation };

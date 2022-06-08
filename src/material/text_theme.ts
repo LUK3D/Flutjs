@@ -1,4 +1,4 @@
-import { _TextStyle } from "../painting/text_style";
+import { _TextStyle } from "../painting/text_style.js";
 
 class TextTheme {
 

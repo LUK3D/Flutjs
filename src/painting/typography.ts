@@ -1,7 +1,7 @@
-import { TextTheme } from "../material/text_theme";
-import { Colors } from "./colors";
-import { _TextStyle } from "./text_style";
-import { TextDecoration } from "../ui/text";
+import { TextTheme } from "../material/text_theme.js";
+import { Colors } from "./colors.js";
+import { _TextStyle } from "./text_style.js";
+import { TextDecoration } from "../ui/text.js";
 
 class Typography {
   constructor() {

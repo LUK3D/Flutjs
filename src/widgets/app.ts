@@ -1,5 +1,5 @@
-import { ThemeData } from "../painting/themeData";
-import Widget from "./framework";
+import { ThemeData } from "../painting/themeData.js";
+import Widget from "./framework.js";
 
 class _App extends Widget {
   title?: string;

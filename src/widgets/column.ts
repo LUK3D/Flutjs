@@ -1,4 +1,4 @@
-import Widget from "./framework";
+import Widget from "./framework.js";
 
 class _Column extends Widget {
   constructor(args: { children?: Array<Widget> }) {

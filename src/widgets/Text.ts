@@ -1,6 +1,6 @@
-import { TextStyle, _TextStyle } from "../painting/text_style";
-import _Key from "../utils/uuid";
-import {Widget } from "./framework";
+import { TextStyle, _TextStyle } from "../painting/text_style.js";
+import _Key from "../utils/uuid.js";
+import {Widget } from "./framework.js";
 
 class  _Text extends Widget {
     constructor(args:{

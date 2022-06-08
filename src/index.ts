@@ -1,7 +1,7 @@
 
 
-import { Widget} from "./widgets/framework";
-import {ThemeData} from "./painting/themeData"
+import { Widget} from "./widgets/framework.js";
+import {ThemeData} from "./painting/themeData.js"
 
 
 // new Widget({tagName:"div"});

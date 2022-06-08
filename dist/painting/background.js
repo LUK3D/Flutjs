@@ -1,6 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.BackgroundSize = exports.BackgroundRepeat = exports.BackgroundPosition = exports.BackgroundOrigin = exports.BackgroundClip = exports.BackgroundScrollBehaviour = exports._Background = void 0;
 var BackgroundScrollBehaviour;
 (function (BackgroundScrollBehaviour) {
     /**
@@ -10,7 +7,6 @@ var BackgroundScrollBehaviour;
     BackgroundScrollBehaviour[BackgroundScrollBehaviour["local"] = 1] = "local";
     BackgroundScrollBehaviour[BackgroundScrollBehaviour["scroll"] = 2] = "scroll";
 })(BackgroundScrollBehaviour || (BackgroundScrollBehaviour = {}));
-exports.BackgroundScrollBehaviour = BackgroundScrollBehaviour;
 var BackgroundClip;
 (function (BackgroundClip) {
     BackgroundClip[BackgroundClip["borderBox"] = 0] = "borderBox";
@@ -18,14 +14,12 @@ var BackgroundClip;
     BackgroundClip[BackgroundClip["contentBox"] = 2] = "contentBox";
     BackgroundClip[BackgroundClip["text"] = 3] = "text";
 })(BackgroundClip || (BackgroundClip = {}));
-exports.BackgroundClip = BackgroundClip;
 var BackgroundOrigin;
 (function (BackgroundOrigin) {
     BackgroundOrigin[BackgroundOrigin["borderBox"] = 0] = "borderBox";
     BackgroundOrigin[BackgroundOrigin["paddingBox"] = 1] = "paddingBox";
     BackgroundOrigin[BackgroundOrigin["contentBox"] = 2] = "contentBox";
 })(BackgroundOrigin || (BackgroundOrigin = {}));
-exports.BackgroundOrigin = BackgroundOrigin;
 var BackgroundPosition;
 (function (BackgroundPosition) {
     BackgroundPosition[BackgroundPosition["bottom"] = 0] = "bottom";
@@ -38,7 +32,6 @@ var BackgroundPosition;
     BackgroundPosition[BackgroundPosition["rightTop"] = 7] = "rightTop";
     BackgroundPosition[BackgroundPosition["top"] = 8] = "top";
 })(BackgroundPosition || (BackgroundPosition = {}));
-exports.BackgroundPosition = BackgroundPosition;
 var BackgroundRepeat;
 (function (BackgroundRepeat) {
     BackgroundRepeat[BackgroundRepeat["repeat"] = 0] = "repeat";
@@ -48,16 +41,14 @@ var BackgroundRepeat;
     BackgroundRepeat[BackgroundRepeat["round"] = 4] = "round";
     BackgroundRepeat[BackgroundRepeat["space"] = 5] = "space";
 })(BackgroundRepeat || (BackgroundRepeat = {}));
-exports.BackgroundRepeat = BackgroundRepeat;
 var BackgroundSize;
 (function (BackgroundSize) {
     BackgroundSize[BackgroundSize["auto"] = 0] = "auto";
     BackgroundSize[BackgroundSize["cover"] = 1] = "cover";
     BackgroundSize[BackgroundSize["contain"] = 2] = "contain";
 })(BackgroundSize || (BackgroundSize = {}));
-exports.BackgroundSize = BackgroundSize;
-class _Background {
-    constructor(args) {
+var _Background = /** @class */ (function () {
+    function _Background(args) {
         this.scrollBehaviour = args.scrollBehaviour;
         this.Clip = args.Clip;
         this.Color = args.Color;
@@ -67,5 +58,6 @@ class _Background {
         this.Size = args.Size;
         this.Image = args.Image;
     }
-}
-exports._Background = _Background;
+    return _Background;
+}());
+export { _Background, BackgroundScrollBehaviour, BackgroundClip, BackgroundOrigin, BackgroundPosition, BackgroundRepeat, BackgroundSize, };

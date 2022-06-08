@@ -36,7 +36,12 @@ var _AppBar = /** @class */ (function (_super) {
         if (args.actions) {
             children = __spreadArray(__spreadArray([], children, true), args.actions, true);
         }
-        return _super.call(this, { tagName: "div", children: children, width: 100, height: 50 }) || this;
+        return _super.call(this, { tagName: "div", children: children, classes: [
+                "h-20",
+                "w-full",
+                "shadow-2xl",
+                "bg-white"
+            ] }) || this;
     }
     return _AppBar;
 }(Widget));

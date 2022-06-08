@@ -1,9 +1,6 @@
-"use strict";
 // Copyright 2022 The Flutjs Author. All rights reserved.
 // Use of this source code is governed by a license that can be
 // found in the LICENSE file.
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppTheme = void 0;
 /** Configures the tap target and layout size of certain Material widgets.
 *
 * Changing the value in [ThemeData.materialTapTargetSize] will affect the
@@ -57,6 +54,9 @@ var MaterialTapTargetSize;
 * compute its own default values, typically based on the overall theme's
 * [ThemeData.colorScheme], [ThemeData.textTheme], and [ThemeData.iconTheme].
 */
-class AppTheme {
-}
-exports.AppTheme = AppTheme;
+var AppTheme = /** @class */ (function () {
+    function AppTheme() {
+    }
+    return AppTheme;
+}());
+export { AppTheme };

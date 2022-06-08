@@ -1,5 +1,5 @@
-import { Color } from "./colors";
-import { _Image } from './Image'
+import { Color } from "./colors.js";
+import { _Image } from './Image.js'
 enum BackgroundScrollBehaviour {
     /** 
      * ## fixed

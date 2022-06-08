@@ -1,6 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.TargetPlatform = void 0;
 /// The platform that user interaction should adapt to target.
 ///
 /// The [defaultTargetPlatform] getter returns the current platform.
@@ -19,4 +16,4 @@ var TargetPlatform;
     /// Windows: <https://www.windows.com>
     TargetPlatform[TargetPlatform["windows"] = 5] = "windows";
 })(TargetPlatform || (TargetPlatform = {}));
-exports.TargetPlatform = TargetPlatform;
+export { TargetPlatform };

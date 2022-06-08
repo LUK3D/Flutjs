@@ -10,7 +10,7 @@ enum ThemeMode{
 }
 
 
-function MaterialApp (
+function WindiApp (
     args:{
         title?:string,
         theme?:ThemeData,
@@ -30,5 +30,5 @@ function MaterialApp (
 
 export{
     ThemeMode,
-    MaterialApp
+    WindiApp
 }

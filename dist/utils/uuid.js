@@ -1,17 +1,14 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Key = exports._Key = void 0;
-class _Key {
+var _Key = /** @class */ (function () {
     /**
      * Generates a uuid
      * @returns `string`
      */
-    constructor() {
+    function _Key() {
     }
-    fromValue(val) {
+    _Key.prototype.fromValue = function (val) {
         return val;
-    }
-    uuidv4() {
+    };
+    _Key.prototype.uuidv4 = function () {
         var d = new Date().getTime(); //Timestamp
         var d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now() * 1000)) || 0; //Time in microseconds since page-load or 0 if unsupported
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
@@ -26,14 +23,14 @@ class _Key {
             }
             return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
         });
-    }
-    uid() {
+    };
+    _Key.prototype.uid = function () {
         return Math.round(Math.random() * Math.pow(36, 6)).toString(36);
-    }
-}
-exports.default = _Key;
-exports._Key = _Key;
+    };
+    return _Key;
+}());
+export default _Key;
 function Key() {
     return new _Key().uid();
 }
-exports.Key = Key;
+export { _Key, Key };

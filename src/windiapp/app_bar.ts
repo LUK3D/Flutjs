@@ -30,7 +30,12 @@ class _AppBar extends Widget {
             children =  [...children, ...args.actions];
         }
 
-        super({ tagName: "div", children:children, width:100, height:50 });
+        super({ tagName: "div", children:children,  classes:[
+            "h-20",
+            "w-full",
+            "shadow-2xl",
+            "bg-white"
+        ] });
     }
 
 

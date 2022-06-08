@@ -1,6 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.TextDecoration = exports.FontWeight = exports._FontWeight = void 0;
 /// Whether to slant the glyphs in the font
 var FontStyle;
 (function (FontStyle) {
@@ -23,9 +20,8 @@ var FontWeight;
     FontWeight[FontWeight["normal"] = 9] = "normal";
     FontWeight[FontWeight["bold"] = 10] = "bold";
 })(FontWeight || (FontWeight = {}));
-exports.FontWeight = FontWeight;
 /// The thickness of the glyphs used to draw the text
-class _FontWeight {
+var _FontWeight = /** @class */ (function () {
     // w100:_FontWeight = new _FontWeight(100);
     // w200:_FontWeight= new _FontWeight(200);;
     // w300:_FontWeight= new _FontWeight(300);;
@@ -35,7 +31,7 @@ class _FontWeight {
     // w700:_FontWeight= new _FontWeight(700);;
     // w800:_FontWeight= new _FontWeight(800);;
     // w900:_FontWeight= new _FontWeight(900);;
-    constructor(value) {
+    function _FontWeight(value) {
         if (value == FontWeight.w100) {
             this.value = "100";
             return;
@@ -73,11 +69,11 @@ class _FontWeight {
             return;
         }
     }
-}
-exports.default = _FontWeight;
-exports._FontWeight = _FontWeight;
-class TextDecoration {
-    constructor(args) {
+    return _FontWeight;
+}());
+export default _FontWeight;
+var TextDecoration = /** @class */ (function () {
+    function TextDecoration(args) {
         this.values = {
             none: "none",
             underline: "underline",
@@ -98,5 +94,6 @@ class TextDecoration {
         this.lineThrough = args.lineThrough || this.lineThrough;
         return this;
     }
-}
-exports.TextDecoration = TextDecoration;
+    return TextDecoration;
+}());
+export { _FontWeight, FontWeight, TextDecoration };

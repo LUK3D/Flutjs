@@ -1,14 +1,11 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports._Image = exports.Image = void 0;
-class _Image {
-    constructor(args) {
+var _Image = /** @class */ (function () {
+    function _Image(args) {
     }
-    fromGradient() {
-    }
-}
-exports._Image = _Image;
+    _Image.prototype.fromGradient = function () {
+    };
+    return _Image;
+}());
 function Image(args) {
     return new _Image({ url: args.url });
 }
-exports.Image = Image;
+export { Image, _Image };

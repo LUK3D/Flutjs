@@ -1,4 +1,4 @@
-import { _FontWeight,FontWeight } from "../ui/text";
+import { _FontWeight,FontWeight } from "../ui/text.js";
 
 class _TextStyle {
   inherit?: string;

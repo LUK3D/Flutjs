@@ -1,15 +1,12 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.TextStyle = exports._TextStyle = void 0;
-const text_1 = require("../ui/text");
-class _TextStyle {
-    constructor(args) {
+import { _FontWeight } from "../ui/text.js";
+var _TextStyle = /** @class */ (function () {
+    function _TextStyle(args) {
         ;
         this.inherit = args.inherit || this.inherit;
         this.color = args.color || this.color;
         this.backgroundColor = args.backgroundColor || this.backgroundColor;
-        this.fontSize = `${args.fontSize}pt` || this.fontSize;
-        (args.fontWeight) && (this.fontWeight = new text_1._FontWeight(args.fontWeight).value);
+        this.fontSize = "".concat(args.fontSize, "pt") || this.fontSize;
+        (args.fontWeight) && (this.fontWeight = new _FontWeight(args.fontWeight).value);
         this.fontStyle = args.fontStyle || this.fontStyle;
         this.letterSpacing = args.letterSpacing || this.letterSpacing;
         this.wordSpacing = args.wordSpacing || this.wordSpacing;
@@ -34,8 +31,8 @@ class _TextStyle {
         this.package = args.package || this.package;
         this.overflow = args.overflow || this.overflow;
     }
-}
-exports._TextStyle = _TextStyle;
+    return _TextStyle;
+}());
 function TextStyle(args) {
     return new _TextStyle({
         inherit: args.inherit,
@@ -65,4 +62,4 @@ function TextStyle(args) {
         overflow: args.overflow,
     });
 }
-exports.TextStyle = TextStyle;
+export { _TextStyle, TextStyle };

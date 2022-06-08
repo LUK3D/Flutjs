@@ -1,8 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Color = exports.Colors = void 0;
-class Color {
-    constructor(args) {
+var Color = /** @class */ (function () {
+    function Color(args) {
         this.a = args.a;
         this.r = args.r;
         this.g = args.g;
@@ -14,8 +11,8 @@ class Color {
         this.withGreen = args.withGreen;
         this.withBlue = args.withBlue;
     }
-}
-exports.Color = Color;
+    return Color;
+}());
 /** {@tool snippet}
 *
 * To select a specific color from one of the swatches, index into the swatch
@@ -38,7 +35,7 @@ exports.Color = Color;
 *
 * ## Color palettes
 **/
-class Colors {
+var Colors = /** @class */ (function () {
     /** An immutable 32 bit color value in ARGB format.
 *
 * Consider the light teal of the Flutter logo. It is fully opaque, with a red
@@ -70,7 +67,8 @@ class Colors {
 *   [Colors](https://api.flutter.dev/flutter/material/Colors-class.html), which
 *    defines the colors found in the Material Design specification.
 **/
-    constructor({ a = 255, r = 255, g = 255, b = 255 }) {
+    function Colors(_a) {
+        var _b = _a.a, a = _b === void 0 ? 255 : _b, _c = _a.r, r = _c === void 0 ? 255 : _c, _d = _a.g, g = _d === void 0 ? 255 : _d, _e = _a.b, b = _e === void 0 ? 255 : _e;
         /**
          *
          */
@@ -366,19 +364,21 @@ class Colors {
     *
     * Out of range values are brought into range using modulo 255.
     **/
-    fromARGB({ a = 1, r, g, b }) {
+    Colors.prototype.fromARGB = function (_a) {
+        var _b = _a.a, a = _b === void 0 ? 1 : _b, r = _a.r, g = _a.g, b = _a.b;
         if (this.color) {
-            this.color.value = `rgba(${r}, ${g}, ${b}, ${a})`;
+            this.color.value = "rgba(".concat(r, ", ").concat(g, ", ").concat(b, ", ").concat(a, ")");
         }
         /** Red chanel of this color */
-        this.color = new Color({ r, g, b, a });
+        this.color = new Color({ r: r, g: g, b: b, a: a });
         return this.color;
-    }
+    };
     /** Converts an Hex value to RGB color
      *
      * invalid values will have unexpected effects.
      **/
-    hexToRgb({ hex, alpha = 1 }) {
+    Colors.prototype.hexToRgb = function (_a) {
+        var hex = _a.hex, _b = _a.alpha, alpha = _b === void 0 ? 1 : _b;
         hex = hex.replace('#', '');
         var r = parseInt(hex.length == 3 ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2), 16);
         var g = parseInt(hex.length == 3 ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4), 16);
@@ -389,7 +389,7 @@ class Colors {
         else {
             return this.fromARGB({ r: r, g: g, b: b });
         }
-    }
+    };
     /**
      * Returns a new color that matches this color with the alpha channel
      * replaced with `a` (which ranges from 0 to 255).
@@ -397,48 +397,49 @@ class Colors {
      * @param a
      * @returns
      */
-    withAlpha(a) {
+    Colors.prototype.withAlpha = function (a) {
         // var vals = this.value.replace("rgb(","").replace(")","").split(",").map(x=>parseFloat(x));
         return this.fromARGB({ r: this.color.r, g: this.color.g, b: this.color.b, a: a }).value;
-    }
+    };
     /** Returns a new color that matches this color with the alpha channel
     * replaced with the given `opacity` (which ranges from 0.0 to 1.0).
     *
     * Out of range values will have unexpected effects.
     **/
-    withOpacity(opacity) {
+    Colors.prototype.withOpacity = function (opacity) {
         // var vals = this.color.value?.replace("rgb(","").replace(")","").split(",").map(x=>parseFloat(x));
         return this.fromARGB({ r: this.color.r, g: this.color.g, b: this.color.b, a: Math.round(255.0 * opacity) }).value;
-    }
+    };
     /** Returns a new color that matches this color with the red channel replaced
     * with `r` (which ranges from 0 to 255).
     *
     * Out of range values will have unexpected effects.
     * */
-    withRed(r) {
+    Colors.prototype.withRed = function (r) {
         return this.fromARGB({ a: this.color.a, r: r, g: this.color.g, b: this.color.b }).value;
-    }
+    };
     /** Returns a new color that matches this color with the green channel
     * replaced with `g` (which ranges from 0 to 255).
     *
     * Out of range values will have unexpected effects.
     **/
-    withGreen(g) {
+    Colors.prototype.withGreen = function (g) {
         return this.fromARGB({ a: this.color.a, r: this.color.r, g: g, b: this.color.b }).value;
-    }
+    };
     /** Returns a new color that matches this color with the blue channel replaced
     * with `b` (which ranges from 0 to 255).
     *
     * Out of range values will have unexpected effects.
     * */
-    withBlue(b) {
+    Colors.prototype.withBlue = function (b) {
         return this.fromARGB({ a: this.color.a, r: this.color.r, g: this.color.g, b: b }).value;
-    }
-    fromUtil(className) {
+    };
+    Colors.prototype.fromUtil = function (className) {
         this.color.value = className;
         return this.color.value;
-    }
-}
-exports.default = Colors;
-let c = new Colors({});
-exports.Colors = c;
+    };
+    return Colors;
+}());
+export default Colors;
+var c = new Colors({});
+export { c as Colors, Color };

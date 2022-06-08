@@ -1,6 +1,6 @@
-import _Key from "../utils/uuid";
+import _Key from "../utils/uuid.js";
 import { isNumber } from "../utils/validator";
-import {Widget } from "./framework";
+import {Widget } from "./framework.js";
 
 class  _Container extends Widget {
     constructor(args:{

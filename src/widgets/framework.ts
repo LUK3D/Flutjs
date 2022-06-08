@@ -1,8 +1,8 @@
-import { ThemeData } from "../painting/themeData";
-import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex";
-import { ExtractCss } from "../utils/processor";
-import _Key, { Key } from "../utils/uuid";
-import { isNumber } from "../utils/validator";
+import { ThemeData } from "../painting/themeData.js";
+import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
+import { ExtractCss } from "../utils/processor.js";
+import _Key, { Key } from "../utils/uuid.js";
+import { isNumber } from "../utils/validator.js";
 
 /**
  * Flutjs class to generate a new Widget
@@ -43,7 +43,7 @@ export default class Widget {
     this.child = args.child;
     this.children = args.children;
     this.parent = args.parent;
-    this.render({ tagName: args.tagName, text: args.text });
+    this.render({ tagName: args.tagName, text: args.text, classes: args.classes});
     this.width = args.width || this.width;
     this.height = args.height || this.height;
     
@@ -52,6 +52,7 @@ export default class Widget {
     this.setKey(args.key);
     
     this.classes = args.classes;
+
 
     if (isNumber(args.width!)) {
       this.tag!.style.width = args.width!.toString() + "%";
@@ -73,13 +74,20 @@ export default class Widget {
     }
   }
 
-  render(args: { tagName: string; text?: string }) {
+  render(args: { tagName: string; text?: string,classes?:Array<string> }) {
     this.tag = document.createElement(args.tagName);
     document.body.appendChild(this.tag);
 
 
-    if (this.classes) {
-      this.tag.classList.add(this.classes.join(" "));
+    if (args.classes) {
+      console.log("Classes=>",args.classes);
+     
+     
+        this.tag!.classList.add(...args.classes);      
+      // ctx.classes!.forEach(element => {
+  
+        
+      // });
     }
 
     this.addTextContent({ text: args.text });

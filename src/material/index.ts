@@ -1,9 +1,9 @@
-import { Container } from "../widgets/container";
-import { Column} from "../widgets/column";
-import {MaterialApp} from "./app";
-import {AppBar} from "./app_bar";
-import {Scaffold} from "./scaffold";
-import {Text} from "../widgets/Text";
+import { Container } from "../widgets/container.js";
+import { Column} from "../widgets/column.js";
+import {MaterialApp} from "./app.js";
+import {AppBar} from "./app_bar.js";
+import {Scaffold} from "./scaffold.js";
+import {Text} from "../widgets/Text.js";
 
 export{
     Column,

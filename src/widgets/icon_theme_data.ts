@@ -1,4 +1,4 @@
-import { Color } from "../painting/colors";
+import { Color } from "../painting/colors.js";
 
 class IconThemeData{
 

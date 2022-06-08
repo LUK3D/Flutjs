@@ -32,7 +32,7 @@
 /// passed in as a parameter to the constructor or by using 'brightness' and
 /// 'colorSchemeSeed' parameters (which are used to generate a scheme with
 
-import Colors, { Color } from "../painting/colors";
+import Colors, { Color } from "../painting/colors.js";
 
 /// [ColorScheme.fromSeed]).
 class ColorScheme {

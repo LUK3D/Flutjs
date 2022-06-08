@@ -1,8 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.TextTheme = void 0;
-class TextTheme {
-    constructor(args) {
+var TextTheme = /** @class */ (function () {
+    function TextTheme(args) {
         this.displayLarge = args.displayLarge || this.displayLarge;
         this.displayMedium = args.displayMedium || this.displayMedium;
         this.displaySmall = args.displaySmall || this.displaySmall;
@@ -32,5 +29,6 @@ class TextTheme {
         this.button = args.button || this.button;
         this.overline = args.overline || this.overline;
     }
-}
-exports.TextTheme = TextTheme;
+    return TextTheme;
+}());
+export { TextTheme };

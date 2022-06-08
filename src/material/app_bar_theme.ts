@@ -2,8 +2,8 @@
 // Use of this source code is governed by a license that can be
 // found in the LICENSE file.
 
-import { TargetPlatform } from "../foundation/platform";
-import { Color } from "../painting/colors";
+import { TargetPlatform } from "../foundation/platform.js";
+import { Color } from "../painting/colors.js";
 
 
 

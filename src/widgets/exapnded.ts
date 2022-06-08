@@ -1,5 +1,5 @@
-import _Key from "../utils/uuid";
-import Widget from "./framework";
+import _Key from "../utils/uuid.js";
+import Widget from "./framework.js";
 
 class _Expanded extends Widget{
 

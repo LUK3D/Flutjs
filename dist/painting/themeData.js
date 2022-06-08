@@ -1,22 +1,20 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ThemeData = void 0;
-const colors_1 = require("./colors");
-class ThemeData {
-    constructor(args) {
-        this.primaryColor = args.primaryColor || colors_1.Colors.Blue[200];
-        this.primaryColorVariant = args.primaryColorVariant || colors_1.Colors.Blue[700];
-        this.colorOnPrimary = args.colorOnPrimary || colors_1.Colors.Gray[50];
-        this.colorSecondary = args.colorSecondary || colors_1.Colors.Green[400];
+import { Colors } from "./colors.js";
+var ThemeData = /** @class */ (function () {
+    function ThemeData(args) {
+        this.primaryColor = args.primaryColor || Colors.Blue[200];
+        this.primaryColorVariant = args.primaryColorVariant || Colors.Blue[700];
+        this.colorOnPrimary = args.colorOnPrimary || Colors.Gray[50];
+        this.colorSecondary = args.colorSecondary || Colors.Green[400];
         this.colorSecondaryVariant =
-            args.colorSecondaryVariant || colors_1.Colors.Green[700];
-        this.colorOnSecondary = args.colorOnSecondary || colors_1.Colors.Gray[50];
-        this.colorSurface = args.colorSurface || colors_1.Colors.Gray[50];
-        this.colorOnSurface = args.colorOnSurface || colors_1.Colors.Gray[800];
-        this.chrome = args.chrome || colors_1.Colors.Yellow[600];
-        this.colorOnBackground = args.colorOnBackground || colors_1.Colors.Gray[800];
-        this.colorError = args.colorError || colors_1.Colors.Red[400];
-        this.colorOnError = args.colorOnError || colors_1.Colors.Gray[50];
+            args.colorSecondaryVariant || Colors.Green[700];
+        this.colorOnSecondary = args.colorOnSecondary || Colors.Gray[50];
+        this.colorSurface = args.colorSurface || Colors.Gray[50];
+        this.colorOnSurface = args.colorOnSurface || Colors.Gray[800];
+        this.chrome = args.chrome || Colors.Yellow[600];
+        this.colorOnBackground = args.colorOnBackground || Colors.Gray[800];
+        this.colorError = args.colorError || Colors.Red[400];
+        this.colorOnError = args.colorOnError || Colors.Gray[50];
     }
-}
-exports.ThemeData = ThemeData;
+    return ThemeData;
+}());
+export { ThemeData };
