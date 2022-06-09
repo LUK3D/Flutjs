@@ -15,7 +15,7 @@ export default class Widget {
 
   width: number | string = "auto";
   height: number | string = "auto";
-
+  
   tag?: HTMLElement;
   child?: Widget;
   children?: Array<Widget>;
@@ -80,8 +80,6 @@ export default class Widget {
 
 
     if (args.classes) {
-      console.log("Classes=>",args.classes);
-     
      
         this.tag!.classList.add(...args.classes);      
       // ctx.classes!.forEach(element => {

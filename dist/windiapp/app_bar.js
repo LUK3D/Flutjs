@@ -26,6 +26,8 @@ import Widget from "../widgets/framework.js";
 var _AppBar = /** @class */ (function (_super) {
     __extends(_AppBar, _super);
     function _AppBar(args) {
+        var _this = this;
+        var _a, _b, _c, _d;
         var children = [];
         if (args.leading) {
             children.push(args.leading);
@@ -36,16 +38,24 @@ var _AppBar = /** @class */ (function (_super) {
         if (args.actions) {
             children = __spreadArray(__spreadArray([], children, true), args.actions, true);
         }
-        return _super.call(this, { tagName: "div", children: children, classes: [
-                "h-20",
+        _this = _super.call(this, { tagName: "div", children: children, classes: [
+                "h-10",
                 "w-full",
                 "shadow-2xl",
-                "bg-white"
+                "bg-white",
+                "fixed",
+                "top-0",
+                "left-0"
             ] }) || this;
+        _this.tag.style.backgroundColor = (_b = (_a = args.backgroundColor) === null || _a === void 0 ? void 0 : _a.value) !== null && _b !== void 0 ? _b : '';
+        _this.tag.style.color = (_d = (_c = args.foregroundColor) === null || _c === void 0 ? void 0 : _c.value) !== null && _d !== void 0 ? _d : '';
+        return _this;
     }
     return _AppBar;
 }(Widget));
-/** Creates a material design app bar.
+/**
+* ## AppBar
+* Creates a material design app bar.
 *
 * The arguments [primary], [toolbarOpacity], [bottomOpacity],
 * [backwardsCompatibility], and [automaticallyImplyLeading] must

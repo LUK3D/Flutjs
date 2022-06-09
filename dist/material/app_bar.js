@@ -22,7 +22,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
-import Widget from "../widgets/framework.js";
+import { Widget } from "../widgets/index.js";
 var _AppBar = /** @class */ (function (_super) {
     __extends(_AppBar, _super);
     function _AppBar(args) {

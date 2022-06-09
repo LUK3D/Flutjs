@@ -16,7 +16,9 @@ declare class _AppBar extends Widget {
         foregroundColor?: Color;
     });
 }
-/** Creates a material design app bar.
+/**
+* ## AppBar
+* Creates a material design app bar.
 *
 * The arguments [primary], [toolbarOpacity], [bottomOpacity],
 * [backwardsCompatibility], and [automaticallyImplyLeading] must

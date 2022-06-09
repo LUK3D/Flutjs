@@ -25,15 +25,33 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { Widget } from "./framework.js";
+import { WidgetExeption } from "../utils/FlutExeption.js";
 var _Container = /** @class */ (function (_super) {
     __extends(_Container, _super);
     function _Container(args) {
-        var _this = _super.call(this, __assign({ tagName: "div" }, args)) || this;
+        var _this = this;
+        var _a, _b, _c, _d;
+        _this = _super.call(this, __assign({ tagName: "div" }, args)) || this;
+        if (args.decoratio) {
+            _this.tag.style.backgroundColor = (_b = (_a = args.decoratio) === null || _a === void 0 ? void 0 : _a.color) !== null && _b !== void 0 ? _b : '';
+        }
+        else {
+            _this.tag.style.backgroundColor = (_d = (_c = args.color) === null || _c === void 0 ? void 0 : _c.value) !== null && _d !== void 0 ? _d : '';
+        }
         return _this;
     }
     return _Container;
 }(Widget));
 function Container(args) {
+    if (args.color != null && args.decoratio != null) {
+        WidgetExeption({ message: "The propertie Color needs to be null when decoration:<BoxDecoration> its been in use. Try to put the Color inside the BoxDecoration." });
+    }
+    if (!args.width) {
+        args.width = 100;
+    }
+    if (!args.height) {
+        args.height = 100;
+    }
     return new _Container(args);
 }
 export { Container, _Container };

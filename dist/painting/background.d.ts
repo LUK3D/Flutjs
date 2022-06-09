@@ -63,4 +63,14 @@ declare class _Background {
         Image: string | _Image;
     });
 }
-export { _Background, BackgroundScrollBehaviour, BackgroundClip, BackgroundOrigin, BackgroundPosition, BackgroundRepeat, BackgroundSize, };
+declare function Background(args: {
+    scrollBehaviour: BackgroundScrollBehaviour;
+    Clip: BackgroundClip;
+    Color: Color;
+    Origin: BackgroundOrigin;
+    Position: BackgroundPosition;
+    Repeat: BackgroundRepeat;
+    Size: BackgroundSize | string;
+    Image: string | _Image;
+}): _Background;
+export { Background, _Background, BackgroundScrollBehaviour, BackgroundClip, BackgroundOrigin, BackgroundPosition, BackgroundRepeat, BackgroundSize, };

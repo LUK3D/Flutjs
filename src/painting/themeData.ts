@@ -1,5 +1,5 @@
 import { TextTheme } from "../material/text_theme.js";
-import { IconThemeData } from "../widgets/icon_theme_data.js";
+import { IconThemeData } from "../widgets/index.js";
 import { Colors, Color } from "./colors.js";
 import { Typography } from "./typography.js";
 

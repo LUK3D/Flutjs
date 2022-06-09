@@ -1,6 +1,6 @@
 import { ThemeData } from "../painting/themeData.js";
-import { App } from "../widgets/app.js";
-import { Widget} from "../widgets/framework.js";
+import { App } from "../widgets/index.js";
+import { Widget} from "../widgets/index.js";
 import { Scaffold } from "./scaffold.js";
 
 enum ThemeMode{

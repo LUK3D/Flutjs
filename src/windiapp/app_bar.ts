@@ -31,17 +31,24 @@ class _AppBar extends Widget {
         }
 
         super({ tagName: "div", children:children,  classes:[
-            "h-20",
+            "h-10",
             "w-full",
             "shadow-2xl",
-            "bg-white"
+            "bg-white",
+            "fixed",
+            "top-0",
+            "left-0"
         ] });
+        this.tag!.style.backgroundColor = args.backgroundColor?.value??''
+        this.tag!.style.color = args.foregroundColor?.value??''
     }
 
 
 }
 
-/** Creates a material design app bar.
+/** 
+* ## AppBar 
+* Creates a material design app bar.
 *
 * The arguments [primary], [toolbarOpacity], [bottomOpacity],
 * [backwardsCompatibility], and [automaticallyImplyLeading] must

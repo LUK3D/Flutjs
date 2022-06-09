@@ -17,10 +17,15 @@ function WindiApp (
         home:Widget
     }
 ){
+
+ 
     return  App({
         title: args.title,
         theme: args.theme,
-        home: args.home
+        home: args.home,
+        classes:[
+            'bg-gray-100'
+        ]
     });
 }
 

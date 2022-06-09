@@ -85,8 +85,23 @@ class _Background {
     }
 }
 
+function Background(args: {
+    scrollBehaviour: BackgroundScrollBehaviour,
+    Clip: BackgroundClip,
+    Color: Color,
+    Origin: BackgroundOrigin,
+    Position: BackgroundPosition,
+    Repeat: BackgroundRepeat,
+    Size: BackgroundSize | string,
+    Image: string | _Image,
+
+}){
+    return new _Background(args);
+}
+
 
 export {
+    Background,
     _Background,
     BackgroundScrollBehaviour,
     BackgroundClip,

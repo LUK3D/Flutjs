@@ -1,12 +1,21 @@
-import {Colors} from "./colors.js"
-class BoxDecation {
+import {Color, Colors} from "./colors.js"
+class _BoxDecation {
+    color?:string;
 
-    background?:string;
+    constructor(args:{color?:Color}){
+        this.color = args.color?.value;
+    }
+
     
 
 }
 
+function BoxDecation(args:{color?:Color}){
+    return new _BoxDecation(args);
+}
+
 export{
-    BoxDecation
+    BoxDecation,
+    _BoxDecation
 }
 

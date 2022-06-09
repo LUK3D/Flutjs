@@ -13,16 +13,20 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-import Widget from "./framework.js";
+import { Widget } from "./framework.js";
 var _App = /** @class */ (function (_super) {
     __extends(_App, _super);
     function _App(args) {
-        var _this = _super.call(this, { tagName: "div", children: [args.home] }) || this;
+        var _this = this;
+        var _a;
+        _this = _super.call(this, { tagName: "div", children: [args.home] }) || this;
         _this.title = args.title;
         _this.theme = args.theme;
         _this.home = args.home;
         _this.tag.style.width = "100vw";
         _this.tag.style.height = "100vh";
+        _this.classes;
+        document.title = (_a = args.title) !== null && _a !== void 0 ? _a : document.title;
         return _this;
         // this.tag = document.createElement("div");
         // this.tag.id  = "baseApp";
@@ -34,7 +38,7 @@ var _App = /** @class */ (function (_super) {
 }(Widget));
 function App(args) {
     var _a;
-    var app = new _App({ title: args.title, theme: args.theme, home: args.home });
+    var app = new _App({ title: args.title, theme: args.theme, home: args.home, classes: args.classes });
     return ((_a = app.tag) === null || _a === void 0 ? void 0 : _a.outerHTML) + "\n\n<style>\n".concat(app.style, "\n</style>");
 }
 export { App };

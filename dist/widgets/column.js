@@ -20,10 +20,27 @@ var _Column = /** @class */ (function (_super) {
         return _super.call(this, {
             tagName: "div",
             children: args.children,
+            classes: ['flex', 'flex-col', 'w-full', 'h-full']
         }) || this;
     }
     return _Column;
 }(Widget));
+/**
+ * ## Column Widget
+ * Creates a Vertical List Container
+ * @param args Columns Arguments
+ * @returns Widget
+ *
+ * Ex:
+ * ```js
+ * Column({
+ *    children:[
+ *       //List of widgets here
+ *    ]
+ * })
+ *
+ * ```
+ */
 function Column(args) {
     return new _Column(args);
 }

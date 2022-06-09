@@ -1,5 +1,5 @@
 import { ThemeData } from "../painting/themeData.js";
-import { Widget } from "../widgets/framework.js";
+import { Widget } from "../widgets/index.js";
 declare enum ThemeMode {
     system = 0,
     light = 1,

@@ -9,7 +9,10 @@ function WindiApp(args) {
     return App({
         title: args.title,
         theme: args.theme,
-        home: args.home
+        home: args.home,
+        classes: [
+            'bg-gray-100'
+        ]
     });
 }
 export { ThemeMode, WindiApp };

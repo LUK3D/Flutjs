@@ -17,12 +17,12 @@
 //         width: 200,
 //         child: Column({
 //           children: [
-//             Text("LUK3D", { 
+//             Text("LUK3D", {
 //               textStyle: TextStyle(
-//                 { 
-//                   color: Colors.Red[100].value, 
-//                   fontWeight: FontWeight.w800, 
-//                   fontSize: 200, 
+//                 {
+//                   color: Colors.Red[100].value,
+//                   fontWeight: FontWeight.w800,
+//                   fontSize: 200,
 //                 }) }),
 //             Text("Vamos la ver se iras funcionar 😍"),
 //             Container({
@@ -38,38 +38,38 @@
 //   }),
 // });
 
-import { TextStyle } from "./painting/text_style.js";
-import { Expanded } from "./widgets/exapnded.js";
 
-import { Column, Container, MaterialApp,  Text } from "./material/index.js";
+import { Expanded } from "./widgets/index.js";
 
-import {Scaffold, WindiApp,AppBar } from "./windiapp/index.js";
+import { Column, Container, MaterialApp, Text } from "./material/index.js";
+
+import { Scaffold, WindiApp, AppBar } from "./windiapp/index.js";
+import { Colors } from "./painting/colors.js";
+import { BoxDecation } from "./painting/index.js";
 var el = WindiApp({
   title: "Flutjs test",
 
   home: Scaffold({
-    appBar: new AppBar({
+    appBar:  AppBar({
+      backgroundColor: Colors.Blue[500],
+      foregroundColor: Colors.Gray[100],
       title: Text("Teste basico de titulo"),
     }),
     body: Expanded({
-            child: Container({
-              width: 200,
+      child: Container({
+        child: Column({
+          children: [
+            Text("Vamos la ver se iras "),
+            Container({
+              decoratio:  BoxDecation({color:Colors.Sky[500]}),
               child: Column({
-                children: [
-                
-                  Text("Vamos la ver se iras "),
-                  Container({
-                    child: Column({
-                      children: [Text("Aparentemente tudo vai funcionar")],
-                    }),  
-                  }),
-                  
-                ],
+                children: [Text("Aparentemente tudo vai funcionar")],
               }),
             }),
-            }),
+          ],
+        }),
+      }),
+    }),
   }),
 });
 
-
-console.log(el);

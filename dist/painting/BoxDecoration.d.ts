@@ -1,4 +1,11 @@
-declare class BoxDecation {
-    background?: string;
+import { Color } from "./colors.js";
+declare class _BoxDecation {
+    color?: string;
+    constructor(args: {
+        color?: Color;
+    });
 }
-export { BoxDecation };
+declare function BoxDecation(args: {
+    color?: Color;
+}): _BoxDecation;
+export { BoxDecation, _BoxDecation };

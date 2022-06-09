@@ -1,4 +1,4 @@
-import { App } from "../widgets/app.js";
+import { App } from "../widgets/index.js";
 var ThemeMode;
 (function (ThemeMode) {
     ThemeMode[ThemeMode["system"] = 0] = "system";

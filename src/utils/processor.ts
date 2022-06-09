@@ -1,4 +1,4 @@
-import Widget from "../widgets/framework.js";
+import {Widget} from "../widgets/index.js";
 
 class CSS {
   extractCss(widget: Widget) {

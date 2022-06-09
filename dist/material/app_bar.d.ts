@@ -1,6 +1,6 @@
 import { Color } from "../painting/colors.js";
 import _Key from "../utils/uuid.js";
-import Widget from "../widgets/framework.js";
+import { Widget } from "../widgets/index.js";
 declare class _AppBar extends Widget {
     constructor(args: {
         key?: _Key;

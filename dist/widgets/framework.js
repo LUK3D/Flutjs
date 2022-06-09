@@ -41,7 +41,6 @@ var Widget = /** @class */ (function () {
         this.tag = document.createElement(args.tagName);
         document.body.appendChild(this.tag);
         if (args.classes) {
-            console.log("Classes=>", args.classes);
             (_a = this.tag.classList).add.apply(_a, args.classes);
             // ctx.classes!.forEach(element => {
             // });

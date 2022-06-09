@@ -19,16 +19,19 @@ function Scaffold(
     }
 ):Widget{
 
-    var children = [];
+     var children:Array<Widget> = [];
+
+     
 
     if(args.appBar){
         children.push(args.appBar);
     }
+   
     if(args.body){
         children.push(args.body);
     }
 
-    return new Widget({
+    var widget = new Widget({
         tagName:"div",
         children:children,
         classes:[
@@ -36,7 +39,13 @@ function Scaffold(
             "h-full",
             "bg-gray-100"
         ]
-    })
+    });
+
+    if(args.body && args.appBar){
+        widget.tag!.style.paddingTop = (args.appBar.tag!.offsetHeight+10+"px")??"100px";    
+    }
+
+    return widget;
 }
 
 
