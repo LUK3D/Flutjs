@@ -53,28 +53,34 @@ var el = WindiApp({
     appBar:  AppBar({
       backgroundColor: Colors.Blue[500],
       foregroundColor: Colors.Gray[100],
-      title: Text("Teste basico de titulo"),
+      title: Text("Welcome to Flutjs"),
+      elevation:2,
     }),
     body: Expanded({
       child: Container({
-        child: Column({
-          children: [
-            Text("Vamos la ver se iras "),
-            Container({
-              decoratio:  BoxDecation({color:Colors.Gray[100]}),
-              child: Column({
-                children: [
-                 Padding({
-                   child: Text("Aparentemente tudo vai funcionar"),
-                   padding:EdgeInsets.only({top:100})
-                 })
-                ],
-              }),
+            child: Column({
+              children: [
+                Container({
+                  decoratio:  BoxDecation({color:Colors.Gray[100]}),
+                  child: Padding(
+                    {
+                      padding:EdgeInsets.all(100),
+                      child:Column({
+                        children: [
+                         Padding({
+                           child: Text("Hello World"),
+                           padding:EdgeInsets.only({top:10})
+                         })
+                        ],
+                      })
+                    }
+                  ),
+                }),
+              ],
             }),
-          ],
-        }),
-      }),
+          })
+        }
+      ),
     }),
-  }),
 });
 

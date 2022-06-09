@@ -60,7 +60,6 @@ declare class _EdgeInsets extends EdgeInsetsGeometry {
         top?: number | string;
         propertie: string;
     });
-    all(val: string | number): this;
     /** Creates insets with only the given values non-zero.
     *
     * {@tool snippet}
@@ -78,7 +77,8 @@ declare class _EdgeInsets extends EdgeInsetsGeometry {
         top?: string | number;
         right?: string | number;
         bottom?: string | number;
-    }): this;
+    }): EdgeInsetsGeometry;
+    all(val: string | number): EdgeInsetsGeometry;
     /** Creates insets with symmetrical vertical and horizontal offsets.
     *
     * Eight pixel margin above and below, no horizontal margins:
@@ -90,7 +90,7 @@ declare class _EdgeInsets extends EdgeInsetsGeometry {
     symmetric(args: {
         vertical?: number | string;
         horizontal?: number | string;
-    }): this;
+    }): EdgeInsetsGeometry;
 }
 /**
  * ## EdgeInsets

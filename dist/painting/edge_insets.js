@@ -54,6 +54,8 @@ var EdgeInsetsGeometry = /** @class */ (function () {
         var converter = new Converter();
         this.horizontal = converter.toNumber(this.left) + converter.toNumber(this.right) + converter.toNumber(this.start) + converter.toNumber(this.end);
         this.vertical = converter.toNumber(this.top) + converter.toNumber(this.bottom);
+        console.log("1.1->", this.arrayed_value("padding-"));
+        return this;
     }
     /**
      * ## EdgeInsets Value
@@ -123,12 +125,6 @@ var _EdgeInsets = /** @class */ (function (_super) {
         var _this = _super.call(this, args) || this;
         return _this;
     }
-    _EdgeInsets.prototype.all = function (val) {
-        this.reset();
-        this.left = val;
-        this.right = this.top = this.bottom = this.start = this.end = this.left;
-        return this;
-    };
     /** Creates insets with only the given values non-zero.
     *
     * {@tool snippet}
@@ -142,12 +138,19 @@ var _EdgeInsets = /** @class */ (function (_super) {
     *
     * */
     _EdgeInsets.prototype.only = function (args) {
-        this.reset();
-        this.left = args.left;
-        this.top = args.top;
-        this.right = args.right;
-        this.bottom = args.bottom;
-        return this;
+        var ei = new EdgeInsetsGeometry({
+            left: args.left,
+            top: args.top,
+            right: args.right,
+            bottom: args.bottom,
+        });
+        return ei;
+    };
+    _EdgeInsets.prototype.all = function (val) {
+        return this.symmetric({
+            vertical: val,
+            horizontal: val
+        });
     };
     /** Creates insets with symmetrical vertical and horizontal offsets.
     *
@@ -159,11 +162,12 @@ var _EdgeInsets = /** @class */ (function (_super) {
     * */
     _EdgeInsets.prototype.symmetric = function (args) {
         this.reset();
-        this.left = args.horizontal,
-            this.top = args.vertical,
-            this.right = args.horizontal,
-            this.bottom = args.vertical;
-        return this;
+        return this.only({
+            left: args.horizontal,
+            right: args.horizontal,
+            top: args.vertical,
+            bottom: args.vertical
+        });
     };
     return _EdgeInsets;
 }(EdgeInsetsGeometry));

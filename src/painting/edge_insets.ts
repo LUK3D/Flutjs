@@ -53,6 +53,9 @@ class EdgeInsetsGeometry {
 
          this.horizontal = converter.toNumber(this.left)  + converter.toNumber(this.right)+ converter.toNumber(this.start) + converter.toNumber(this.end);
          this.vertical = converter.toNumber(this.top) + converter.toNumber(this.bottom);
+
+         console.log("1.1->", this.arrayed_value("padding-"));
+         return this;
         
     }
 
@@ -73,13 +76,14 @@ class EdgeInsetsGeometry {
         return this;
     }
     arrayed_value(propertie:string){
+        
        return  [
             `${this.left}px`,
             `${this.top}px`,
             `${this.right}px`,
             `${this.bottom??this.end}px`,
 
-        ]
+        ];
 
     }
 
@@ -139,12 +143,6 @@ class _EdgeInsets extends EdgeInsetsGeometry {
         return this;
     }
 
-    all(val:string|number){
-        this.reset();
-        this.left = val;
-        this.right = this.top = this.bottom = this.start = this.end = this.left;
-        return this;
-    }
 
   /** Creates insets with only the given values non-zero.
   *
@@ -166,12 +164,25 @@ class _EdgeInsets extends EdgeInsetsGeometry {
            bottom?:string|number,
         }
     ){
-        this.reset();
-        this.left = args.left;
-        this.top = args.top;
-        this.right = args.right;
-        this.bottom = args.bottom;
-        return this;
+        var ei = new EdgeInsetsGeometry({
+            left :args.left,
+            top :args.top,
+            right :args.right,
+            bottom :args.bottom,
+        })
+        return ei;
+    }
+
+
+    
+    all(val:string|number){
+
+       
+        return this.symmetric({
+            vertical:val,
+            horizontal:val
+        });
+      
     }
 
   /** Creates insets with symmetrical vertical and horizontal offsets.
@@ -186,14 +197,13 @@ class _EdgeInsets extends EdgeInsetsGeometry {
     vertical?:number|string,
     horizontal?:number|string,
   }){
-
         this.reset();
-        this.left = args.horizontal,
-        this.top = args.vertical,
-        this.right = args.horizontal,
-        this.bottom = args.vertical;
-
-       return this;
+       return this.only({
+        left:args.horizontal,
+        right:args.horizontal,
+        top:args.vertical,
+        bottom:args.vertical
+    })
        
     } 
 

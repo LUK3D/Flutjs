@@ -1,6 +1,9 @@
 import { Color } from "../painting/colors.js";
+import { EdgeInsets } from "../painting/edge_insets.js";
 import _Key from "../utils/uuid.js";
 import Widget from "../widgets/framework.js";
+import { Padding } from "../widgets/padding.js";
+import { Row } from "../widgets/row.js";
 
 class _AppBar extends Widget {
 
@@ -12,6 +15,11 @@ class _AppBar extends Widget {
         actions?: Array<Widget>,
         flexibleSpace?: Widget,
         bottom?: number,
+        /**
+         *  ### Elevation
+         * Defines the strangeness of the shadow
+         * Values between 0 and 6
+         */
         elevation?: number,
         shadowColor?: Color,
         backgroundColor?: Color,
@@ -29,15 +37,49 @@ class _AppBar extends Widget {
         if(args.actions){
             children =  [...children, ...args.actions];
         }
+        let shadow = "shadow-none";
+        switch (args.elevation) {
+            case 1:
+                shadow = "shadow-sm";
+                break;
+            case 2:
+                shadow = "shadow";
+                break;
+            case 3:
+                shadow = "shadow-md";
+                break;
+            case 4:
+                shadow = "shadow-lg";
+                break;
+            case 5:
+                shadow = "shadow-xl";
+                break;
+            case 6:
+                shadow = "shadow-2xl";
+                break;
+        
+            default:
+                break;
+        }
 
-        super({ tagName: "div", children:children,  classes:[
-            "h-10",
+
+        super({ tagName: "div", children:[Padding(
+            {
+                padding:EdgeInsets.all(10),
+                child:Row({children:children})
+            }
+           
+        )],  classes:[
+            "h-12",
             "w-full",
-            "shadow-2xl",
+            shadow,
+            "shadow-gray-600",
             "bg-white",
             "fixed",
             "top-0",
-            "left-0"
+            "left-0",
+            "flex",
+            "items-center"
         ] });
         this.tag!.style.backgroundColor = args.backgroundColor?.value??''
         this.tag!.style.color = args.foregroundColor?.value??''
@@ -66,6 +108,11 @@ function AppBar(
         actions?: Array<Widget>,
         flexibleSpace?: Widget,
         bottom?: number,
+        /**
+         *  ### Elevation
+         * Defines the strangeness of the shadow
+         * Values between 0 and 6
+         */
         elevation?: number,
         shadowColor?: Color,
         backgroundColor?: Color,

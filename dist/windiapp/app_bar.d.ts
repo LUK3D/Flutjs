@@ -10,6 +10,11 @@ declare class _AppBar extends Widget {
         actions?: Array<Widget>;
         flexibleSpace?: Widget;
         bottom?: number;
+        /**
+         *  ### Elevation
+         * Defines the strangeness of the shadow
+         * Values between 0 and 6
+         */
         elevation?: number;
         shadowColor?: Color;
         backgroundColor?: Color;
@@ -35,6 +40,11 @@ declare function AppBar(args: {
     actions?: Array<Widget>;
     flexibleSpace?: Widget;
     bottom?: number;
+    /**
+     *  ### Elevation
+     * Defines the strangeness of the shadow
+     * Values between 0 and 6
+     */
     elevation?: number;
     shadowColor?: Color;
     backgroundColor?: Color;

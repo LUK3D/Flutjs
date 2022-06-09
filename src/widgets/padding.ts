@@ -9,9 +9,14 @@ class _Padding extends Widget {
         child:Widget|undefined
     }) {
         super({tagName:"div", child:args.child})
+
+        let values = args.padding.arrayed_value("padding");
+        console.log(values);
         
         ElementSides.forEach((element,i) => {
-            this.tag?.style.setProperty("padding-"+element, args.padding.arrayed_value("padding")[i]);
+            let p = "padding-"+element;
+            let v = values[i];
+            this.tag?.style.setProperty(p,v);
         });
     }
 }
@@ -20,6 +25,7 @@ function Padding(args:{
     padding:EdgeInsetsGeometry,
     child:Widget|undefined
 }){
+    console.log("1->",args.padding.arrayed_value("padding-"));
     return new _Padding(
         {child:args.child, padding:args.padding}
     )

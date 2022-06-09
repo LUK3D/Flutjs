@@ -19,15 +19,20 @@ var _Padding = /** @class */ (function (_super) {
     __extends(_Padding, _super);
     function _Padding(args) {
         var _this = _super.call(this, { tagName: "div", child: args.child }) || this;
+        var values = args.padding.arrayed_value("padding");
+        console.log(values);
         ElementSides.forEach(function (element, i) {
             var _a;
-            (_a = _this.tag) === null || _a === void 0 ? void 0 : _a.style.setProperty("padding-" + element, args.padding.arrayed_value("padding")[i]);
+            var p = "padding-" + element;
+            var v = values[i];
+            (_a = _this.tag) === null || _a === void 0 ? void 0 : _a.style.setProperty(p, v);
         });
         return _this;
     }
     return _Padding;
 }(Widget));
 function Padding(args) {
+    console.log("1->", args.padding.arrayed_value("padding-"));
     return new _Padding({ child: args.child, padding: args.padding });
 }
 export { Padding };

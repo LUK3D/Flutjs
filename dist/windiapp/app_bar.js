@@ -22,7 +22,10 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
+import { EdgeInsets } from "../painting/edge_insets.js";
 import Widget from "../widgets/framework.js";
+import { Padding } from "../widgets/padding.js";
+import { Row } from "../widgets/row.js";
 var _AppBar = /** @class */ (function (_super) {
     __extends(_AppBar, _super);
     function _AppBar(args) {
@@ -38,14 +41,43 @@ var _AppBar = /** @class */ (function (_super) {
         if (args.actions) {
             children = __spreadArray(__spreadArray([], children, true), args.actions, true);
         }
-        _this = _super.call(this, { tagName: "div", children: children, classes: [
-                "h-10",
+        var shadow = "shadow-none";
+        switch (args.elevation) {
+            case 1:
+                shadow = "shadow-sm";
+                break;
+            case 2:
+                shadow = "shadow";
+                break;
+            case 3:
+                shadow = "shadow-md";
+                break;
+            case 4:
+                shadow = "shadow-lg";
+                break;
+            case 5:
+                shadow = "shadow-xl";
+                break;
+            case 6:
+                shadow = "shadow-2xl";
+                break;
+            default:
+                break;
+        }
+        _this = _super.call(this, { tagName: "div", children: [Padding({
+                    padding: EdgeInsets.all(10),
+                    child: Row({ children: children })
+                })], classes: [
+                "h-12",
                 "w-full",
-                "shadow-2xl",
+                shadow,
+                "shadow-gray-600",
                 "bg-white",
                 "fixed",
                 "top-0",
-                "left-0"
+                "left-0",
+                "flex",
+                "items-center"
             ] }) || this;
         _this.tag.style.backgroundColor = (_b = (_a = args.backgroundColor) === null || _a === void 0 ? void 0 : _a.value) !== null && _b !== void 0 ? _b : '';
         _this.tag.style.color = (_d = (_c = args.foregroundColor) === null || _c === void 0 ? void 0 : _c.value) !== null && _d !== void 0 ? _d : '';
