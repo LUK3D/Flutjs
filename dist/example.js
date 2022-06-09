@@ -36,11 +36,11 @@
 //     }),
 //   }),
 // });
-import { Expanded } from "./widgets/index.js";
+import { Expanded, Padding } from "./widgets/index.js";
 import { Column, Container, Text } from "./material/index.js";
 import { Scaffold, WindiApp, AppBar } from "./windiapp/index.js";
 import { Colors } from "./painting/colors.js";
-import { BoxDecation } from "./painting/index.js";
+import { BoxDecation, EdgeInsets } from "./painting/index.js";
 var el = WindiApp({
     title: "Flutjs test",
     home: Scaffold({
@@ -55,9 +55,14 @@ var el = WindiApp({
                     children: [
                         Text("Vamos la ver se iras "),
                         Container({
-                            decoratio: BoxDecation({ color: Colors.Sky[500] }),
+                            decoratio: BoxDecation({ color: Colors.Gray[100] }),
                             child: Column({
-                                children: [Text("Aparentemente tudo vai funcionar")],
+                                children: [
+                                    Padding({
+                                        child: Text("Aparentemente tudo vai funcionar"),
+                                        padding: EdgeInsets.only({top:100, left:100})
+                                    })
+                                ],
                             }),
                         }),
                     ],

@@ -14,8 +14,10 @@ import { Color, Colors } from "./colors.js";
 import { TextStyle, _TextStyle } from "./text_style.js";
 import { ThemeData } from "./themeData.js";
 import { Typography } from "./typography.js";
+import { EdgeInsets } from "./edge_insets.js";
 
 export {
+  EdgeInsets,
   _BoxDecation,
   BoxDecation,
   ClassDecoration,

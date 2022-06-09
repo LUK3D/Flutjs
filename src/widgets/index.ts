@@ -6,6 +6,7 @@ import { Container } from "./container.js";
 import { Expanded } from "./exapnded.js";
 import { Widget } from "./framework.js";
 import { IconThemeData } from "./icon_theme_data.js";
+import { Padding } from "./padding.js";
 
 export{
     App,
@@ -14,6 +15,7 @@ export{
     Row,
     Container,
     Expanded,
+    Padding,
     Widget,
     IconThemeData,
 }

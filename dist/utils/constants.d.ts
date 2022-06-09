@@ -1,2 +1,3 @@
 declare var Mesurements: string[];
-export { Mesurements };
+declare var ElementSides: string[];
+export { Mesurements, ElementSides };

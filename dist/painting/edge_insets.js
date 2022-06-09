@@ -14,6 +14,21 @@ See also:
  * [Padding], a widget that describes margins using [EdgeInsetsGeometry].
 
 **/
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import { Axis } from "../rendering/axis.js";
 import { Converter } from "../utils/converter.js";
 var EdgeInsetsGeometry = /** @class */ (function () {
@@ -26,26 +41,43 @@ var EdgeInsetsGeometry = /** @class */ (function () {
         this.top = 0;
         this.horizontal = 0;
         this.vertical = 0;
+        /**
+         *  ## Value
+         * the string value of EdgeInsets
+         */
         this.value = "";
         this.bottom = args.bottom;
         this.end = args.end;
         this.left = args.left;
         this.right = args.right;
         this.top = args.top;
-        this.propertie = args.propertie;
         var converter = new Converter();
         this.horizontal = converter.toNumber(this.left) + converter.toNumber(this.right) + converter.toNumber(this.start) + converter.toNumber(this.end);
         this.vertical = converter.toNumber(this.top) + converter.toNumber(this.bottom);
     }
-    EdgeInsetsGeometry.prototype.val = function () {
+    /**
+     * ## EdgeInsets Value
+     * @param propertie The css propertie to be modified (margin, padding), needs to have `-` signe
+     * @returns css string propertie-left:value
+     */
+    EdgeInsetsGeometry.prototype.val = function (propertie) {
         var _a;
         this.value = [
-            "".concat(this.propertie, "-left:").concat(this.left),
-            "".concat(this.propertie, "-right:").concat(this.right),
-            "".concat(this.propertie, "-top:").concat(this.top),
-            "".concat(this.propertie, "-bottom:").concat((_a = this.bottom) !== null && _a !== void 0 ? _a : this.end),
+            "".concat(propertie, "left:").concat(this.left, "px"),
+            "".concat(propertie, "right:").concat(this.right, "px"),
+            "".concat(propertie, "top:").concat(this.top, "px"),
+            "".concat(propertie, "bottom:").concat((_a = this.bottom) !== null && _a !== void 0 ? _a : this.end, "px"),
         ].join(";");
         return this;
+    };
+    EdgeInsetsGeometry.prototype.arrayed_value = function (propertie) {
+        var _a;
+        return [
+            "".concat(this.left, "px"),
+            "".concat(this.top, "px"),
+            "".concat(this.right, "px"),
+            "".concat((_a = this.bottom) !== null && _a !== void 0 ? _a : this.end, "px"),
+        ];
     };
     EdgeInsetsGeometry.prototype.reset = function () {
         this.left = 0;
@@ -63,14 +95,14 @@ var EdgeInsetsGeometry = /** @class */ (function () {
                 this.right = this.horizontal;
                 this.start = this.horizontal;
                 this.end = this.horizontal;
-                return this.val();
+                return this;
             case Axis.Vertical:
                 this.reset();
                 this.top = this.vertical;
                 this.start = this.vertical;
                 this.end = this.vertical;
                 this.bottom = this.vertical;
-                return this.val();
+                return this;
             default:
                 break;
         }
@@ -81,8 +113,102 @@ var EdgeInsetsGeometry = /** @class */ (function () {
         this.left = "100%";
         this.right = "100%";
         this.top = "100%";
-        return this.val();
+        return this;
     };
     return EdgeInsetsGeometry;
 }());
+var _EdgeInsets = /** @class */ (function (_super) {
+    __extends(_EdgeInsets, _super);
+    function _EdgeInsets(args) {
+        var _this = _super.call(this, args) || this;
+        return _this;
+    }
+    _EdgeInsets.prototype.all = function (val) {
+        this.reset();
+        this.left = val;
+        this.right = this.top = this.bottom = this.start = this.end = this.left;
+        return this;
+    };
+    /** Creates insets with only the given values non-zero.
+    *
+    * {@tool snippet}
+    *
+    * Left margin indent of 40 pixels:
+    *
+    * ```js
+    * const EdgeInsets.only({left: 40.0})
+    * ```
+    * {@end-tool}
+    *
+    * */
+    _EdgeInsets.prototype.only = function (args) {
+        this.reset();
+        this.left = args.left;
+        this.top = args.top;
+        this.right = args.right;
+        this.bottom = args.bottom;
+        return this;
+    };
+    /** Creates insets with symmetrical vertical and horizontal offsets.
+    *
+    * Eight pixel margin above and below, no horizontal margins:
+    *
+    * ```js
+    * const EdgeInsets.symmetric({vertical: 8.0})
+    * ```
+    * */
+    _EdgeInsets.prototype.symmetric = function (args) {
+        this.reset();
+        this.left = args.horizontal,
+            this.top = args.vertical,
+            this.right = args.horizontal,
+            this.bottom = args.vertical;
+        return this;
+    };
+    return _EdgeInsets;
+}(EdgeInsetsGeometry));
+/**
+ * ## EdgeInsets
+* An immutable set of offsets in each of the four cardinal directions.
+*
+* Typically used for an offset from each of the four sides of a box. For
+* example, the padding inside a box can be represented using this class.
+*
+* The [EdgeInsets] class specifies offsets in terms of visual edges, left,
+* top, right, and bottom. These values are not affected by the
+* [TextDirection]. To support both left-to-right and right-to-left layouts,
+* consider using [EdgeInsetsDirectional], which is expressed in terms of
+* _start_, top, _end_, and bottom, where start and end are resolved in terms
+* of a [TextDirection] (typically obtained from the ambient [Directionality]).
+*
+*
+* Here are some examples of how to create [EdgeInsets] instances:
+*
+* Typical eight-pixel margin on all sides:
+*
+* ```js
+* const EdgeInsets.all(8.0)
+* ```
+*
+* Eight pixel margin above and below, no horizontal margins:
+*
+* ```js
+* const EdgeInsets.symmetric({vertical: 8.0})
+* ```
+*
+* Left margin indent of 40 pixels:
+*
+* ```js
+* const EdgeInsets.only({left: 40.0})
+* ```
+*
+* See also:
+*
+*  * [Padding], a widget that accepts [EdgeInsets] to describe its margins.
+*  * [EdgeInsetsDirectional], which (for properties and arguments that accept
+*    the type [EdgeInsetsGeometry]) allows the horizontal insets to be
+*    specified in a [TextDirection]-aware manner.
+*/
+var EdgeInsets = new _EdgeInsets({ propertie: "padding" });
+export { EdgeInsetsGeometry, EdgeInsets };
 //# sourceMappingURL=edge_insets.js.map

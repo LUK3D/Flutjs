@@ -1,5 +1,11 @@
 var Mesurements = [
     'px', 'vh', 'vw', '%', 'pt',
 ];
-export { Mesurements };
+var ElementSides = [
+    "left",
+    "top",
+    "right",
+    "bottom",
+];
+export { Mesurements, ElementSides };
 //# sourceMappingURL=constants.js.map
