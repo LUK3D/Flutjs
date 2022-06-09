@@ -1,6 +1,9 @@
+import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
 import Widget from "./framework.js";
 declare class _Row extends Widget {
     constructor(args: {
+        mainAxisAlignment?: MainAxisAlignment;
+        crossAxisAlignment?: CrossAxisAlignment;
         children?: Array<Widget>;
     });
 }
@@ -21,6 +24,8 @@ declare class _Row extends Widget {
  * ```
  */
 declare function Row(args: {
+    mainAxisAlignment?: MainAxisAlignment;
+    crossAxisAlignment?: CrossAxisAlignment;
     children?: Array<Widget>;
 }): _Row;
 export { Row };

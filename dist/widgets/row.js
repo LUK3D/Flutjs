@@ -13,14 +13,17 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
 import Widget from "./framework.js";
 var _Row = /** @class */ (function (_super) {
     __extends(_Row, _super);
     function _Row(args) {
+        var _a, _b;
         return _super.call(this, {
             tagName: "div",
             children: args.children,
-            classes: ['flex', 'flex-row', 'w-full', 'h-full']
+            classes: ['flex', 'flex-row', 'w-full', 'h-full', (_a = args.mainAxisAlignment) !== null && _a !== void 0 ? _a : MainAxisAlignment.start, (_b = args.crossAxisAlignment) !== null && _b !== void 0 ? _b : CrossAxisAlignment.start
+            ]
         }) || this;
     }
     return _Row;

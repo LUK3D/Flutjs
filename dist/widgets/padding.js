@@ -18,7 +18,7 @@ import { Widget } from "./framework.js";
 var _Padding = /** @class */ (function (_super) {
     __extends(_Padding, _super);
     function _Padding(args) {
-        var _this = _super.call(this, { tagName: "div", child: args.child }) || this;
+        var _this = _super.call(this, { tagName: "div", child: args.child, classes: ["w-full", "h-full"] }) || this;
         var values = args.padding.arrayed_value("padding");
         console.log(values);
         ElementSides.forEach(function (element, i) {

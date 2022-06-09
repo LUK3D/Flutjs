@@ -5,65 +5,82 @@
 Flutjs is a javascript framework for creating beautiful, fast and lightweight websites.
 As the name suggests, Flutejs is based on Flutter for its simplicity and easy learning curve and the ability to easily extend.
 
-## Flutjs Example: ⚡
+## Getting Stated:
+
+To get start with Flutjs just follow the steps below:
+
+### With Nodejs:
+
+1 - Install the latest version of Nodejs.
+
+2 - Start new nodejs project
+
+  `npm init`
+
+3 - Install Flutjs with npm or yarn:
+
+>npm
+
+`npm i @luk3d/flutjs`
+>yarn
+
+`yarn add @luk3d/flutjs`
+
+Congrats!! 🎉 You have Installed Flujs successfully on your project. Now jump to hello world section the create a simple Flutjs website/webApp.
+
+
+<img src="./screenshots/flutjs_helloworld_app.png" width="500px">
+
+
+
+
+### On Browser:
+
+Coming soon....
+
+
+
+## Hello World App: ⚡
 
 ```js
-import { Column,  Container,  MaterialApp,  Scaffold,  Text,  AppBar, } from "./material";
-import { ThemeData } from "./painting/themeData";
+/**Basic Flutjs App With Tailwind */
+import { Expanded, Padding, Column, Container, Text, Colors, EdgeInsets, MainAxisAlignment, CrossAxisAlignment, TextStyle } from "./index.js";
+import { Scaffold, WindiApp, AppBar } from "./windiapp/index.js";
 
-// This widget is the root of your application.
-MaterialApp({
-  title: "Flutjs Demo 😎",
-  theme: new ThemeData({}),
+WindiApp({
+  title: "Flutjs test",
+
   home: Scaffold({
     appBar: AppBar({
-      title: Text("---Titulo da aplicação---"),
+      backgroundColor: Colors.Blue[500],
+      foregroundColor: Colors.Gray[100],
+      title: Text("Welcome to Flutjs"),
+      elevation: 2,
     }),
     body: Expanded({
       child: Container({
-        width: 200,
-        child: Column({
-          children: [
-            Text("LUK3D", {}),
-            Text("Vamos la ver se iras funcionar 😍", {}),
-            Container({
-              child: Column({
-                children: [Text("Aparentemente tudo vai funcionar")],
-              }),
+        color: Colors.Gray[50],
+        child:
+          Padding({
+            padding: EdgeInsets.all(10),
+            child: Column({
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text("Hello World"), Text("🤩", {
+                  textStyle: TextStyle({ fontSize: 20 })
+                })
+              ],
             }),
-            //Here we can put any widget we want 😁
-          ],
-        }),
+          }),
       }),
     }),
   }),
 });
 ```
 
-> NOTE: Just like in Flutter, every thing here is a widget...
+> NOTE: Just like in Flutter, every component is a widget...
 
-### The above Flutjs code produces the following html output: ⚡
-
-```html
-<div style="width: 100vw; height: 100vh;">
-    <div style="width: 100%; height: 100%;">
-        <div style="width: 100%; height: 50%;">
-            <p>---Titulo da aplicação---</p>
-        </div>
-        <div style="width: 100%; height: 100%;">
-            <div>
-                <p>LUK3D</p>
-                <p>Vamos la ver se iras funcionar 😍</p>
-                <div>
-                    <div>
-                        <p>Aparentemente tudo vai funcionar</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-```
 
 
 ## UPDATES TABLE 🚀
@@ -88,12 +105,3 @@ Date | Updates|
 - Routing
 - Custom cli tool for fast project creation.
 - VsCode Extension for auto completion and snippets for fast coding...
-
-<!--
-
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-global.document = new JSDOM(`<body><body>`).window.document;
-
-
--->

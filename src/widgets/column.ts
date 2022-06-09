@@ -1,11 +1,21 @@
+import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
 import Widget from "./framework.js";
 
 class _Column extends Widget {
-  constructor(args: { children?: Array<Widget> }) {
+  constructor(args: { 
+    mainAxisAlignment?:MainAxisAlignment,
+    crossAxisAlignment?:CrossAxisAlignment,
+    children?: Array<Widget> }) {
     super({
+       
+      
       tagName: "div",
       children: args.children,
-      classes:['flex','flex-col','w-full','h-full']
+      classes:['flex','flex-col','w-full','h-full',
+      args.mainAxisAlignment??MainAxisAlignment.start,
+      args.crossAxisAlignment??CrossAxisAlignment.start
+    
+      ]
     });
   }
 }
@@ -26,7 +36,10 @@ class _Column extends Widget {
  * 
  * ```
  */
-function Column(args: { children?: Array<Widget> }) {
+function Column(args: {
+  mainAxisAlignment?:MainAxisAlignment,
+  crossAxisAlignment?:CrossAxisAlignment,
+  children?: Array<Widget> }) {
   return new _Column(args);
 }
 export { Column };

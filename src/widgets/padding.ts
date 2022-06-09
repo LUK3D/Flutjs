@@ -8,7 +8,7 @@ class _Padding extends Widget {
         padding:EdgeInsetsGeometry,
         child:Widget|undefined
     }) {
-        super({tagName:"div", child:args.child})
+        super({tagName:"div", child:args.child,classes:["w-full","h-full"]})
 
         let values = args.padding.arrayed_value("padding");
         console.log(values);
