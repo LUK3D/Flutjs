@@ -34,9 +34,10 @@ var _TextStyle = /** @class */ (function () {
     return _TextStyle;
 }());
 function TextStyle(args) {
+    var _a;
     return new _TextStyle({
         inherit: args.inherit,
-        color: args.color,
+        color: (_a = args.color) === null || _a === void 0 ? void 0 : _a.value,
         backgroundColor: args.backgroundColor,
         fontSize: args.fontSize,
         fontWeight: args.fontWeight,

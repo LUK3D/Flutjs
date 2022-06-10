@@ -16,6 +16,7 @@ import {
   Row,
   Text
 } from "./widgets/index.js";
+import { AbsoluteUnits, RelativeUnits } from "./rendering/mesurementes.js";
 
 
 
@@ -35,7 +36,9 @@ export{
   EdgeInsets,
   CrossAxisAlignment, 
   MainAxisAlignment,
-  TextStyle
+  TextStyle,
+  RelativeUnits,
+  AbsoluteUnits
 };
 
 

@@ -74,6 +74,8 @@ export default class Colors {
    * 
    */
 
+  White = this.hexToRgb({hex:"FFFFFF"})
+  Black = this.hexToRgb({hex:"000000"})
    Rose = {
      /**
       * Cor basico de teste
@@ -441,7 +443,7 @@ export default class Colors {
 *   [Colors](https://api.flutter.dev/flutter/material/Colors-class.html), which
 *    defines the colors found in the Material Design specification.
 **/
-    constructor({ a=255, r=255, g=255, b=255}:Color){
+    constructor({ a=1, r=255, g=255, b=255}:Color){
 
          this.color = this.fromARGB({a:a,r:r,g:g,b:b});
 
@@ -470,11 +472,17 @@ export default class Colors {
     * Out of range values are brought into range using modulo 255.
     **/
     fromARGB({ a=1, r, g, b}:Color):Color{
-      if(this.color){
+
+      if(r==255 && g==255 && b==255){
+        console.log({r,g,b,a})
+        this.color = new Color({a:a,r:r,g:g,b:b});
         this.color.value = `rgba(${r}, ${g}, ${b}, ${a})`;
+        return this.color;
       }
-        /** Red chanel of this color */
-        this.color = new Color({r,g,b,a});
+      this.color = new Color({a:a,r:r,g:g,b:b});
+      this.color.value = `rgba(${r}, ${g}, ${b}, ${a})`;
+        
+      
         
         return this.color;
     }
@@ -490,6 +498,8 @@ export default class Colors {
         var r = parseInt(hex.length == 3 ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2), 16);
         var g = parseInt(hex.length == 3 ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4), 16);
         var b = parseInt(hex.length == 3 ? hex.slice(2, 3).repeat(2) : hex.slice(4, 6), 16);
+
+        console.log({color:hex,code:{r:r,g:g,b:b,a:alpha}})
         if ( alpha ) {
            return this.fromARGB({r:r,g:g,b:b,a:alpha}) ;
         }

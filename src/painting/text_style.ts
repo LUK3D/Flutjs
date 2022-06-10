@@ -1,4 +1,5 @@
 import { _FontWeight,FontWeight } from "../ui/text.js";
+import { Color } from "./colors.js";
 
 class _TextStyle {
   inherit?: string;
@@ -90,7 +91,7 @@ class _TextStyle {
 function TextStyle(
   args: {
     inherit?: string;
-    color?: string;
+    color?: Color;
     backgroundColor?: string;
     fontSize?: number;
     fontWeight?: FontWeight;
@@ -120,7 +121,7 @@ function TextStyle(
   return new _TextStyle(
     {
       inherit: args.inherit,
-      color: args.color,
+      color: args.color?.value,
       backgroundColor: args.backgroundColor,
       fontSize: args.fontSize,
       fontWeight: args.fontWeight,

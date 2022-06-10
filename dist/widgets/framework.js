@@ -1,3 +1,4 @@
+import { RelativeUnits } from "../rendering/mesurementes.js";
 import { ExtractCss } from "../utils/processor.js";
 import { Key } from "../utils/uuid.js";
 import { isNumber } from "../utils/validator.js";
@@ -6,8 +7,15 @@ import { isNumber } from "../utils/validator.js";
  */
 var Widget = /** @class */ (function () {
     function Widget(args) {
+        var _a, _b;
         this.width = "auto";
         this.height = "auto";
+        /**
+         * ### Size Measurement unit
+         * Defines the Units measurement of Width and Height
+         */
+        this.width_size_measurement_unit = RelativeUnits["%"];
+        this.height_size_measurement_unit = RelativeUnits["%"];
         this.key = args.key;
         this.child = args.child;
         this.children = args.children;
@@ -15,14 +23,16 @@ var Widget = /** @class */ (function () {
         this.render({ tagName: args.tagName, text: args.text, classes: args.classes });
         this.width = args.width || this.width;
         this.height = args.height || this.height;
+        this.width_size_measurement_unit = (_a = args.width_size_measurement_unit) !== null && _a !== void 0 ? _a : this.width_size_measurement_unit;
+        this.height_size_measurement_unit = (_b = args.height_size_measurement_unit) !== null && _b !== void 0 ? _b : this.height_size_measurement_unit;
         this.key = Key();
         this.setKey(args.key);
         this.classes = args.classes;
         if (isNumber(args.width)) {
-            this.tag.style.width = args.width.toString() + "%";
+            this.tag.style.width = args.width.toString() + this.width_size_measurement_unit;
         }
         if (isNumber(args.height)) {
-            this.tag.style.height = args.height.toString() + "%";
+            this.tag.style.height = args.height.toString() + this.height_size_measurement_unit;
         }
         return this;
     }

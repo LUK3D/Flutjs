@@ -1,5 +1,6 @@
 import { ThemeData } from "../painting/themeData.js";
 import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
+import { AbsoluteUnits, RelativeUnits } from "../rendering/mesurementes.js";
 import _Key from "../utils/uuid.js";
 /**
  * Flutjs class to generate a new Widget
@@ -11,6 +12,12 @@ export default class Widget {
     key?: _Key | string;
     width: number | string;
     height: number | string;
+    /**
+     * ### Size Measurement unit
+     * Defines the Units measurement of Width and Height
+     */
+    width_size_measurement_unit: AbsoluteUnits | RelativeUnits;
+    height_size_measurement_unit: AbsoluteUnits | RelativeUnits;
     tag?: HTMLElement;
     child?: Widget;
     children?: Array<Widget>;
@@ -32,6 +39,20 @@ export default class Widget {
         width?: string | number;
         height?: string | number;
         classes?: Array<string>;
+        /**
+            * ### Size Measurement unit
+            * Defines the Units measurement of Width
+            *
+            * {@link AbsoluteUnits} or {@link AbsoluteUnits}
+            */
+        width_size_measurement_unit?: AbsoluteUnits | RelativeUnits;
+        /**
+         * ### Size Measurement unit
+         * Defines the Units measurement of Height
+         *
+         * {@link AbsoluteUnits} or {@link AbsoluteUnits}
+         */
+        height_size_measurement_unit?: AbsoluteUnits | RelativeUnits;
     });
     setKey(key?: _Key | string): void;
     render(args: {

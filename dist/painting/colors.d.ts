@@ -52,6 +52,8 @@ export default class Colors {
     /**
      *
      */
+    White: Color;
+    Black: Color;
     Rose: {
         /**
          * Cor basico de teste

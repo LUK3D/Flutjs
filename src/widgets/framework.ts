@@ -1,5 +1,6 @@
 import { ThemeData } from "../painting/themeData.js";
 import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
+import { AbsoluteUnits, RelativeUnits } from "../rendering/mesurementes.js";
 import { ExtractCss } from "../utils/processor.js";
 import _Key, { Key } from "../utils/uuid.js";
 import { isNumber } from "../utils/validator.js";
@@ -15,7 +16,12 @@ export default class Widget {
 
   width: number | string = "auto";
   height: number | string = "auto";
-  
+  /**
+   * ### Size Measurement unit
+   * Defines the Units measurement of Width and Height
+   */
+  width_size_measurement_unit:AbsoluteUnits|RelativeUnits = RelativeUnits["%"];
+  height_size_measurement_unit:AbsoluteUnits|RelativeUnits = RelativeUnits["%"];
   tag?: HTMLElement;
   child?: Widget;
   children?: Array<Widget>;
@@ -38,6 +44,20 @@ export default class Widget {
     width?: string | number;
     height?: string | number;
     classes?: Array<string>;
+     /**
+         * ### Size Measurement unit
+         * Defines the Units measurement of Width
+         *
+         * {@link AbsoluteUnits} or {@link AbsoluteUnits}
+         */
+      width_size_measurement_unit?:AbsoluteUnits|RelativeUnits;
+      /**
+       * ### Size Measurement unit
+       * Defines the Units measurement of Height
+       * 
+       * {@link AbsoluteUnits} or {@link AbsoluteUnits}
+       */
+      height_size_measurement_unit?:AbsoluteUnits|RelativeUnits;
   }) {
     this.key = args.key;
     this.child = args.child;
@@ -46,6 +66,8 @@ export default class Widget {
     this.render({ tagName: args.tagName, text: args.text, classes: args.classes});
     this.width = args.width || this.width;
     this.height = args.height || this.height;
+    this.width_size_measurement_unit = args.width_size_measurement_unit??this.width_size_measurement_unit;
+    this.height_size_measurement_unit = args.height_size_measurement_unit??this.height_size_measurement_unit;
     
     
     this.key = Key();
@@ -55,10 +77,10 @@ export default class Widget {
 
 
     if (isNumber(args.width!)) {
-      this.tag!.style.width = args.width!.toString() + "%";
+      this.tag!.style.width = args.width!.toString() + this.width_size_measurement_unit;
     }
     if (isNumber(args.height!)) {
-      this.tag!.style.height = args.height!.toString() + "%";
+      this.tag!.style.height = args.height!.toString() + this.height_size_measurement_unit;
     }
 
     return this;
