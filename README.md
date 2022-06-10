@@ -9,6 +9,11 @@ As the name suggests, Flutejs is based on Flutter for its simplicity and easy le
 
 To get start with Flutjs just follow the steps below:
 
+### With boilerplate
+
+Just go to [Flutjs Template Ts](https://github.com/LUK3D/flutjs-template-ts) repository and click on "Use This repository" and you are good to go.
+
+
 ### With Nodejs:
 
 1 - Install the latest version of Nodejs.
