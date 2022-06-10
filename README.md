@@ -29,7 +29,7 @@ To get start with Flutjs just follow the steps below:
 Congrats!! 🎉 You have Installed Flujs successfully on your project. Now jump to hello world section the create a simple Flutjs website/webApp.
 
 
-<img src="./screenshots/flutjs_helloworld_app.png" width="500px">
+<img src="./docs/screenshots/flutjs_helloworld_app.png" width="500px">
 
 
 
@@ -38,6 +38,12 @@ Congrats!! 🎉 You have Installed Flujs successfully on your project. Now jump 
 
 Coming soon....
 
+Add this link to the header tag of your html page:
+```html
+<script type="moduel" src="https://cdn.jsdelivr.net/npm/@luk3d/flutjs@0.2.0/dist/flutjs.min.js"></script>
+```
+>NOTE: you need to check the latest vesio here:
+[Flutjs Latest](https://www.jsdelivr.com/package/npm/@luk3d/flutjs?path=dist)
 
 
 ## Hello World App: ⚡
