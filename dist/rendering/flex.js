@@ -60,8 +60,6 @@ var CrossAxisAlignment;
     CrossAxisAlignment["end"] = "items-end";
     /** Place the children as close to the middle of the main axis as possible.*/
     CrossAxisAlignment["center"] = "items-center";
-    /** Place the free space evenly between the children.*/
-    CrossAxisAlignment["spaceBetween"] = "items-";
     /** Place the free space evenly between the children as well as half of that
     * space before and after the first and last child.
     * */

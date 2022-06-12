@@ -474,7 +474,6 @@ export default class Colors {
     fromARGB({ a=1, r, g, b}:Color):Color{
 
       if(r==255 && g==255 && b==255){
-        console.log({r,g,b,a})
         this.color = new Color({a:a,r:r,g:g,b:b});
         this.color.value = `rgba(${r}, ${g}, ${b}, ${a})`;
         return this.color;
@@ -499,7 +498,6 @@ export default class Colors {
         var g = parseInt(hex.length == 3 ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4), 16);
         var b = parseInt(hex.length == 3 ? hex.slice(2, 3).repeat(2) : hex.slice(4, 6), 16);
 
-        console.log({color:hex,code:{r:r,g:g,b:b,a:alpha}})
         if ( alpha ) {
            return this.fromARGB({r:r,g:g,b:b,a:alpha}) ;
         }

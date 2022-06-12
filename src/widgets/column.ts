@@ -1,4 +1,5 @@
 import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
+import { Converter } from "../utils/converter.js";
 import Widget from "./framework.js";
 
 class _Column extends Widget {
@@ -11,9 +12,9 @@ class _Column extends Widget {
       
       tagName: "div",
       children: args.children,
-      classes:['flex','flex-col','w-full','h-full',
-      args.mainAxisAlignment??MainAxisAlignment.start,
-      args.crossAxisAlignment??CrossAxisAlignment.start
+      classes:['flex','flex-col',
+      args.mainAxisAlignment??new Converter().invertFlex(MainAxisAlignment.start),
+      args.crossAxisAlignment??new Converter().invertFlex(CrossAxisAlignment.start)
     
       ]
     });

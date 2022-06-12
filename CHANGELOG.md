@@ -1,3 +1,16 @@
+# v0.2.1-alpha-2 (2022-06-12)
+
+## Feature
+* Added `Radius` Class.
+* Added `BorderRadiusGeometry` Class.
+* Added `BorderRadius` property to the Container Component.
+* Added `Spacer Widget`.
+
+## Bug Fixes
+* Container now have Width and Hight of Auto as default value.
+* Column widget now have the correct MainAxisDirection.
+
+
 # v0.2.1-alpha-1 (2022-06-11)
 This version adds new Features and some Bug Fixes.
 ## Feature

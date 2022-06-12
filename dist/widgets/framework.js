@@ -31,6 +31,7 @@ var Widget = /** @class */ (function () {
         if (isNumber(args.width)) {
             this.tag.style.width = args.width.toString() + this.width_size_measurement_unit;
         }
+        else { }
         if (isNumber(args.height)) {
             this.tag.style.height = args.height.toString() + this.height_size_measurement_unit;
         }

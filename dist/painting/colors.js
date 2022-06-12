@@ -369,7 +369,6 @@ var Colors = /** @class */ (function () {
     Colors.prototype.fromARGB = function (_a) {
         var _b = _a.a, a = _b === void 0 ? 1 : _b, r = _a.r, g = _a.g, b = _a.b;
         if (r == 255 && g == 255 && b == 255) {
-            console.log({ r: r, g: g, b: b, a: a });
             this.color = new Color({ a: a, r: r, g: g, b: b });
             this.color.value = "rgba(".concat(r, ", ").concat(g, ", ").concat(b, ", ").concat(a, ")");
             return this.color;
@@ -388,7 +387,6 @@ var Colors = /** @class */ (function () {
         var r = parseInt(hex.length == 3 ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2), 16);
         var g = parseInt(hex.length == 3 ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4), 16);
         var b = parseInt(hex.length == 3 ? hex.slice(2, 3).repeat(2) : hex.slice(4, 6), 16);
-        console.log({ color: hex, code: { r: r, g: g, b: b, a: alpha } });
         if (alpha) {
             return this.fromARGB({ r: r, g: g, b: b, a: alpha });
         }

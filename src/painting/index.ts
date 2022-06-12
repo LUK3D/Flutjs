@@ -15,6 +15,7 @@ import { TextStyle, _TextStyle } from "./text_style.js";
 import { ThemeData } from "./themeData.js";
 import { Typography } from "./typography.js";
 import { EdgeInsets } from "./edge_insets.js";
+import { BorderRadiusGeometry } from "./BorderRadiusGeometry.js";
 
 export {
   EdgeInsets,
@@ -33,4 +34,5 @@ export {
   BackgroundRepeat,
   BackgroundScrollBehaviour,
   BackgroundSize,
+  BorderRadiusGeometry
 };

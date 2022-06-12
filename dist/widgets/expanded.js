@@ -13,39 +13,28 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
 import Widget from "./framework.js";
-var _Row = /** @class */ (function (_super) {
-    __extends(_Row, _super);
-    function _Row(args) {
-        var _a, _b;
-        return _super.call(this, {
+var _Expanded = /** @class */ (function (_super) {
+    __extends(_Expanded, _super);
+    function _Expanded(args) {
+        var _this = _super.call(this, {
+            key: args.key,
             tagName: "div",
-            children: args.children,
-            classes: ['flex', 'flex-row', (_a = args.mainAxisAlignment) !== null && _a !== void 0 ? _a : MainAxisAlignment.start, (_b = args.crossAxisAlignment) !== null && _b !== void 0 ? _b : CrossAxisAlignment.start
-            ]
+            child: args.child
         }) || this;
+        if (_this.child) {
+            _this.tag = _this.child.tag;
+        }
+        _this.tag.style.width = "100%";
+        _this.tag.style.height = "100%";
+        args.child.tag.style.width = "100%";
+        args.child.tag.style.height = "100%";
+        return _this;
     }
-    return _Row;
+    return _Expanded;
 }(Widget));
-/**
- * ## Row Widget
- * Creates a Horizontal List Container
- * @param args Rows Arguments
- * @returns Widget
- *
- * Ex:
- * ```js
- * Row({
- *    children:[
- *       //List of widgets here
- *    ]
- * })
- *
- * ```
- */
-function Row(args) {
-    return new _Row(args);
+function Expanded(args) {
+    return new _Expanded(args);
 }
-export { Row };
-//# sourceMappingURL=row.js.map
+export { Expanded };
+//# sourceMappingURL=expanded.js.map

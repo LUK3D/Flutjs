@@ -1,5 +1,5 @@
 /**Basic Flutjs App With Tailwind */
-import { Expanded, Padding, Column, Container, Text, Colors, EdgeInsets, MainAxisAlignment, CrossAxisAlignment, TextStyle } from "./index.js";
+import {Spacer, Expanded,Row,RelativeUnits,BoxDecation, Padding, Column, Container, Text, Colors, EdgeInsets, MainAxisAlignment, CrossAxisAlignment, TextStyle } from "./index.js";
 import { Scaffold, WindiApp, AppBar } from "./windiapp/index.js";
 
 WindiApp({
@@ -12,23 +12,47 @@ WindiApp({
       title: Text("Welcome to Flutjs"),
       elevation: 2,
     }),
-    body: Expanded({
-      child: Container({
+    body: Container({
         color: Colors.Gray[50],
+        width:100,
+        height:100,
         child:
-          Padding({
-            padding: EdgeInsets.all(10),
-            child: Column({
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text("Hello World"), Text("🤩", {
-                  textStyle: TextStyle({ fontSize: 20 })
+        Expanded({
+          child:  Column({
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text("Hello World"), 
+              Text("🤩", {textStyle: TextStyle({ fontSize: 20 })}),
+              Spacer(),
+              Container({
+                width:100,
+                height:200,
+                decoratio:BoxDecation({
+                  color:Colors.Amber[500],
                 })
-              ],
-            }),
-          }),
-      }),
+              }),
+              Container(
+                {
+                  width:100,
+                  width_size_measurement_unit:RelativeUnits["%"],
+                  child:Row(
+                    {
+                      mainAxisAlignment:MainAxisAlignment.start,
+                      crossAxisAlignment:CrossAxisAlignment.start,
+                      children:[
+                        Container({child:Text("Outro Exemplo no final")}),
+                        Spacer({child:Text("Estamos no meio")}),
+                        Container({child:Text("Terminamos aqui")}),
+                      ]
+                    }
+                  ),
+                }
+              ) 
+
+            ],
+        }),
+        })
     }),
   }),
 });

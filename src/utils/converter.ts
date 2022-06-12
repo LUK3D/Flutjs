@@ -25,7 +25,16 @@ class Converter {
         }
         return Number.parseFloat(this.val!.toString());
     }
+
+    invertFlex(val:string){
+        if(val.includes("items")){
+            return val.split("items").join("justify").replace('stretch','evenly').replace('line','around');
+        }
+            return val.split("justify").join("items").replace('evenly','stretch').replace('around','line');
+    }
+    
 }
+
 
 export{
     Converter

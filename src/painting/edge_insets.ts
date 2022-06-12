@@ -66,10 +66,10 @@ class EdgeInsetsGeometry {
      */
      val(propertie:string){
         this.value =  [
-            `${propertie}left:${this.left}px`,
-            `${propertie}right:${this.right}px`,
-            `${propertie}top:${this.top}px`,
-            `${propertie}bottom:${this.bottom??this.end}px`,
+            `${propertie}left:${this.left}`,
+            `${propertie}right:${this.right}`,
+            `${propertie}top:${this.top}`,
+            `${propertie}bottom:${this.bottom??this.end}`,
 
         ].join(";")
 
@@ -78,10 +78,10 @@ class EdgeInsetsGeometry {
     arrayed_value(propertie:string){
         
        return  [
-            `${this.left}px`,
-            `${this.top}px`,
-            `${this.right}px`,
-            `${this.bottom??this.end}px`,
+            `${this.left}`,
+            `${this.top}`,
+            `${this.right}`,
+            `${this.bottom??this.end}`,
 
         ];
 

@@ -65,20 +65,20 @@ var EdgeInsetsGeometry = /** @class */ (function () {
     EdgeInsetsGeometry.prototype.val = function (propertie) {
         var _a;
         this.value = [
-            "".concat(propertie, "left:").concat(this.left, "px"),
-            "".concat(propertie, "right:").concat(this.right, "px"),
-            "".concat(propertie, "top:").concat(this.top, "px"),
-            "".concat(propertie, "bottom:").concat((_a = this.bottom) !== null && _a !== void 0 ? _a : this.end, "px"),
+            "".concat(propertie, "left:").concat(this.left),
+            "".concat(propertie, "right:").concat(this.right),
+            "".concat(propertie, "top:").concat(this.top),
+            "".concat(propertie, "bottom:").concat((_a = this.bottom) !== null && _a !== void 0 ? _a : this.end),
         ].join(";");
         return this;
     };
     EdgeInsetsGeometry.prototype.arrayed_value = function (propertie) {
         var _a;
         return [
-            "".concat(this.left, "px"),
-            "".concat(this.top, "px"),
-            "".concat(this.right, "px"),
-            "".concat((_a = this.bottom) !== null && _a !== void 0 ? _a : this.end, "px"),
+            "".concat(this.left),
+            "".concat(this.top),
+            "".concat(this.right),
+            "".concat((_a = this.bottom) !== null && _a !== void 0 ? _a : this.end),
         ];
     };
     EdgeInsetsGeometry.prototype.reset = function () {

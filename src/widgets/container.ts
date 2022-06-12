@@ -66,13 +66,13 @@ function Container(args:{
      height_size_measurement_unit?:AbsoluteUnits|RelativeUnits;
 }){
     if(args.color!=null && args.decoratio!=null){
-        WidgetExeption({message:"The propertie Color needs to be null when decoration:<BoxDecoration> its been in use. Try to put the Color inside the BoxDecoration."});
+        WidgetExeption({message:"The property Color needs to be null when decoration:<BoxDecoration> its been in use. Try to put the Color inside the BoxDecoration."});
     }
     if(!args.width){
-        args.width = 100;
+        args.width = "auto";
     }
     if(!args.height){
-        args.height = 100;
+        args.height = "auto";
     }
 
     return new _Container(args);

@@ -1,7 +1,7 @@
 
 import { Colors } from "./painting/colors.js";
 import {ThemeData} from "./painting/themeData.js"
-import { BoxDecation, EdgeInsets } from "./painting/index.js";
+import { BorderRadiusGeometry, BoxDecation, EdgeInsets } from "./painting/index.js";
 import { CrossAxisAlignment, MainAxisAlignment } from "./rendering/flex.js";
 import { TextStyle } from "./painting/text_style.js";
 
@@ -14,9 +14,11 @@ import {
   IconThemeData,
   Padding,
   Row,
-  Text
+  Text,
+  Spacer,
 } from "./widgets/index.js";
 import { AbsoluteUnits, RelativeUnits } from "./rendering/mesurementes.js";
+import { _Radius } from "./ui/Radius.js";
 
 
 
@@ -38,7 +40,10 @@ export{
   MainAxisAlignment,
   TextStyle,
   RelativeUnits,
-  AbsoluteUnits
+  AbsoluteUnits,
+  Spacer,
+  BorderRadiusGeometry,
+  _Radius
 };
 
 

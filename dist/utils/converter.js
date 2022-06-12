@@ -23,6 +23,12 @@ var Converter = /** @class */ (function () {
         }
         return Number.parseFloat(this.val.toString());
     };
+    Converter.prototype.invertFlex = function (val) {
+        if (val.includes("items")) {
+            return val.split("items").join("justify").replace('stretch', 'evenly').replace('line', 'around');
+        }
+        return val.split("justify").join("items").replace('evenly', 'stretch').replace('around', 'line');
+    };
     return Converter;
 }());
 export { Converter };

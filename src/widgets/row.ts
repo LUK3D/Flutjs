@@ -9,7 +9,7 @@ class _Row extends Widget {
     super({
       tagName: "div",
       children: args.children,
-      classes:['flex','flex-row','w-full','h-full',
+      classes:['flex','flex-row',
       args.mainAxisAlignment??MainAxisAlignment.start,
       args.crossAxisAlignment??CrossAxisAlignment.start
     ]

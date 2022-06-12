@@ -42,7 +42,8 @@ function Scaffold(
     });
 
     if(args.body && args.appBar){
-        widget.tag!.style.paddingTop = (args.appBar.tag!.offsetHeight+10+"px")??"100px";    
+        widget.tag!.style.paddingTop = (args.appBar.tag!.offsetHeight+20+"px")??"100px"; 
+        widget.tag!.setAttribute("component","body")
     }
 
     return widget;
