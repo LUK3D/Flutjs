@@ -13,13 +13,15 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+import { Colors } from "../painting/colors.js";
+import { CssProperties } from "../utils/cssprops.js";
 import { Widget } from "./framework.js";
 var _App = /** @class */ (function (_super) {
     __extends(_App, _super);
     function _App(args) {
         var _this = this;
         var _a;
-        _this = _super.call(this, { tagName: "div", children: [args.home] }) || this;
+        _this = _super.call(this, { tagName: "div", children: [args.home], css: new CssProperties({ background: Colors.Gray[100].value }) }) || this;
         _this.title = args.title;
         _this.theme = args.theme;
         _this.home = args.home;

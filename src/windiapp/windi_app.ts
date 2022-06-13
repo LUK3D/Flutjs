@@ -13,7 +13,6 @@ function WindiApp(args: { title?: string; theme?: ThemeData; home: Widget }) {
     title: args.title,
     theme: args.theme,
     home: args.home,
-    classes: ["bg-gray-100"],
   });
 }
 

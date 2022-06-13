@@ -20,7 +20,7 @@ var _Expanded = /** @class */ (function (_super) {
         var _this = _super.call(this, {
             key: args.key,
             tagName: "div",
-            child: args.child
+            child: args.child,
         }) || this;
         if (_this.child) {
             _this.tag = _this.child.tag;

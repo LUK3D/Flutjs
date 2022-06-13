@@ -41,7 +41,6 @@ function Spacer(args?:{child?:Widget}):Widget{
         child:args?.child
     });
     
-    console.log("Spacer PAI: ",widget.parent);
     return widget;
 }
 

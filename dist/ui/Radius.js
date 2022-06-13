@@ -11,7 +11,6 @@ var _Radius = /** @class */ (function () {
     /** Constructs a circular radius. [x] and [y] will have the same radius value.*/
     _Radius.prototype.circular = function (radius) {
         this.value = "".concat(radius, "px");
-        console.warn("RADIUS", this);
         return this;
     };
     /** Constructs an elliptical radius with the given radii. */

@@ -12,7 +12,6 @@ class _Radius {
    /** Constructs a circular radius. [x] and [y] will have the same radius value.*/
   circular(radius:number):_Radius{
     this.value = `${radius}px`;
-    console.warn("RADIUS",this);
     return this;
   }
 

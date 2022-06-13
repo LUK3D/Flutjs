@@ -35,7 +35,6 @@ function Spacer(args) {
         height_size_measurement_unit: RelativeUnits["%"],
         child: args === null || args === void 0 ? void 0 : args.child
     });
-    console.log("Spacer PAI: ", widget.parent);
     return widget;
 }
 export { Spacer };

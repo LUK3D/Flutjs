@@ -1,4 +1,5 @@
 import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
+import { CssProperties } from "../utils/cssprops.js";
 import Widget from "./framework.js";
 
 class _Row extends Widget {
@@ -9,10 +10,14 @@ class _Row extends Widget {
     super({
       tagName: "div",
       children: args.children,
-      classes:['flex','flex-row',
+   
+    css: new CssProperties({
+      display: "flex",
+      flexDirection: "row",
+      justifyContent:
       args.mainAxisAlignment??MainAxisAlignment.start,
-      args.crossAxisAlignment??CrossAxisAlignment.start
-    ]
+      alignItems:args.crossAxisAlignment??CrossAxisAlignment.start
+    }),
     });
   }
 }

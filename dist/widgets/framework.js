@@ -1,3 +1,14 @@
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 import { RelativeUnits } from "../rendering/mesurementes.js";
 import { CssProperties } from "../utils/cssprops.js";
 import { ExtractCss } from "../utils/processor.js";
@@ -9,7 +20,7 @@ import { isNumber } from "../utils/validator.js";
  */
 var Widget = /** @class */ (function () {
     function Widget(args) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         this.width = "auto";
         this.height = "auto";
         /**
@@ -18,7 +29,7 @@ var Widget = /** @class */ (function () {
          */
         this.width_size_measurement_unit = RelativeUnits["%"];
         this.height_size_measurement_unit = RelativeUnits["%"];
-        this.css = new CssProperties({});
+        this.css = new CssProperties(__assign({}, (_a = args.css) === null || _a === void 0 ? void 0 : _a._props));
         this.key = args.key;
         this.child = args.child;
         this.children = args.children;
@@ -31,30 +42,30 @@ var Widget = /** @class */ (function () {
         this.width = args.width || this.width;
         this.height = args.height || this.height;
         this.width_size_measurement_unit =
-            (_a = args.width_size_measurement_unit) !== null && _a !== void 0 ? _a : this.width_size_measurement_unit;
+            (_b = args.width_size_measurement_unit) !== null && _b !== void 0 ? _b : this.width_size_measurement_unit;
         this.height_size_measurement_unit =
-            (_b = args.height_size_measurement_unit) !== null && _b !== void 0 ? _b : this.height_size_measurement_unit;
-        this.boxDecoration = (_c = args.boxDecoration) !== null && _c !== void 0 ? _c : this.boxDecoration;
+            (_c = args.height_size_measurement_unit) !== null && _c !== void 0 ? _c : this.height_size_measurement_unit;
+        this.boxDecoration = (_d = args.boxDecoration) !== null && _d !== void 0 ? _d : this.boxDecoration;
         // this.css = args.css;
         this.key = Key();
         this.setKey(args.key);
         this.classes = args.classes;
-        var paddings = (_d = args.padding) === null || _d === void 0 ? void 0 : _d.arrayed_value("padding");
+        var paddings = (_e = args.padding) === null || _e === void 0 ? void 0 : _e.arrayed_value("padding");
         if (paddings) {
             this.css._props.paddingLeft = paddings[0];
             this.css._props.paddingTop = paddings[1];
             this.css._props.paddingRight = paddings[2];
             this.css._props.paddingBottom = paddings[3];
         }
-        var margins = (_e = args.margin) === null || _e === void 0 ? void 0 : _e.arrayed_value("margin");
+        var margins = (_f = args.margin) === null || _f === void 0 ? void 0 : _f.arrayed_value("margin");
         if (margins) {
             this.css._props.marginLeft = margins[0];
             this.css._props.marginTop = margins[1];
             this.css._props.marginRight = margins[2];
             this.css._props.marginBottom = margins[3];
         }
-        if ((_f = args.boxDecoration) === null || _f === void 0 ? void 0 : _f.color)
-            this.css._props.backgroundColor = (_h = (_g = args.boxDecoration) === null || _g === void 0 ? void 0 : _g.color) !== null && _h !== void 0 ? _h : "";
+        if ((_g = args.boxDecoration) === null || _g === void 0 ? void 0 : _g.color)
+            this.css._props.backgroundColor = (_j = (_h = args.boxDecoration) === null || _h === void 0 ? void 0 : _h.color) !== null && _j !== void 0 ? _j : "";
         if (isNumber(args.width))
             this.css._props.width =
                 args.width.toString() + this.width_size_measurement_unit;
@@ -62,7 +73,7 @@ var Widget = /** @class */ (function () {
             this.css._props.height =
                 args.height.toString() + this.height_size_measurement_unit;
         defineDecoration(this, args.boxDecoration);
-        (_j = this.css) === null || _j === void 0 ? void 0 : _j.apply(this);
+        (_k = this.css) === null || _k === void 0 ? void 0 : _k.apply(this);
         return this;
     }
     Widget.prototype.setKey = function (key) {

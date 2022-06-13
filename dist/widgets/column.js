@@ -15,6 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
 import { Converter } from "../utils/converter.js";
+import { CssProperties } from "../utils/cssprops.js";
 import Widget from "./framework.js";
 var _Column = /** @class */ (function (_super) {
     __extends(_Column, _super);
@@ -23,8 +24,12 @@ var _Column = /** @class */ (function (_super) {
         return _super.call(this, {
             tagName: "div",
             children: args.children,
-            classes: ['flex', 'flex-col', (_a = args.mainAxisAlignment) !== null && _a !== void 0 ? _a : new Converter().invertFlex(MainAxisAlignment.start), (_b = args.crossAxisAlignment) !== null && _b !== void 0 ? _b : new Converter().invertFlex(CrossAxisAlignment.start)
-            ]
+            css: new CssProperties({
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: (_a = args.mainAxisAlignment) !== null && _a !== void 0 ? _a : new Converter().invertFlex(MainAxisAlignment.start),
+                alignItems: (_b = args.crossAxisAlignment) !== null && _b !== void 0 ? _b : new Converter().invertFlex(CrossAxisAlignment.start),
+            }),
         }) || this;
     }
     return _Column;

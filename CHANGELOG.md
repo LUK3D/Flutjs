@@ -3,10 +3,14 @@
 * Added `BorderRadiusGeometry` Class.
 * Added `BorderRadius` property to the Container Component.
 * Added `Spacer Widget`.
+* Added `Cssprops` with `CssProperties` class that maps the Flutjs properties to css attributes.
 
 ## Bug Fixes
 * Container now have Width and Hight of Auto as default value.
 * Column widget now have the correct MainAxisDirection.
+* Paddings now works well
+* Added Margin and Padding Attributrs to the container
+
 
 
 # v0.2.1-alpha-1 (2022-06-11)

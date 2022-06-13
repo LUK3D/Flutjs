@@ -14,6 +14,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
+import { CssProperties } from "../utils/cssprops.js";
 import Widget from "./framework.js";
 var _Row = /** @class */ (function (_super) {
     __extends(_Row, _super);
@@ -22,8 +23,12 @@ var _Row = /** @class */ (function (_super) {
         return _super.call(this, {
             tagName: "div",
             children: args.children,
-            classes: ['flex', 'flex-row', (_a = args.mainAxisAlignment) !== null && _a !== void 0 ? _a : MainAxisAlignment.start, (_b = args.crossAxisAlignment) !== null && _b !== void 0 ? _b : CrossAxisAlignment.start
-            ]
+            css: new CssProperties({
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: (_a = args.mainAxisAlignment) !== null && _a !== void 0 ? _a : MainAxisAlignment.start,
+                alignItems: (_b = args.crossAxisAlignment) !== null && _b !== void 0 ? _b : CrossAxisAlignment.start
+            }),
         }) || this;
     }
     return _Row;

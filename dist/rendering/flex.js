@@ -15,7 +15,7 @@ var MainAxisAlignment;
     * If this value is used in a vertical direction, a [VerticalDirection] must be
     * available to determine if the start is the top or the bottom.
     * */
-    MainAxisAlignment["start"] = "justify-start";
+    MainAxisAlignment["start"] = "flex-start";
     /** Place the children as close to the end of the main axis as possible.
     *
     * If this value is used in a horizontal direction, a [TextDirection] must be
@@ -24,19 +24,19 @@ var MainAxisAlignment;
     * If this value is used in a vertical direction, a [VerticalDirection] must be
     * available to determine if the end is the top or the bottom.
     * */
-    MainAxisAlignment["end"] = "justify-end";
+    MainAxisAlignment["end"] = "flex-end";
     /** Place the children as close to the middle of the main axis as possible.*/
-    MainAxisAlignment["center"] = "justify-center";
+    MainAxisAlignment["center"] = "center";
     /** Place the free space evenly between the children.*/
-    MainAxisAlignment["spaceBetween"] = "justify-between";
+    MainAxisAlignment["spaceBetween"] = "space-between";
     /** Place the free space evenly between the children as well as half of that
     * space before and after the first and last child.
     * */
-    MainAxisAlignment["spaceAround"] = "justify-around";
+    MainAxisAlignment["spaceAround"] = "space-around";
     /** Place the free space evenly between the children as well as before and
     * after the first and last child.
     * */
-    MainAxisAlignment["spaceEvenly"] = "justify-evenly";
+    MainAxisAlignment["spaceEvenly"] = "space-evenly";
 })(MainAxisAlignment || (MainAxisAlignment = {}));
 var CrossAxisAlignment;
 (function (CrossAxisAlignment) {
@@ -48,7 +48,7 @@ var CrossAxisAlignment;
     * If this value is used in a vertical direction, a [VerticalDirection] must be
     * available to determine if the start is the top or the bottom.
     * */
-    CrossAxisAlignment["start"] = "items-start";
+    CrossAxisAlignment["start"] = "start";
     /** Place the children as close to the end of the main axis as possible.
     *
     * If this value is used in a horizontal direction, a [TextDirection] must be
@@ -57,13 +57,13 @@ var CrossAxisAlignment;
     * If this value is used in a vertical direction, a [VerticalDirection] must be
     * available to determine if the end is the top or the bottom.
     * */
-    CrossAxisAlignment["end"] = "items-end";
+    CrossAxisAlignment["end"] = "end";
     /** Place the children as close to the middle of the main axis as possible.*/
-    CrossAxisAlignment["center"] = "items-center";
+    CrossAxisAlignment["center"] = "center";
     /** Place the free space evenly between the children as well as half of that
     * space before and after the first and last child.
     * */
-    CrossAxisAlignment["spaceAround"] = "base-line";
+    CrossAxisAlignment["spaceAround"] = "stretch";
     /** Place the free space evenly between the children as well as before and
     * after the first and last child.
     * */

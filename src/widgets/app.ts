@@ -1,4 +1,6 @@
+import { Colors } from "../painting/colors.js";
 import { ThemeData } from "../painting/themeData.js";
+import { CssProperties } from "../utils/cssprops.js";
 import { Widget } from "./framework.js";
 
 class _App extends Widget {
@@ -12,7 +14,7 @@ class _App extends Widget {
     home: Widget;
     classes?: Array<string>;
   }) {
-    super({ tagName: "div", children: [args.home] });
+    super({ tagName: "div", children: [args.home], css:new CssProperties({background:Colors.Gray[100].value}) });
     this.title = args.title;
     this.theme = args.theme;
     this.home = args.home;

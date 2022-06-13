@@ -1,55 +1,50 @@
-import {Widget } from "../widgets/framework.js"
+import { Colors } from "../painting/colors.js";
+import { CssProperties } from "../utils/cssprops.js";
+import { Widget } from "../widgets/framework.js";
 import { _AppBar } from "./app_bar.js";
 
+function Scaffold(args: {
+  body?: Widget;
+  appBar?: _AppBar;
+  bodyScrim?: Widget;
+  bottomSheet?: Widget;
+  snackBar?: Widget;
+  materialBanner?: Widget;
+  persistentFooter?: Widget;
+  bottomNavigationBar?: Widget;
+  floatingActionButton?: Widget;
+  drawer?: Widget;
+  endDrawer?: Widget;
+  statusBar?: Widget;
+}): Widget {
+  var children: Array<Widget> = [];
 
-function Scaffold(
-    args:{
-        body?:Widget,
-        appBar?:_AppBar,
-        bodyScrim?:Widget,
-        bottomSheet?:Widget,
-        snackBar?:Widget,
-        materialBanner?:Widget,
-        persistentFooter?:Widget,
-        bottomNavigationBar?:Widget,
-        floatingActionButton?:Widget,
-        drawer?:Widget,
-        endDrawer?:Widget,
-        statusBar?:Widget,
-    }
-):Widget{
+  if (args.appBar) {
+    children.push(args.appBar);
+  }
 
-     var children:Array<Widget> = [];
+  if (args.body) {
+    children.push(args.body);
+  }
 
-     
+  var widget = new Widget({
+    tagName: "div",
+    children: children,
 
-    if(args.appBar){
-        children.push(args.appBar);
-    }
-   
-    if(args.body){
-        children.push(args.body);
-    }
+    css: new CssProperties({
+      backgroundColor: Colors.Gray[100].value,
+      width: "100%",
+      height: "100%",
+    }),
+  });
 
-    var widget = new Widget({
-        tagName:"div",
-        children:children,
-        classes:[
-            "w-full",
-            "h-full",
-            "bg-gray-100"
-        ]
-    });
+  if (args.body && args.appBar) {
+    widget.tag!.style.paddingTop =
+      args.appBar.tag!.offsetHeight + 20 + "px" ?? "100px";
+    widget.tag!.setAttribute("component", "body");
+  }
 
-    if(args.body && args.appBar){
-        widget.tag!.style.paddingTop = (args.appBar.tag!.offsetHeight+20+"px")??"100px"; 
-        widget.tag!.setAttribute("component","body")
-    }
-
-    return widget;
+  return widget;
 }
 
-
-export{
-    Scaffold
-}
+export { Scaffold };
