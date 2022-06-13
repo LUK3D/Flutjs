@@ -36,11 +36,12 @@ function Spacer(args?:{child?:Widget}):Widget{
     var widget =  Container({
         width:100, 
         height:100, 
-        width_size_measurement_unit:RelativeUnits["%"], 
-        height_size_measurement_unit:RelativeUnits["%"], 
+        widthSizeMeasurementUnit:RelativeUnits["%"], 
+        heightSizeMeasurementUnit:RelativeUnits["%"], 
         child:args?.child
     });
     
+    console.log("Spacer PAI: ",widget.parent);
     return widget;
 }
 

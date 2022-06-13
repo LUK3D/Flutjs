@@ -1,7 +1,7 @@
 /**Basic Flutjs App With Tailwind */
-import { Spacer, Expanded, Row, RelativeUnits, Column, Container, Text, Colors, EdgeInsets, MainAxisAlignment, CrossAxisAlignment, TextStyle, Radius } from "./index.js";
+import { Spacer, Expanded, Row, RelativeUnits, BoxDecoration, Column, Container, Text, Colors, EdgeInsets, MainAxisAlignment, CrossAxisAlignment, TextStyle, Radius, AbsoluteUnits } from "./index.js";
 import { BorderRadius } from "./painting/BorderRadiusGeometry.js";
-import { BoxDecoration } from "./painting/BoxDecoration.js";
+import { Image } from "./widgets/image.js";
 import { Positioned } from "./widgets/positioned.js";
 import { Stack } from "./widgets/stack.js";
 import { Scaffold, WindiApp, AppBar } from "./windiapp/index.js";
@@ -41,12 +41,19 @@ WindiApp({
                                         bottom: 10,
                                         right: 10,
                                         child: Text("Teste de baixo")
+                                    }),
+                                    Container({
+                                        width: 200,
+                                        height: 200,
+                                        widthSizeMeasurementUnit: AbsoluteUnits.pixels,
+                                        heightSizeMeasurementUnit: AbsoluteUnits.pixels,
+                                        child: Image.network("https://picsum.photos/200/300", { opacity: 0.5, semanticLabel: "Image aleatoria" })
                                     })
                                 ]
                             })
                         }),
                         Container({
-                            width_size_measurement_unit: RelativeUnits["%"],
+                            widthSizeMeasurementUnit: RelativeUnits["%"],
                             child: Row({
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,

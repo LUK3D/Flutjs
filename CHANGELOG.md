@@ -1,3 +1,17 @@
+This version comes with Some Features, Updates and Enhancements
+## Feature
+* Added `Image` Widget.
+* Added `Painting` Class with `BlendMode` list.
+* Added `BoxFit` Class with `BoxFit` list.
+
+## Enhancements
+
+
+## Bug Fixes
+
+
+
+
 # v0.2.3-alpha-1 (2022-06-13)
 This version comes with Some Features, Updates and Enhancements
 ## Feature

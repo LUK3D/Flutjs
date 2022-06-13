@@ -1,7 +1,7 @@
 
 import { Colors } from "./painting/colors.js";
 import {ThemeData} from "./painting/themeData.js"
-import { BorderRadiusGeometry, BoxDecation, EdgeInsets } from "./painting/index.js";
+import { BorderRadiusGeometry, BoxDecoration, EdgeInsets } from "./painting/index.js";
 import { CrossAxisAlignment, MainAxisAlignment } from "./rendering/flex.js";
 import { TextStyle } from "./painting/text_style.js";
 
@@ -34,7 +34,7 @@ export{
   Row,
   Text,
   Colors,
-  BoxDecation, 
+  BoxDecoration, 
   EdgeInsets,
   CrossAxisAlignment, 
   MainAxisAlignment,

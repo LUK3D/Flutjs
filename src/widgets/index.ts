@@ -4,6 +4,7 @@ import { Container } from "./container.js";
 import { Expanded } from "./expanded.js";
 import { Widget } from "./framework.js";
 import { IconThemeData } from "./icon_theme_data.js";
+import { _Image,Image } from "./image.js";
 import { Padding } from "./padding.js";
 import { Positioned } from "./positioned.js";
 import { Row } from "./row.js";
@@ -23,5 +24,7 @@ export{
     IconThemeData,
     Spacer,
     Stack,
-    Positioned
+    Positioned,
+    _Image,
+    Image
 }

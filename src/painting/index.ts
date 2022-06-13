@@ -20,7 +20,7 @@ import { BorderRadius, BorderRadiusGeometry, _BorderRadius } from "./BorderRadiu
 export {
   EdgeInsets,
   _BoxDecoration,
-  BoxDecoration as BoxDecation,
+  BoxDecoration,
   ClassDecoration,
   Image,
   Background,

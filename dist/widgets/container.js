@@ -62,8 +62,8 @@ function Container(args) {
         height: args.height,
         width: args.width,
         key: args.key,
-        height_size_measurement_unit: args.height_size_measurement_unit,
-        width_size_measurement_unit: args.width_size_measurement_unit,
+        height_size_measurement_unit: args.heightSizeMeasurementUnit,
+        width_size_measurement_unit: args.widthSizeMeasurementUnit,
     });
 }
 export { Container, _Container };

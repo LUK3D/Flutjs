@@ -178,6 +178,7 @@ interface props {
     wordSpacing?: string,
     wordWrap?: string,
     zIndex?: string,
+    objectFit?: string,
 }
 
 class CssProperties {

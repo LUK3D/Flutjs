@@ -51,14 +51,14 @@ function Container(args: {
    *
    * {@link AbsoluteUnits} or {@link AbsoluteUnits}
    */
-  width_size_measurement_unit?: AbsoluteUnits | RelativeUnits;
+  widthSizeMeasurementUnit?: AbsoluteUnits | RelativeUnits;
   /**
    * ### Size Measurement unit
    * Defines the Units measurement of Height
    *
    * {@link AbsoluteUnits} or {@link AbsoluteUnits}
    */
-  height_size_measurement_unit?: AbsoluteUnits | RelativeUnits;
+  heightSizeMeasurementUnit?: AbsoluteUnits | RelativeUnits;
   /**Empty space to surround the [decoration] and [child]. */
   margin?: EdgeInsetsGeometry;
   /**
@@ -99,8 +99,8 @@ function Container(args: {
     height: args.height,
     width: args.width,
     key: args.key,
-    height_size_measurement_unit: args.height_size_measurement_unit,
-    width_size_measurement_unit: args.width_size_measurement_unit,
+    height_size_measurement_unit: args.heightSizeMeasurementUnit,
+    width_size_measurement_unit: args.widthSizeMeasurementUnit,
   });
 }
 

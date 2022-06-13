@@ -38,8 +38,8 @@ WindiApp({
                                                     color:Colors.White,
                                                     height:40,
                                                     width:70,
-                                                    width_size_measurement_unit:AbsoluteUnits.pixels,
-                                                    height_size_measurement_unit:AbsoluteUnits.pixels,
+                                                    widthSizeMeasurementUnit:AbsoluteUnits.pixels,
+                                                    heightSizeMeasurementUnit:AbsoluteUnits.pixels,
                                                     child:Row(
                                                         {
                                                             mainAxisAlignment:MainAxisAlignment.center,

@@ -43,14 +43,14 @@ declare function Container(args: {
      *
      * {@link AbsoluteUnits} or {@link AbsoluteUnits}
      */
-    width_size_measurement_unit?: AbsoluteUnits | RelativeUnits;
+    widthSizeMeasurementUnit?: AbsoluteUnits | RelativeUnits;
     /**
      * ### Size Measurement unit
      * Defines the Units measurement of Height
      *
      * {@link AbsoluteUnits} or {@link AbsoluteUnits}
      */
-    height_size_measurement_unit?: AbsoluteUnits | RelativeUnits;
+    heightSizeMeasurementUnit?: AbsoluteUnits | RelativeUnits;
     /**Empty space to surround the [decoration] and [child]. */
     margin?: EdgeInsetsGeometry;
     /**

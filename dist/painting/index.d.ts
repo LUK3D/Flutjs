@@ -8,4 +8,4 @@ import { ThemeData } from "./themeData.js";
 import { Typography } from "./typography.js";
 import { EdgeInsets } from "./edge_insets.js";
 import { BorderRadius, BorderRadiusGeometry, _BorderRadius } from "./BorderRadiusGeometry.js";
-export { EdgeInsets, _BoxDecoration, BoxDecoration as BoxDecation, ClassDecoration, Image, Background, Color, TextStyle, ThemeData, Typography, BackgroundOrigin, BackgroundClip, BackgroundPosition, BackgroundRepeat, BackgroundScrollBehaviour, BackgroundSize, BorderRadiusGeometry, BorderRadius, _BorderRadius };
+export { EdgeInsets, _BoxDecoration, BoxDecoration, ClassDecoration, Image, Background, Color, TextStyle, ThemeData, Typography, BackgroundOrigin, BackgroundClip, BackgroundPosition, BackgroundRepeat, BackgroundScrollBehaviour, BackgroundSize, BorderRadiusGeometry, BorderRadius, _BorderRadius };
