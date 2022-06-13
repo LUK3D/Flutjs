@@ -38,7 +38,12 @@ var _App = /** @class */ (function (_super) {
 }(Widget));
 function App(args) {
     var _a;
-    var app = new _App({ title: args.title, theme: args.theme, home: args.home, classes: args.classes });
+    var app = new _App({
+        title: args.title,
+        theme: args.theme,
+        home: args.home,
+        classes: args.classes,
+    });
     return ((_a = app.tag) === null || _a === void 0 ? void 0 : _a.outerHTML) + "\n\n<style>\n".concat(app.style, "\n</style>");
 }
 export { App };

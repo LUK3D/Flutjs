@@ -27,7 +27,7 @@ WindiApp({
                         Container({
                             width: 50,
                             height: 200,
-                            padding: EdgeInsets.only({ left: 20 }),
+                            padding: EdgeInsets.all(20),
                             decoration: BoxDecoration({
                                 color: Colors.Amber[500],
                                 borderRadius: BorderRadius.all(Radius.circular(10))

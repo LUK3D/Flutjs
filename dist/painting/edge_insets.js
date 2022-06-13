@@ -75,10 +75,10 @@ var EdgeInsetsGeometry = /** @class */ (function () {
     EdgeInsetsGeometry.prototype.arrayed_value = function (propertie) {
         var _a;
         return [
-            "".concat(this.left),
-            "".concat(this.top),
-            "".concat(this.right),
-            "".concat((_a = this.bottom) !== null && _a !== void 0 ? _a : this.end),
+            "".concat(this.left, "px"),
+            "".concat(this.top, "px"),
+            "".concat(this.right, "px"),
+            "".concat((_a = this.bottom) !== null && _a !== void 0 ? _a : this.end, "px"),
         ];
     };
     EdgeInsetsGeometry.prototype.reset = function () {

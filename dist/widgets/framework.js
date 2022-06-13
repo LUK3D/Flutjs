@@ -9,7 +9,7 @@ import { isNumber } from "../utils/validator.js";
  */
 var Widget = /** @class */ (function () {
     function Widget(args) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         this.width = "auto";
         this.height = "auto";
         /**
@@ -39,8 +39,22 @@ var Widget = /** @class */ (function () {
         this.key = Key();
         this.setKey(args.key);
         this.classes = args.classes;
-        if ((_d = args.boxDecoration) === null || _d === void 0 ? void 0 : _d.color)
-            this.css._props.backgroundColor = (_f = (_e = args.boxDecoration) === null || _e === void 0 ? void 0 : _e.color) !== null && _f !== void 0 ? _f : "";
+        var paddings = (_d = args.padding) === null || _d === void 0 ? void 0 : _d.arrayed_value("padding");
+        if (paddings) {
+            this.css._props.paddingLeft = paddings[0];
+            this.css._props.paddingTop = paddings[1];
+            this.css._props.paddingRight = paddings[2];
+            this.css._props.paddingBottom = paddings[3];
+        }
+        var margins = (_e = args.margin) === null || _e === void 0 ? void 0 : _e.arrayed_value("margin");
+        if (margins) {
+            this.css._props.marginLeft = margins[0];
+            this.css._props.marginTop = margins[1];
+            this.css._props.marginRight = margins[2];
+            this.css._props.marginBottom = margins[3];
+        }
+        if ((_f = args.boxDecoration) === null || _f === void 0 ? void 0 : _f.color)
+            this.css._props.backgroundColor = (_h = (_g = args.boxDecoration) === null || _g === void 0 ? void 0 : _g.color) !== null && _h !== void 0 ? _h : "";
         if (isNumber(args.width))
             this.css._props.width =
                 args.width.toString() + this.width_size_measurement_unit;
@@ -48,7 +62,7 @@ var Widget = /** @class */ (function () {
             this.css._props.height =
                 args.height.toString() + this.height_size_measurement_unit;
         defineDecoration(this, args.boxDecoration);
-        (_g = this.css) === null || _g === void 0 ? void 0 : _g.apply(this);
+        (_j = this.css) === null || _j === void 0 ? void 0 : _j.apply(this);
         return this;
     }
     Widget.prototype.setKey = function (key) {

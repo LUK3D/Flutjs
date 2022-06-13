@@ -1,3 +1,4 @@
+import { EdgeInsetsGeometry } from "../painting/edge_insets.js";
 import { _BoxDecoration } from "../painting/index.js";
 import { ThemeData } from "../painting/themeData.js";
 import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
@@ -59,6 +60,8 @@ export default class Widget {
         height_size_measurement_unit?: AbsoluteUnits | RelativeUnits;
         boxDecoration?: _BoxDecoration;
         css?: CssProperties;
+        margin?: EdgeInsetsGeometry;
+        padding?: EdgeInsetsGeometry;
     });
     setKey(key?: _Key | string): void;
     render(args: {

@@ -78,10 +78,10 @@ class EdgeInsetsGeometry {
     arrayed_value(propertie:string){
         
        return  [
-            `${this.left}`,
-            `${this.top}`,
-            `${this.right}`,
-            `${this.bottom??this.end}`,
+            `${this.left}px`,
+            `${this.top}px`,
+            `${this.right}px`,
+            `${this.bottom??this.end}px`,
 
         ];
 

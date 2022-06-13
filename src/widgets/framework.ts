@@ -1,7 +1,9 @@
+import { EdgeInsetsGeometry } from "../painting/edge_insets.js";
 import { _BoxDecoration } from "../painting/index.js";
 import { ThemeData } from "../painting/themeData.js";
 import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
 import { AbsoluteUnits, RelativeUnits } from "../rendering/mesurementes.js";
+import { ElementSides } from "../utils/constants.js";
 import { CssProperties } from "../utils/cssprops.js";
 import { ExtractCss } from "../utils/processor.js";
 import { defineDecoration } from "../utils/styles.js";
@@ -67,6 +69,9 @@ export default class Widget {
     height_size_measurement_unit?: AbsoluteUnits | RelativeUnits;
     boxDecoration?: _BoxDecoration;
     css?: CssProperties;
+
+    margin?:EdgeInsetsGeometry,
+    padding?:EdgeInsetsGeometry,
   }) {
     this.css = new CssProperties({});
 
@@ -92,6 +97,24 @@ export default class Widget {
     this.setKey(args.key);
 
     this.classes = args.classes;
+
+      let paddings = args.padding?.arrayed_value("padding");
+        if(paddings){
+
+          this.css!._props.paddingLeft = paddings![0];
+          this.css!._props.paddingTop = paddings![1];
+          this.css!._props.paddingRight = paddings![2];
+          this.css!._props.paddingBottom = paddings![3];
+           
+        }
+        let margins = args.margin?.arrayed_value("margin");
+        if(margins){
+          this.css!._props.marginLeft = margins![0];
+          this.css!._props.marginTop = margins![1];
+          this.css!._props.marginRight = margins![2];
+          this.css!._props.marginBottom = margins![3];
+        }
+        
 
     if (args.boxDecoration?.color)
       this.css!._props.backgroundColor = args.boxDecoration?.color ?? "";

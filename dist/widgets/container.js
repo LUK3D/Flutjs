@@ -26,39 +26,19 @@ var __assign = (this && this.__assign) || function () {
 };
 import { Widget } from "./framework.js";
 import { WidgetExeption } from "../utils/FlutExeption.js";
-import { ElementSides } from "../utils/constants.js";
 var _Container = /** @class */ (function (_super) {
     __extends(_Container, _super);
     function _Container(args) {
-        var _this = this;
-        var _a, _b;
-        _this = _super.call(this, __assign({ tagName: "div" }, args)) || this;
-        var paddings = (_a = args.padding) === null || _a === void 0 ? void 0 : _a.arrayed_value("padding");
-        console.warn("PADDINGS", paddings);
-        if (paddings) {
-            ElementSides.forEach(function (element, i) {
-                var _a;
-                var p = "padding-" + element;
-                var v = paddings[i];
-                (_a = _this.tag) === null || _a === void 0 ? void 0 : _a.style.setProperty(p, v);
-            });
-        }
-        var margins = (_b = args.margin) === null || _b === void 0 ? void 0 : _b.arrayed_value("margin");
-        if (margins) {
-            ElementSides.forEach(function (element, i) {
-                var _a;
-                var p = "margin-" + element;
-                var v = margins[i];
-                (_a = _this.tag) === null || _a === void 0 ? void 0 : _a.style.setProperty(p, v);
-            });
-        }
+        var _this = _super.call(this, __assign({ tagName: "div" }, args)) || this;
         return _this;
     }
     return _Container;
 }(Widget));
 function Container(args) {
     if (args.color != null && args.decoration != null) {
-        WidgetExeption({ message: "The property Color needs to be null when decoration:<BoxDecoration> its been in use. Try to put the Color inside the BoxDecoration." });
+        WidgetExeption({
+            message: "The property Color needs to be null when decoration:<BoxDecoration> its been in use. Try to put the Color inside the BoxDecoration.",
+        });
     }
     else {
         if (args.color) {
@@ -83,7 +63,7 @@ function Container(args) {
         width: args.width,
         key: args.key,
         height_size_measurement_unit: args.height_size_measurement_unit,
-        width_size_measurement_unit: args.width_size_measurement_unit
+        width_size_measurement_unit: args.width_size_measurement_unit,
     });
 }
 export { Container, _Container };
