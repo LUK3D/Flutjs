@@ -1,5 +1,3 @@
-# v0.2.1-alpha-2 (2022-06-12)
-
 ## Feature
 * Added `Radius` Class.
 * Added `BorderRadiusGeometry` Class.

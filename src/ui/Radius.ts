@@ -11,12 +11,14 @@ class _Radius {
    
    /** Constructs a circular radius. [x] and [y] will have the same radius value.*/
   circular(radius:number):_Radius{
-    return this.elliptical(radius, radius)
+    this.value = `${radius}px`;
+    console.warn("RADIUS",this);
+    return this;
   }
 
   /** Constructs an elliptical radius with the given radii. */
-  elliptical(x:number, y:number):_Radius{
-    this.value = `border-radius: ${x}px ${y}px;`;
+  elliptical(radius:number):_Radius{
+    this.value = `${radius}%`;
     return this;
   }
 

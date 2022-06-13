@@ -1,12 +1,13 @@
-var _BoxDecation = /** @class */ (function () {
-    function _BoxDecation(args) {
+var _BoxDecoration = /** @class */ (function () {
+    function _BoxDecoration(args) {
         var _a;
         this.color = (_a = args.color) === null || _a === void 0 ? void 0 : _a.value;
+        this.borderRadius = args.borderRadius;
     }
-    return _BoxDecation;
+    return _BoxDecoration;
 }());
-function BoxDecation(args) {
-    return new _BoxDecation(args);
+function BoxDecoration(args) {
+    return new _BoxDecoration(args);
 }
-export { BoxDecation, _BoxDecation };
+export { BoxDecoration, _BoxDecoration };
 //# sourceMappingURL=BoxDecoration.js.map

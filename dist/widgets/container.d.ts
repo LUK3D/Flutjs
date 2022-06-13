@@ -1,8 +1,9 @@
-import { _BoxDecation } from "../painting/index.js";
+import { _BoxDecoration } from "../painting/index.js";
 import { Color } from "../painting/colors.js";
 import _Key from "../utils/uuid.js";
 import { Widget } from "./framework.js";
 import { AbsoluteUnits, RelativeUnits } from "../index.js";
+import { EdgeInsetsGeometry } from "../painting/edge_insets.js";
 declare class _Container extends Widget {
     constructor(args: {
         key?: _Key | string;
@@ -10,7 +11,9 @@ declare class _Container extends Widget {
         width?: number | string;
         height?: number | string;
         color?: Color;
-        decoratio?: _BoxDecation;
+        boxDecoration?: _BoxDecoration;
+        margin?: EdgeInsetsGeometry;
+        padding?: EdgeInsetsGeometry;
         /**
          * ### Size Measurement unit
          * Defines the Units measurement of Width
@@ -33,7 +36,7 @@ declare function Container(args: {
     width?: number | string;
     height?: number | string;
     color?: Color;
-    decoratio?: _BoxDecation;
+    decoration?: _BoxDecoration;
     /**
          * ### Size Measurement unit
          * Defines the Units measurement of Width
@@ -48,5 +51,15 @@ declare function Container(args: {
      * {@link AbsoluteUnits} or {@link AbsoluteUnits}
      */
     height_size_measurement_unit?: AbsoluteUnits | RelativeUnits;
+    /**Empty space to surround the [decoration] and [child]. */
+    margin?: EdgeInsetsGeometry;
+    /**
+     * Empty space to inscribe inside the [decoration]. The [child], if any, is
+     *  placed inside this padding.
+     *
+     *  This padding is in addition to any padding inherent in the [decoration];
+     *  see [Decoration.padding].
+     */
+    padding?: EdgeInsetsGeometry;
 }): _Container;
 export { Container, _Container };

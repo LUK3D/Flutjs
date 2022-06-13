@@ -1,7 +1,9 @@
+import { _BoxDecoration } from "../painting/index.js";
 import { ThemeData } from "../painting/themeData.js";
 import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
 import { AbsoluteUnits, RelativeUnits } from "../rendering/mesurementes.js";
 import { ExtractCss } from "../utils/processor.js";
+import { defineDecoration } from "../utils/styles.js";
 import _Key, { Key } from "../utils/uuid.js";
 import { isNumber } from "../utils/validator.js";
 
@@ -32,6 +34,7 @@ export default class Widget {
   crossAxisAlignment?: CrossAxisAlignment;
   classes?: Array<string>;
   style?:string;
+  boxDecoration?:_BoxDecoration;
 
   constructor(args: {
     key?: _Key | string;
@@ -58,6 +61,7 @@ export default class Widget {
        * {@link AbsoluteUnits} or {@link AbsoluteUnits}
        */
       height_size_measurement_unit?:AbsoluteUnits|RelativeUnits;
+      boxDecoration?:_BoxDecoration;
   }) {
     this.key = args.key;
     this.child = args.child;
@@ -68,6 +72,7 @@ export default class Widget {
     this.height = args.height || this.height;
     this.width_size_measurement_unit = args.width_size_measurement_unit??this.width_size_measurement_unit;
     this.height_size_measurement_unit = args.height_size_measurement_unit??this.height_size_measurement_unit;
+    this.boxDecoration = args.boxDecoration??this.boxDecoration;
     
     
     this.key = Key();
@@ -75,6 +80,12 @@ export default class Widget {
     
     this.classes = args.classes;
 
+
+    if(args.boxDecoration?.color){
+      this.tag!.style.backgroundColor = args.boxDecoration?.color??'black';
+    }
+
+    defineDecoration(this, args.boxDecoration)
 
     if (isNumber(args.width!)) {
       this.tag!.style.width = args.width!.toString() + this.width_size_measurement_unit;

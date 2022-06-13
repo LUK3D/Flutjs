@@ -1,4 +1,4 @@
-import { BoxDecation, _BoxDecation } from "./BoxDecoration.js";
+import { BoxDecoration, _BoxDecoration } from "./BoxDecoration.js";
 import { ClassDecoration } from "./ClassDecoration.js";
 import { Image } from "./Image.js";
 import { Background, BackgroundOrigin, BackgroundClip, BackgroundPosition, BackgroundRepeat, BackgroundScrollBehaviour, BackgroundSize } from "./background.js";
@@ -7,4 +7,5 @@ import { TextStyle } from "./text_style.js";
 import { ThemeData } from "./themeData.js";
 import { Typography } from "./typography.js";
 import { EdgeInsets } from "./edge_insets.js";
-export { EdgeInsets, _BoxDecation, BoxDecation, ClassDecoration, Image, Background, Color, TextStyle, ThemeData, Typography, BackgroundOrigin, BackgroundClip, BackgroundPosition, BackgroundRepeat, BackgroundScrollBehaviour, BackgroundSize, };
+import { BorderRadius, BorderRadiusGeometry, _BorderRadius } from "./BorderRadiusGeometry.js";
+export { EdgeInsets, _BoxDecoration, BoxDecoration as BoxDecation, ClassDecoration, Image, Background, Color, TextStyle, ThemeData, Typography, BackgroundOrigin, BackgroundClip, BackgroundPosition, BackgroundRepeat, BackgroundScrollBehaviour, BackgroundSize, BorderRadiusGeometry, BorderRadius, _BorderRadius };

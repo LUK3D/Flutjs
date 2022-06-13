@@ -1,5 +1,7 @@
 /**Basic Flutjs App With Tailwind */
-import {Spacer, Expanded,Row,RelativeUnits,BoxDecation, Padding, Column, Container, Text, Colors, EdgeInsets, MainAxisAlignment, CrossAxisAlignment, TextStyle } from "./index.js";
+import {Spacer, Expanded,Row,RelativeUnits,BoxDecation, Padding, Column, Container, Text, Colors, EdgeInsets, MainAxisAlignment, CrossAxisAlignment, TextStyle, Radius } from "./index.js";
+import { BorderRadius } from "./painting/BorderRadiusGeometry.js";
+import { BoxDecoration } from "./painting/BoxDecoration.js";
 import { Scaffold, WindiApp, AppBar } from "./windiapp/index.js";
 
 WindiApp({
@@ -26,16 +28,21 @@ WindiApp({
               Text("🤩", {textStyle: TextStyle({ fontSize: 20 })}),
               Spacer(),
               Container({
-                width:100,
+                width:50,
                 height:200,
-                decoratio:BoxDecation({
+                padding:EdgeInsets.only({left:20}),
+                decoration:BoxDecoration({
                   color:Colors.Amber[500],
-                })
+                  borderRadius:BorderRadius.all(
+                    Radius.circular(10)
+                    )
+                }),
+                child:Text("Baboseiras hahshashas 😅😅😅")
               }),
               Container(
                 {
-                  width:100,
                   width_size_measurement_unit:RelativeUnits["%"],
+                
                   child:Row(
                     {
                       mainAxisAlignment:MainAxisAlignment.start,

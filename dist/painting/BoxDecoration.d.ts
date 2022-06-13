@@ -1,11 +1,15 @@
+import { BorderRadiusGeometry } from "./BorderRadiusGeometry.js";
 import { Color } from "./colors.js";
-declare class _BoxDecation {
+declare class _BoxDecoration {
     color?: string;
+    borderRadius?: BorderRadiusGeometry;
     constructor(args: {
         color?: Color;
+        borderRadius?: BorderRadiusGeometry;
     });
 }
-declare function BoxDecation(args: {
+declare function BoxDecoration(args: {
     color?: Color;
-}): _BoxDecation;
-export { BoxDecation, _BoxDecation };
+    borderRadius?: BorderRadiusGeometry;
+}): _BoxDecoration;
+export { BoxDecoration, _BoxDecoration };

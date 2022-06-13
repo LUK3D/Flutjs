@@ -18,7 +18,7 @@ import {
   Spacer,
 } from "./widgets/index.js";
 import { AbsoluteUnits, RelativeUnits } from "./rendering/mesurementes.js";
-import { _Radius } from "./ui/Radius.js";
+import { Radius, _Radius } from "./ui/Radius.js";
 
 
 
@@ -43,7 +43,8 @@ export{
   AbsoluteUnits,
   Spacer,
   BorderRadiusGeometry,
-  _Radius
+  _Radius,
+  Radius
 };
 
 

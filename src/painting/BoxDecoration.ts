@@ -1,7 +1,8 @@
 import { BorderRadiusGeometry } from "./BorderRadiusGeometry.js";
 import {Color, Colors} from "./colors.js"
-class _BoxDecation {
+class _BoxDecoration {
     color?:string;
+    borderRadius?:BorderRadiusGeometry;
 
     constructor(args:{
         color?:Color, 
@@ -12,21 +13,22 @@ class _BoxDecation {
         *
         * {@macro flutter.painting.BoxDecoration.clip}
         * */
-        derRadius?:BorderRadiusGeometry
+        borderRadius?:BorderRadiusGeometry
     }){
         this.color = args.color?.value;
+        this.borderRadius = args.borderRadius;
     }
 
     
 
 }
 
-function BoxDecation(args:{color?:Color,borderRadius?:BorderRadiusGeometry}){
-    return new _BoxDecation(args);
+function BoxDecoration(args:{color?:Color,borderRadius?:BorderRadiusGeometry}){
+    return new _BoxDecoration(args);
 }
 
 export{
-    BoxDecation,
-    _BoxDecation
+    BoxDecoration,
+    _BoxDecoration
 }
 

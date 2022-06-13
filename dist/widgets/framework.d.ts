@@ -1,3 +1,4 @@
+import { _BoxDecoration } from "../painting/index.js";
 import { ThemeData } from "../painting/themeData.js";
 import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
 import { AbsoluteUnits, RelativeUnits } from "../rendering/mesurementes.js";
@@ -28,6 +29,7 @@ export default class Widget {
     crossAxisAlignment?: CrossAxisAlignment;
     classes?: Array<string>;
     style?: string;
+    boxDecoration?: _BoxDecoration;
     constructor(args: {
         key?: _Key | string;
         tagName: string;
@@ -53,6 +55,7 @@ export default class Widget {
          * {@link AbsoluteUnits} or {@link AbsoluteUnits}
          */
         height_size_measurement_unit?: AbsoluteUnits | RelativeUnits;
+        boxDecoration?: _BoxDecoration;
     });
     setKey(key?: _Key | string): void;
     render(args: {
