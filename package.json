@@ -1,6 +1,6 @@
 {
   "name": "@luk3d/flutjs",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Javascript framework for flutter lovers",
   "scripts": {
     "build": "yarn tsc -p tsconfig.browser.json",
