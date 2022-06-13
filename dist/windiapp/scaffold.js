@@ -17,11 +17,12 @@ function Scaffold(args) {
             backgroundColor: Colors.Gray[100].value,
             width: "100%",
             height: "100%",
+            overflow: "hidden"
         }),
     });
     if (args.body && args.appBar) {
         widget.tag.style.paddingTop =
-            (_a = args.appBar.tag.offsetHeight + 20 + "px") !== null && _a !== void 0 ? _a : "100px";
+            (_a = args.appBar.tag.offsetHeight + "px") !== null && _a !== void 0 ? _a : "100px";
         widget.tag.setAttribute("component", "body");
     }
     return widget;

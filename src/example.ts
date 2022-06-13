@@ -2,6 +2,8 @@
 import {Spacer, Expanded,Row,RelativeUnits,BoxDecation, Padding, Column, Container, Text, Colors, EdgeInsets, MainAxisAlignment, CrossAxisAlignment, TextStyle, Radius } from "./index.js";
 import { BorderRadius } from "./painting/BorderRadiusGeometry.js";
 import { BoxDecoration } from "./painting/BoxDecoration.js";
+import { Positioned } from "./widgets/positioned.js";
+import { Stack } from "./widgets/stack.js";
 import { Scaffold, WindiApp, AppBar } from "./windiapp/index.js";
 
 WindiApp({
@@ -37,7 +39,17 @@ WindiApp({
                     Radius.circular(10)
                     )
                 }),
-                child:Text("Baboseiras hahshashas 😅😅😅")
+                child:Stack({
+                  
+                  children:[
+                    Text("Baboseiras hahshashas 😅😅😅"),
+                    Positioned({
+                      bottom:10,
+                      right:10,
+                      child:Text("Teste de baixo")
+                    })
+                  ]
+                })
               }),
               Container(
                 {

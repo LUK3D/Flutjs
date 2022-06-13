@@ -4,6 +4,11 @@
 * Added `BorderRadius` property to the Container Component.
 * Added `Spacer Widget`.
 * Added `Cssprops` with `CssProperties` class that maps the Flutjs properties to css attributes.
+* Added `Stack Widget`.
+* Added `Positioned`.
+
+## Enhancements
+* Removed Tailwind Css Dependency.
 
 ## Bug Fixes
 * Container now have Width and Hight of Auto as default value.
