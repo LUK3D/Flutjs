@@ -1,4 +1,5 @@
 import { RelativeUnits } from "../rendering/mesurementes.js";
+import { CssProperties } from "../utils/cssprops.js";
 import { ExtractCss } from "../utils/processor.js";
 import { defineDecoration } from "../utils/styles.js";
 import { Key } from "../utils/uuid.js";
@@ -8,7 +9,7 @@ import { isNumber } from "../utils/validator.js";
  */
 var Widget = /** @class */ (function () {
     function Widget(args) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g;
         this.width = "auto";
         this.height = "auto";
         /**
@@ -17,30 +18,37 @@ var Widget = /** @class */ (function () {
          */
         this.width_size_measurement_unit = RelativeUnits["%"];
         this.height_size_measurement_unit = RelativeUnits["%"];
+        this.css = new CssProperties({});
         this.key = args.key;
         this.child = args.child;
         this.children = args.children;
         this.parent = args.parent;
-        this.render({ tagName: args.tagName, text: args.text, classes: args.classes });
+        this.render({
+            tagName: args.tagName,
+            text: args.text,
+            classes: args.classes,
+        });
         this.width = args.width || this.width;
         this.height = args.height || this.height;
-        this.width_size_measurement_unit = (_a = args.width_size_measurement_unit) !== null && _a !== void 0 ? _a : this.width_size_measurement_unit;
-        this.height_size_measurement_unit = (_b = args.height_size_measurement_unit) !== null && _b !== void 0 ? _b : this.height_size_measurement_unit;
+        this.width_size_measurement_unit =
+            (_a = args.width_size_measurement_unit) !== null && _a !== void 0 ? _a : this.width_size_measurement_unit;
+        this.height_size_measurement_unit =
+            (_b = args.height_size_measurement_unit) !== null && _b !== void 0 ? _b : this.height_size_measurement_unit;
         this.boxDecoration = (_c = args.boxDecoration) !== null && _c !== void 0 ? _c : this.boxDecoration;
+        // this.css = args.css;
         this.key = Key();
         this.setKey(args.key);
         this.classes = args.classes;
-        if ((_d = args.boxDecoration) === null || _d === void 0 ? void 0 : _d.color) {
-            this.tag.style.backgroundColor = (_f = (_e = args.boxDecoration) === null || _e === void 0 ? void 0 : _e.color) !== null && _f !== void 0 ? _f : 'black';
-        }
+        if ((_d = args.boxDecoration) === null || _d === void 0 ? void 0 : _d.color)
+            this.css._props.backgroundColor = (_f = (_e = args.boxDecoration) === null || _e === void 0 ? void 0 : _e.color) !== null && _f !== void 0 ? _f : "";
+        if (isNumber(args.width))
+            this.css._props.width =
+                args.width.toString() + this.width_size_measurement_unit;
+        if (isNumber(args.height))
+            this.css._props.height =
+                args.height.toString() + this.height_size_measurement_unit;
         defineDecoration(this, args.boxDecoration);
-        if (isNumber(args.width)) {
-            this.tag.style.width = args.width.toString() + this.width_size_measurement_unit;
-        }
-        else { }
-        if (isNumber(args.height)) {
-            this.tag.style.height = args.height.toString() + this.height_size_measurement_unit;
-        }
+        (_g = this.css) === null || _g === void 0 ? void 0 : _g.apply(this);
         return this;
     }
     Widget.prototype.setKey = function (key) {

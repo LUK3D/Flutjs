@@ -25,7 +25,7 @@ var _App = /** @class */ (function (_super) {
         _this.home = args.home;
         _this.tag.style.width = "100vw";
         _this.tag.style.height = "100vh";
-        _this.classes;
+        _this.classes = args.classes;
         document.title = (_a = args.title) !== null && _a !== void 0 ? _a : document.title;
         return _this;
         // this.tag = document.createElement("div");

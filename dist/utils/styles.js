@@ -5,18 +5,20 @@
  * @returns Widget
  */
 function defineDecoration(widget, boxDecoration) {
-    console.log("TAGS", widget.tag);
-    console.log("DECORATION", boxDecoration);
     if (!boxDecoration) {
         return widget;
     }
     if (boxDecoration === null || boxDecoration === void 0 ? void 0 : boxDecoration.borderRadius) {
         if (boxDecoration === null || boxDecoration === void 0 ? void 0 : boxDecoration.borderRadius.value) {
             var radius = boxDecoration === null || boxDecoration === void 0 ? void 0 : boxDecoration.borderRadius.value;
-            widget.tag.style.borderTopLeftRadius = radius[0];
-            widget.tag.style.borderTopRightRadius = radius[1];
-            widget.tag.style.borderBottomLeftRadius = radius[2];
-            widget.tag.style.borderBottomRightRadius = radius[3];
+            widget.css._props.borderTopLeftRadius = radius[0];
+            widget.css._props.borderTopRightRadius = radius[0];
+            widget.css._props.borderBottomLeftRadius = radius[0];
+            widget.css._props.borderBottomRightRadius = radius[0];
+            // widget.tag!.style.borderTopLeftRadius = radius[0] ;
+            // widget.tag!.style.borderTopRightRadius = radius[1] ;
+            // widget.tag!.style.borderBottomLeftRadius = radius[2] ;
+            // widget.tag!.style.borderBottomRightRadius = radius[3] ;
         }
     }
     return widget;

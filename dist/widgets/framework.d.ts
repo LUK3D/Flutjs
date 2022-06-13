@@ -2,6 +2,7 @@ import { _BoxDecoration } from "../painting/index.js";
 import { ThemeData } from "../painting/themeData.js";
 import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
 import { AbsoluteUnits, RelativeUnits } from "../rendering/mesurementes.js";
+import { CssProperties } from "../utils/cssprops.js";
 import _Key from "../utils/uuid.js";
 /**
  * Flutjs class to generate a new Widget
@@ -30,6 +31,7 @@ export default class Widget {
     classes?: Array<string>;
     style?: string;
     boxDecoration?: _BoxDecoration;
+    css?: CssProperties;
     constructor(args: {
         key?: _Key | string;
         tagName: string;
@@ -42,11 +44,11 @@ export default class Widget {
         height?: string | number;
         classes?: Array<string>;
         /**
-            * ### Size Measurement unit
-            * Defines the Units measurement of Width
-            *
-            * {@link AbsoluteUnits} or {@link AbsoluteUnits}
-            */
+         * ### Size Measurement unit
+         * Defines the Units measurement of Width
+         *
+         * {@link AbsoluteUnits} or {@link AbsoluteUnits}
+         */
         width_size_measurement_unit?: AbsoluteUnits | RelativeUnits;
         /**
          * ### Size Measurement unit
@@ -56,6 +58,7 @@ export default class Widget {
          */
         height_size_measurement_unit?: AbsoluteUnits | RelativeUnits;
         boxDecoration?: _BoxDecoration;
+        css?: CssProperties;
     });
     setKey(key?: _Key | string): void;
     render(args: {

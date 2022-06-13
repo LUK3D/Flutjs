@@ -13,7 +13,7 @@ class _App extends Widget {
     this.home = args.home;
     this.tag!.style.width = "100vw";
     this.tag!.style.height = "100vh";
-    this.classes;
+    this.classes= args.classes;
     document.title = args.title??document.title;
 
 

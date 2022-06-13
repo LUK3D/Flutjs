@@ -1,5 +1,6 @@
 import { Widget } from "../widgets/index.js";
 import { _BoxDecoration } from "../painting/index.js";
+import { CssProperty } from "./cssprops.js";
 
 /**
  * Function to process the decorations and bind them to css properties 
@@ -8,19 +9,22 @@ import { _BoxDecoration } from "../painting/index.js";
  * @returns Widget
  */
 function defineDecoration(widget:Widget, boxDecoration?:_BoxDecoration):Widget{
-    console.log("TAGS",widget.tag);
-    console.log("DECORATION",boxDecoration);
-
+  
     if(!boxDecoration){
         return widget;
     }
     if(boxDecoration?.borderRadius){
         if(boxDecoration?.borderRadius.value){
           var radius = boxDecoration?.borderRadius.value;
-          widget.tag!.style.borderTopLeftRadius = radius[0] ;
-          widget.tag!.style.borderTopRightRadius = radius[1] ;
-          widget.tag!.style.borderBottomLeftRadius = radius[2] ;
-          widget.tag!.style.borderBottomRightRadius = radius[3] ;
+          widget.css!._props.borderTopLeftRadius = radius[0];
+          widget.css!._props.borderTopRightRadius = radius[0];
+          widget.css!._props.borderBottomLeftRadius = radius[0];
+          widget.css!._props.borderBottomRightRadius = radius[0];
+          
+          // widget.tag!.style.borderTopLeftRadius = radius[0] ;
+          // widget.tag!.style.borderTopRightRadius = radius[1] ;
+          // widget.tag!.style.borderBottomLeftRadius = radius[2] ;
+          // widget.tag!.style.borderBottomRightRadius = radius[3] ;
   
         }
       }
