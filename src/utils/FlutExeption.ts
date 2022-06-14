@@ -18,4 +18,7 @@ function WidgetExeption(args: { message?: string }) {
 function ConversioException(args: { message?: string }) {
   new FlutException({ type: "Conversion Exception", message: args.message });
 }
-export { WidgetExeption, ConversioException };
+function noStateExeption(args: { message?: string }) {
+  new FlutException({ type: "Unbinded State Exception", message: args.message });
+}
+export { WidgetExeption, ConversioException,noStateExeption };

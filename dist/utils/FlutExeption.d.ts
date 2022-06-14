@@ -4,4 +4,7 @@ declare function WidgetExeption(args: {
 declare function ConversioException(args: {
     message?: string;
 }): void;
-export { WidgetExeption, ConversioException };
+declare function noStateExeption(args: {
+    message?: string;
+}): void;
+export { WidgetExeption, ConversioException, noStateExeption };

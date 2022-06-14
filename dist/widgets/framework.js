@@ -30,6 +30,7 @@ var Widget = /** @class */ (function () {
         this.width_size_measurement_unit = RelativeUnits["%"];
         this.height_size_measurement_unit = RelativeUnits["%"];
         this.css = new CssProperties(__assign({}, (_a = args.css) === null || _a === void 0 ? void 0 : _a._props));
+        this.tagName = args.tagName;
         this.key = args.key;
         this.child = args.child;
         this.children = args.children;
@@ -39,6 +40,7 @@ var Widget = /** @class */ (function () {
             text: args.text,
             classes: args.classes,
         });
+        this.text = args.text;
         this.width = args.width || this.width;
         this.height = args.height || this.height;
         this.width_size_measurement_unit =
@@ -47,8 +49,14 @@ var Widget = /** @class */ (function () {
             (_c = args.height_size_measurement_unit) !== null && _c !== void 0 ? _c : this.height_size_measurement_unit;
         this.boxDecoration = (_d = args.boxDecoration) !== null && _d !== void 0 ? _d : this.boxDecoration;
         // this.css = args.css;
-        this.key = Key();
-        this.setKey(args.key);
+        if (args.key) {
+            this.key = args.key;
+            this.setKey(args.key);
+        }
+        else {
+            this.key = Key();
+            this.setKey(args.key);
+        }
         this.classes = args.classes;
         var paddings = (_e = args.padding) === null || _e === void 0 ? void 0 : _e.arrayed_value("padding");
         if (paddings) {
@@ -85,10 +93,18 @@ var Widget = /** @class */ (function () {
             (_b = this.tag) === null || _b === void 0 ? void 0 : _b.setAttribute("key", "".concat(this.tag.tagName.toLowerCase(), "_").concat(this.key.toString()));
         }
     };
+    Widget.prototype.bind = function () {
+        if (!window.flutjs) {
+            window.flutjs = {};
+        }
+        window.flutjs[this.key.toString()] = this.tag.outerHTML;
+    };
     Widget.prototype.render = function (args) {
         var _a;
         var _this = this;
-        this.tag = document.createElement(args.tagName);
+        if (!this.tag) {
+            this.tag = document.createElement(args.tagName);
+        }
         document.body.appendChild(this.tag);
         if (args.classes) {
             (_a = this.tag.classList).add.apply(_a, args.classes);
@@ -99,6 +115,7 @@ var Widget = /** @class */ (function () {
         if (this.child) {
             this.appendChild(this.child.tag);
             this.extactStyle(this.child);
+            this.child.bind();
         }
         if (this.children) {
             var ctx_1 = this;
@@ -106,6 +123,7 @@ var Widget = /** @class */ (function () {
                 widget.parent = ctx_1.tag;
                 _this.extactStyle(widget);
                 _this.appendChild(widget.tag);
+                widget.bind();
             });
         }
     };

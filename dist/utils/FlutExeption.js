@@ -25,5 +25,8 @@ function WidgetExeption(args) {
 function ConversioException(args) {
     new FlutException({ type: "Conversion Exception", message: args.message });
 }
-export { WidgetExeption, ConversioException };
+function noStateExeption(args) {
+    new FlutException({ type: "Unbinded State Exception", message: args.message });
+}
+export { WidgetExeption, ConversioException, noStateExeption };
 //# sourceMappingURL=FlutExeption.js.map

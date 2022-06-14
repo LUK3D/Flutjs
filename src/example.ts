@@ -1,10 +1,15 @@
 /**Basic Flutjs App With Tailwind */
 import {Spacer, Expanded,Row,RelativeUnits,BoxDecoration, Padding, Column, Container, Text, Colors, EdgeInsets, MainAxisAlignment, CrossAxisAlignment, TextStyle, Radius, AbsoluteUnits } from "./index.js";
 import { BorderRadius } from "./painting/BorderRadiusGeometry.js";
+import { State, StateManager } from "./state/stateManager.js";
 import { Image } from "./widgets/image.js";
 import { Positioned } from "./widgets/positioned.js";
 import { Stack } from "./widgets/stack.js";
 import { Scaffold, WindiApp, AppBar } from "./windiapp/index.js";
+
+var state = new StateManager();
+
+state.bind(new State({key:"teste",val:"Filipe"}));
 
 WindiApp({
   title: "Flutjs test",
@@ -26,10 +31,12 @@ WindiApp({
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+            
               Text("Hello World"), 
               Text("🤩", {textStyle: TextStyle({ fontSize: 20 })}),
               Spacer(),
-              Container({
+              state.Obx(Container({
+                key:"teste",
                 width:50,
                 height:200,
                 padding:EdgeInsets.all(20),
@@ -42,7 +49,7 @@ WindiApp({
                 child:Stack({
                   
                   children:[
-                    Text("Baboseiras hahshashas 😅😅😅"),
+                    Text("Baboseiras hahshashas 😅😅😅 {teste}"),
                     Positioned({
                       bottom:10,
                       right:10,
@@ -54,11 +61,11 @@ WindiApp({
                       height:200,
                       widthSizeMeasurementUnit:AbsoluteUnits.pixels,
                       heightSizeMeasurementUnit:AbsoluteUnits.pixels,
-                      child:Image.network("https://picsum.photos/200/300",{opacity:0.5, semanticLabel:"Image aleatoria"})
+                      child: (state.state?.val == 3)?Image.network("https://picsum.photos/200/300",{opacity:0.5, semanticLabel:"Image aleatoria"}):undefined
                     })
                   ]
                 })
-              }),
+              })),
               Container(
                 {
                   widthSizeMeasurementUnit:RelativeUnits["%"],
@@ -83,3 +90,8 @@ WindiApp({
     }),
   }),
 });
+
+var i = 0;
+document.body.onclick = ()=>{
+  state.setState(`Lukebana ${i++}`)
+}

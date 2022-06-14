@@ -33,6 +33,8 @@ export default class Widget {
     style?: string;
     boxDecoration?: _BoxDecoration;
     css?: CssProperties;
+    tagName?: string;
+    text?: string;
     constructor(args: {
         key?: _Key | string;
         tagName: string;
@@ -64,6 +66,7 @@ export default class Widget {
         padding?: EdgeInsetsGeometry;
     });
     setKey(key?: _Key | string): void;
+    bind(): void;
     render(args: {
         tagName: string;
         text?: string;

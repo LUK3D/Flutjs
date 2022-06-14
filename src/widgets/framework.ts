@@ -41,6 +41,8 @@ export default class Widget {
   style?: string;
   boxDecoration?: _BoxDecoration;
   css?: CssProperties;
+  tagName?:string;
+  text?:string;
 
   constructor(args: {
     key?: _Key | string;
@@ -74,7 +76,7 @@ export default class Widget {
     padding?: EdgeInsetsGeometry;
   }) {
     this.css = new CssProperties({ ...args.css?._props });
-
+    this.tagName = args.tagName;
     this.key = args.key;
     this.child = args.child;
     this.children = args.children;
@@ -84,6 +86,7 @@ export default class Widget {
       text: args.text,
       classes: args.classes,
     });
+    this.text = args.text;
     this.width = args.width || this.width;
     this.height = args.height || this.height;
     this.width_size_measurement_unit =
@@ -93,8 +96,13 @@ export default class Widget {
     this.boxDecoration = args.boxDecoration ?? this.boxDecoration;
     // this.css = args.css;
 
-    this.key = Key();
-    this.setKey(args.key);
+    if(args.key){
+      this.key = args.key;
+      this.setKey(args.key);
+    }else{
+      this.key = Key();
+      this.setKey(args.key);
+    }
 
     this.classes = args.classes;
 
@@ -141,14 +149,24 @@ export default class Widget {
     }
   }
 
-  render(args: { tagName: string; text?: string; classes?: Array<string> }) {
-    this.tag = document.createElement(args.tagName);
+  bind(){
+    if(! (window as any).flutjs){
+      (window as any).flutjs = {}
+    }
+    (window as any).flutjs[this.key!.toString()] = this.tag!.outerHTML;
+  }
+
+  render(args: { tagName: string; text?: string; classes?: Array<string> ,updating?:boolean}) {
+    if(!this.tag){
+      this.tag = document.createElement(args.tagName);
+    }
     document.body.appendChild(this.tag);
+
+    
 
     if (args.classes) {
       this.tag!.classList.add(...args.classes);
       // ctx.classes!.forEach(element => {
-
       // });
     }
 
@@ -157,6 +175,12 @@ export default class Widget {
     if (this.child) {
       this.appendChild(this.child.tag!);
       this.extactStyle(this.child);
+      this.child.bind();
+      /**Rerendering all child nodes */
+      if(args.updating){
+        document.querySelector('[key="'+this.child.key+'"]')?.remove();
+        this.child.render({tagName:this.child.tagName!, classes:this.child.classes,text:this.child.text, updating:args.updating});
+      }
     }
     if (this.children) {
       let ctx = this;
@@ -164,6 +188,12 @@ export default class Widget {
         widget.parent = ctx.tag;
         this.extactStyle(widget);
         this.appendChild(widget.tag!);
+        widget.bind();
+         /**Rerendering all child nodes */
+        if(args.updating){
+          document.querySelector('[key="'+widget.key+'"]')?.remove();
+          widget.render({tagName:widget.tagName!, classes:widget.classes,text:widget.text, updating:args.updating});
+        }
       });
     }
   }
