@@ -1,5 +1,6 @@
 This version comes with Some Features, Updates and Enhancements
 ## Feature
+* 🚀 State Management  - Now we have a basic state Management.
 * Added `Image` Widget.
 * Added `Painting` Class with `BlendMode` list.
 * Added `BoxFit` Class with `BoxFit` list.

@@ -29,6 +29,8 @@ var _App = /** @class */ (function (_super) {
         _this.tag.style.height = "100vh";
         _this.classes = args.classes;
         document.title = (_a = args.title) !== null && _a !== void 0 ? _a : document.title;
+        if (args.mounted)
+            args.mounted();
         return _this;
         // this.tag = document.createElement("div");
         // this.tag.id  = "baseApp";
@@ -45,6 +47,7 @@ function App(args) {
         theme: args.theme,
         home: args.home,
         classes: args.classes,
+        mounted: args.mounted
     });
     return ((_a = app.tag) === null || _a === void 0 ? void 0 : _a.outerHTML) + "\n\n<style>\n".concat(app.style, "\n</style>");
 }

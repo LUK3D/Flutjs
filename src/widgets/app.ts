@@ -13,6 +13,7 @@ class _App extends Widget {
     theme?: ThemeData;
     home: Widget;
     classes?: Array<string>;
+    mounted?:Function
   }) {
     super({ tagName: "div", children: [args.home], css:new CssProperties({background:Colors.Gray[100].value}) });
     this.title = args.title;
@@ -22,6 +23,9 @@ class _App extends Widget {
     this.tag!.style.height = "100vh";
     this.classes = args.classes;
     document.title = args.title ?? document.title;
+
+    if(args.mounted)
+    args.mounted();
 
     // this.tag = document.createElement("div");
     // this.tag.id  = "baseApp";
@@ -39,12 +43,14 @@ function App(args: {
   width?: number | string;
   height?: number | string;
   classes?: Array<string>;
+  mounted?:Function
 }) {
   var app = new _App({
     title: args.title,
     theme: args.theme,
     home: args.home,
     classes: args.classes,
+    mounted:args.mounted
   });
   return app.tag?.outerHTML + `\n\n<style>\n${app.style}\n</style>`;
 }

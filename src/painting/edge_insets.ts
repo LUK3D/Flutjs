@@ -199,10 +199,10 @@ class _EdgeInsets extends EdgeInsetsGeometry {
   }){
         this.reset();
        return this.only({
-        left:args.horizontal,
-        right:args.horizontal,
-        top:args.vertical,
-        bottom:args.vertical
+        left:args.vertical,
+        right:args.vertical,
+        top:args.horizontal,
+        bottom:args.horizontal
     })
        
     } 

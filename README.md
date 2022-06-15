@@ -34,14 +34,13 @@ Just go to [Flutjs Template Ts](https://github.com/LUK3D/flutjs-template-ts) rep
 Congrats!! 🎉 You have Installed Flujs successfully on your project. Now jump to hello world section the create a simple Flutjs website/webApp.
 
 
-<img src="./docs/screenshots/flutjs_helloworld_app.png" width="500px">
+<img src="./docs/screenshots/flutjsCounterApp.png" width="500px">
 
 
 
 
-### On Browser:
+### With Vanilla JS:
 
-Coming soon....
 
 Add this link to the header tag of your html page:
 ```html
@@ -51,12 +50,14 @@ Add this link to the header tag of your html page:
 [Flutjs Latest](https://www.jsdelivr.com/package/npm/@luk3d/flutjs?path=dist)
 
 
-## Hello World App: ⚡
+## Simple Counter App: ⚡
 
 ```js
 /**Basic Flutjs App With Tailwind */
-import { Expanded, Padding, Column, Container, Text, Colors, EdgeInsets, MainAxisAlignment, CrossAxisAlignment, TextStyle } from "./index.js";
-import { Scaffold, WindiApp, AppBar } from "./windiapp/index.js";
+// Stateful Variable 
+var counterState = new StateManager();
+//Defining an Observable State
+counterState.obs(new State({ key: "counter", val: 0 }));
 
 WindiApp({
   title: "Flutjs test",
@@ -68,26 +69,71 @@ WindiApp({
       title: Text("Welcome to Flutjs"),
       elevation: 2,
     }),
-    body: Expanded({
-      child: Container({
-        color: Colors.Gray[50],
-        child:
-          Padding({
-            padding: EdgeInsets.all(10),
+    body: Stack({
+      children: [
+        Container({
+          color: Colors.Gray[50],
+          width: 100,
+          height: 100,
+          child: Expanded({
             child: Column({
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text("Hello World"), Text("🤩", {
-                  textStyle: TextStyle({ fontSize: 20 })
-                })
+                //Binding The widget to the State
+                counterState.Bind(
+                  Container({
+                    key: "counter",
+                    child: Text("{counter}", {
+                      textStyle: TextStyle({
+                        fontWeight: FontWeight.w700,
+                        fontSize: 40,
+                        color: Colors.Gray[500],
+                      }),
+                    }),
+                  })
+                ),
               ],
             }),
           }),
-      }),
+        }),
+        Container({
+          key: "addButton",
+          child: Positioned({
+            bottom: 20,
+            right: 20,
+            child: Container({
+              padding: EdgeInsets.symmetric({ horizontal: 13, vertical: 20 }),
+              decoration: BoxDecoration({
+                color: Colors.Sky[500],
+                borderRadius: BorderRadius.all(Radius.circular(100)),
+              }),
+              child: Text("+", {
+                textStyle: TextStyle({
+                  fontWeight: FontWeight.w600,
+                  fontSize: 20,
+                  color: Colors.White,
+                }),
+              }),
+            }),
+          }),
+        }),
+      ],
     }),
   }),
+  // Executed when the document finish rendering the page
+  mounted: () => {
+    var i = 0;
+    counterState.setState(`0`);
+    document
+      .querySelector('[key="addButton"]')
+      ?.addEventListener("click", () => {
+        //Updating the value of state
+        counterState.setState(`${i++}`);
+      });
+  },
 });
+
 ```
 
 > NOTE: Just like in Flutter, every component is a widget...

@@ -50,7 +50,6 @@ class StateManager {
         this.widget!.tag!.innerText = '';
         this.widget!.tag?.append(html);
       
-
     } else {
       noStateExeption({
         message:

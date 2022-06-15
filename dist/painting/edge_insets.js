@@ -163,10 +163,10 @@ var _EdgeInsets = /** @class */ (function (_super) {
     _EdgeInsets.prototype.symmetric = function (args) {
         this.reset();
         return this.only({
-            left: args.horizontal,
-            right: args.horizontal,
-            top: args.vertical,
-            bottom: args.vertical
+            left: args.vertical,
+            right: args.vertical,
+            top: args.horizontal,
+            bottom: args.horizontal
         });
     };
     return _EdgeInsets;

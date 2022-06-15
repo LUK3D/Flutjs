@@ -8,11 +8,12 @@ enum ThemeMode {
   dark,
 }
 
-function WindiApp(args: { title?: string; theme?: ThemeData; home: Widget }) {
+function WindiApp(args: { title?: string; theme?: ThemeData; home: Widget ,mounted?:Function}) {
   return App({
     title: args.title,
     theme: args.theme,
     home: args.home,
+    mounted:args.mounted
   });
 }
 

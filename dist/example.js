@@ -56,5 +56,15 @@ WindiApp({
             }))
         }),
     }),
+    mounted: function () {
+        var _a;
+        var i = 0;
+        counterState.setState("0");
+        (_a = document
+            .querySelector('[key="addButton"]')) === null || _a === void 0 ? void 0 : _a.addEventListener("click", function () {
+            //Updating the value of state
+            counterState.setState("".concat(i++));
+        });
+    },
 });
 //# sourceMappingURL=example.js.map
