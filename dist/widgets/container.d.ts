@@ -4,6 +4,7 @@ import _Key from "../utils/uuid.js";
 import { Widget } from "./framework.js";
 import { AbsoluteUnits, RelativeUnits } from "../index.js";
 import { EdgeInsetsGeometry } from "../painting/edge_insets.js";
+import { Clip } from "../ui/painting.js";
 declare class _Container extends Widget {
     constructor(args: {
         key?: _Key | string;
@@ -28,6 +29,7 @@ declare class _Container extends Widget {
          * {@link AbsoluteUnits} or {@link AbsoluteUnits}
          */
         height_size_measurement_unit?: AbsoluteUnits | RelativeUnits;
+        clipBehavior?: Clip;
     });
 }
 declare function Container(args: {
@@ -61,5 +63,6 @@ declare function Container(args: {
      *  see [Decoration.padding].
      */
     padding?: EdgeInsetsGeometry;
+    clipBehavior?: Clip;
 }): _Container;
 export { Container, _Container };

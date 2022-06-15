@@ -3,6 +3,7 @@ import { _BoxDecoration } from "../painting/index.js";
 import { ThemeData } from "../painting/themeData.js";
 import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
 import { AbsoluteUnits, RelativeUnits } from "../rendering/mesurementes.js";
+import { Clip } from "../ui/painting.js";
 import { CssProperties } from "../utils/cssprops.js";
 import _Key from "../utils/uuid.js";
 /**
@@ -35,6 +36,7 @@ export default class Widget {
     css?: CssProperties;
     tagName?: string;
     text?: string;
+    clip?: Clip;
     constructor(args: {
         key?: _Key | string;
         tagName: string;
@@ -64,6 +66,7 @@ export default class Widget {
         css?: CssProperties;
         margin?: EdgeInsetsGeometry;
         padding?: EdgeInsetsGeometry;
+        clipBehavior?: Clip;
     });
     setKey(key?: _Key | string): void;
     bind(): void;

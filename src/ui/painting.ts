@@ -159,6 +159,35 @@ enum BlendMode {
 
 
   
+/// Different ways to clip a widget's content.
+enum Clip {
+  /// No clip at all.
+  ///
+  /// This is the default option for most widgets: if the content does not
+  /// overflow the widget boundary, don't pay any performance cost for clipping.
+  none = "visible",
+
+  /// Clip, but do not apply anti-aliasing.
+  ///
+  /// This mode enables clipping, but curves and non-axis-aligned straight lines will be
+  /// jagged as no effort is made to anti-alias.
+  ///
+  /// Faster than other clipping modes, but slower than [none].
+  ///
+  /// This is a reasonable choice when clipping is needed, if the container is an axis-
+  /// aligned rectangle or an axis-aligned rounded rectangle with very small corner radii.
+  ///
+  /// See also:
+  ///
+  ///  * [antiAlias], which is more reasonable when clipping is needed and the shape is not
+  ///    an axis-aligned rectangle.
+  hardEdge = "clip",
+  auto = "auto",
+
+}
+
+
+  
 /// Styles to use for blurs in [MaskFilter] objects.
 // These enum values must be kept in sync with SkBlurStyle.
 enum BlurStyle {
@@ -175,5 +204,6 @@ enum BlurStyle {
   
   export{
     BlendMode,
-    BlurStyle
+    BlurStyle,
+    Clip
   }

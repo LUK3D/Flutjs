@@ -5,6 +5,7 @@ import { Widget } from "./framework.js";
 import { WidgetExeption } from "../utils/FlutExeption.js";
 import { AbsoluteUnits, RelativeUnits } from "../index.js";
 import { EdgeInsetsGeometry } from "../painting/edge_insets.js";
+import { Clip } from "../ui/painting.js";
 
 class _Container extends Widget {
   constructor(args: {
@@ -31,6 +32,7 @@ class _Container extends Widget {
      * {@link AbsoluteUnits} or {@link AbsoluteUnits}
      */
     height_size_measurement_unit?: AbsoluteUnits | RelativeUnits;
+    clipBehavior?:Clip
   }) {
     super({ tagName: "div", ...args });
 
@@ -69,6 +71,7 @@ function Container(args: {
    *  see [Decoration.padding].
    */
   padding?: EdgeInsetsGeometry;
+  clipBehavior?:Clip,
 }) {
   if (args.color != null && args.decoration != null) {
     WidgetExeption({
@@ -101,6 +104,7 @@ function Container(args: {
     key: args.key,
     height_size_measurement_unit: args.heightSizeMeasurementUnit,
     width_size_measurement_unit: args.widthSizeMeasurementUnit,
+    clipBehavior:args.clipBehavior
   });
 }
 

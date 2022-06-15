@@ -3,6 +3,7 @@ import { _BoxDecoration } from "../painting/index.js";
 import { ThemeData } from "../painting/themeData.js";
 import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
 import { AbsoluteUnits, RelativeUnits } from "../rendering/mesurementes.js";
+import { Clip } from "../ui/painting.js";
 import { ElementSides } from "../utils/constants.js";
 import { CssProperties } from "../utils/cssprops.js";
 import { ExtractCss } from "../utils/processor.js";
@@ -43,6 +44,7 @@ export default class Widget {
   css?: CssProperties;
   tagName?:string;
   text?:string;
+  clip?:Clip;
 
   constructor(args: {
     key?: _Key | string;
@@ -74,6 +76,7 @@ export default class Widget {
 
     margin?: EdgeInsetsGeometry;
     padding?: EdgeInsetsGeometry;
+    clipBehavior?:Clip
   }) {
     this.css = new CssProperties({ ...args.css?._props });
     this.tagName = args.tagName;
@@ -94,6 +97,7 @@ export default class Widget {
     this.height_size_measurement_unit =
       args.height_size_measurement_unit ?? this.height_size_measurement_unit;
     this.boxDecoration = args.boxDecoration ?? this.boxDecoration;
+    this.clip = args.clipBehavior??this.clip;
     // this.css = args.css;
 
     if(args.key){
@@ -120,6 +124,7 @@ export default class Widget {
       this.css!._props.marginRight = margins![2];
       this.css!._props.marginBottom = margins![3];
     }
+    this.css._props.overflow = args.clipBehavior;
 
     if (args.boxDecoration?.color)
       this.css!._props.backgroundColor = args.boxDecoration?.color ?? "";

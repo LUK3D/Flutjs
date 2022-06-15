@@ -14,8 +14,13 @@ declare enum BlendMode {
     color = "color",
     luminosity = "luminosity"
 }
+declare enum Clip {
+    none = "visible",
+    hardEdge = "clip",
+    auto = "auto"
+}
 declare enum BlurStyle {
     outer = "",
     inner = "inset"
 }
-export { BlendMode, BlurStyle };
+export { BlendMode, BlurStyle, Clip };

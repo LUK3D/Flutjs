@@ -20,7 +20,7 @@ import { isNumber } from "../utils/validator.js";
  */
 var Widget = /** @class */ (function () {
     function Widget(args) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         this.width = "auto";
         this.height = "auto";
         /**
@@ -48,6 +48,7 @@ var Widget = /** @class */ (function () {
         this.height_size_measurement_unit =
             (_c = args.height_size_measurement_unit) !== null && _c !== void 0 ? _c : this.height_size_measurement_unit;
         this.boxDecoration = (_d = args.boxDecoration) !== null && _d !== void 0 ? _d : this.boxDecoration;
+        this.clip = (_e = args.clipBehavior) !== null && _e !== void 0 ? _e : this.clip;
         // this.css = args.css;
         if (args.key) {
             this.key = args.key;
@@ -58,22 +59,23 @@ var Widget = /** @class */ (function () {
             this.setKey(args.key);
         }
         this.classes = args.classes;
-        var paddings = (_e = args.padding) === null || _e === void 0 ? void 0 : _e.arrayed_value("padding");
+        var paddings = (_f = args.padding) === null || _f === void 0 ? void 0 : _f.arrayed_value("padding");
         if (paddings) {
             this.css._props.paddingLeft = paddings[0];
             this.css._props.paddingTop = paddings[1];
             this.css._props.paddingRight = paddings[2];
             this.css._props.paddingBottom = paddings[3];
         }
-        var margins = (_f = args.margin) === null || _f === void 0 ? void 0 : _f.arrayed_value("margin");
+        var margins = (_g = args.margin) === null || _g === void 0 ? void 0 : _g.arrayed_value("margin");
         if (margins) {
             this.css._props.marginLeft = margins[0];
             this.css._props.marginTop = margins[1];
             this.css._props.marginRight = margins[2];
             this.css._props.marginBottom = margins[3];
         }
-        if ((_g = args.boxDecoration) === null || _g === void 0 ? void 0 : _g.color)
-            this.css._props.backgroundColor = (_j = (_h = args.boxDecoration) === null || _h === void 0 ? void 0 : _h.color) !== null && _j !== void 0 ? _j : "";
+        this.css._props.overflow = args.clipBehavior;
+        if ((_h = args.boxDecoration) === null || _h === void 0 ? void 0 : _h.color)
+            this.css._props.backgroundColor = (_k = (_j = args.boxDecoration) === null || _j === void 0 ? void 0 : _j.color) !== null && _k !== void 0 ? _k : "";
         if (isNumber(args.width))
             this.css._props.width =
                 args.width.toString() + this.width_size_measurement_unit;
@@ -81,7 +83,7 @@ var Widget = /** @class */ (function () {
             this.css._props.height =
                 args.height.toString() + this.height_size_measurement_unit;
         defineDecoration(this, args.boxDecoration);
-        (_k = this.css) === null || _k === void 0 ? void 0 : _k.apply(this);
+        (_l = this.css) === null || _l === void 0 ? void 0 : _l.apply(this);
         return this;
     }
     Widget.prototype.setKey = function (key) {

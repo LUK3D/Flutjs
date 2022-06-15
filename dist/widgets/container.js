@@ -64,6 +64,7 @@ function Container(args) {
         key: args.key,
         height_size_measurement_unit: args.heightSizeMeasurementUnit,
         width_size_measurement_unit: args.widthSizeMeasurementUnit,
+        clipBehavior: args.clipBehavior
     });
 }
 export { Container, _Container };
