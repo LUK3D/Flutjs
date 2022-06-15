@@ -1,5 +1,4 @@
 /**Basic Flutjs App With Tailwind */
-import { academicCap } from "./heroIcons/index.js";
 import { Expanded, BoxDecoration, Column, Container, Text, Colors, EdgeInsets, MainAxisAlignment, CrossAxisAlignment, TextStyle, } from "./index.js";
 import { BoxShadow } from "./painting/boxShadow.js";
 import { State, StateManager } from "./state/stateManager.js";
@@ -31,7 +30,6 @@ WindiApp({
                             Text("🤩 {counter}", { textStyle: TextStyle({ fontSize: 20 }) }) :
                             Text("😩 {counter}", { textStyle: TextStyle({ fontSize: 20 }) }),
                         Button({
-                            icon: academicCap({}),
                             padding: EdgeInsets.only({ top: 10, bottom: 10, right: 15, left: 15 }),
                             label: Text("Clica-Me"), onPressed: function () {
                                 var _a;

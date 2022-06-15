@@ -1,3 +1,5 @@
+# v0.2.4-alpha-1 (2022-06-15)
+
 This version comes with Some Features, Updates and Enhancements
 ## Feature
 * 🚀 State Management  - Now we have a basic state Management.
@@ -5,8 +7,7 @@ This version comes with Some Features, Updates and Enhancements
 * Added `Painting` Class with `BlendMode` list.
 * Added `BoxFit` Class with `BoxFit` list.
 * Added `BoxShadow` Class.
-
-
+* Now we have the  (flut-hero)[https://www.npmjs.com/package/@luk3d/flut-hero] package for icons
 * Added `Offset` Class.
 
 ## Enhancements
