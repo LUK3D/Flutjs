@@ -47,8 +47,9 @@ var _Image = /** @class */ (function (_super) {
     return _Image;
 }(Widget));
 /**Creates a widget that displays an  obtained from the network. */
-var Image = function () {
+function Image() {
     return new _Image({});
-};
+}
+;
 export { Image, _Image };
 //# sourceMappingURL=image.js.map

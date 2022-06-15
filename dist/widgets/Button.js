@@ -16,13 +16,14 @@ var __extends = (this && this.__extends) || (function () {
 import { Alignment } from "../painting/alignment.js";
 import { Colors } from "../painting/colors.js";
 import { EdgeInsets } from "../painting/edge_insets.js";
+import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
 import { CssProperties } from "../utils/cssprops.js";
 import { Widget } from "./framework.js";
 import { Row } from "./row.js";
 var _Button = /** @class */ (function (_super) {
     __extends(_Button, _super);
     function _Button(args) {
-        var _this = _super.call(this, { key: args.key, tagName: "button", child: Row({ children: [args.icon, args.label] }), boxDecoration: args.boxDecoration, padding: args.padding }) || this;
+        var _this = _super.call(this, { key: args.key, tagName: "button", child: Row({ children: [args.icon, args.label], mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center }), boxDecoration: args.boxDecoration, padding: args.padding }) || this;
         _this.padding = EdgeInsets.all(8.0);
         _this.alignment = new Alignment({}).center();
         _this.alignment = args.alignment;
@@ -49,7 +50,6 @@ var _Button = /** @class */ (function (_super) {
 function Button(args) {
     var button = new _Button(args);
     button.css = new CssProperties({
-        padding: "15px 32px",
         color: Colors.Gray[50].value,
         textAlign: "center",
         background: Colors.Sky[500].value,

@@ -60,6 +60,7 @@ WindiApp({
               ,
 
               Button({
+                padding:EdgeInsets.only({top:10,bottom:10, right:15,left:15}),
                 label: Text("Clica-Me"), onPressed: () => {
                   counter.setState((counter.state?.val as number)+1)
                  },

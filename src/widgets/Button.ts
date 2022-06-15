@@ -3,6 +3,7 @@ import { BoxShadow } from "../painting/boxShadow.js";
 import { Color, Colors } from "../painting/colors.js";
 import { EdgeInsets, EdgeInsetsGeometry } from "../painting/edge_insets.js";
 import { _BoxDecoration } from "../painting/index.js";
+import { CrossAxisAlignment, MainAxisAlignment } from "../rendering/flex.js";
 import { CssProperties } from "../utils/cssprops.js";
 import _Key from "../utils/uuid.js";
 import {Widget} from "./framework.js";
@@ -49,7 +50,7 @@ class _Button extends Widget {
 
     }) {
         
-        super({key:args.key, tagName:"button", child:Row({children:[args.icon,args.label]}), boxDecoration: args.boxDecoration, padding:args.padding});
+        super({key:args.key, tagName:"button",  child:Row({children:[args.icon,args.label], mainAxisAlignment:MainAxisAlignment.center, crossAxisAlignment:CrossAxisAlignment.center}), boxDecoration: args.boxDecoration, padding:args.padding});
 
         this.alignment = args.alignment;
         this.iconSize = args.iconSize;
@@ -100,7 +101,6 @@ function Button(args:{
 }){
     var button = new _Button(args)
     button.css = new CssProperties({
-        padding:"15px 32px",
         color:Colors.Gray[50].value,
         textAlign:"center",
         background:Colors.Sky[500].value,
