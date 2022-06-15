@@ -35,5 +35,5 @@ declare class _Image extends Widget {
     }): this;
 }
 /**Creates a widget that displays an  obtained from the network. */
-declare var Image: _Image;
+declare function Image(): _Image;
 export { Image, _Image };

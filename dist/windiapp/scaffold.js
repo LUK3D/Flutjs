@@ -2,7 +2,6 @@ import { Colors } from "../painting/colors.js";
 import { CssProperties } from "../utils/cssprops.js";
 import { Widget } from "../widgets/framework.js";
 function Scaffold(args) {
-    var _a;
     var children = [];
     if (args.appBar) {
         children.push(args.appBar);
@@ -20,11 +19,12 @@ function Scaffold(args) {
             overflow: "hidden"
         }),
     });
-    if (args.body && args.appBar) {
-        widget.tag.style.paddingTop =
-            (_a = args.appBar.tag.offsetHeight + "px") !== null && _a !== void 0 ? _a : "100px";
-        widget.tag.setAttribute("component", "body");
-    }
+    /**Adds a padding top to the body of the page. */
+    // if (args.body && args.appBar) {
+    //   widget.tag!.style.paddingTop =
+    //     args.appBar.tag!.offsetHeight +  "px" ?? "100px";
+    //   widget.tag!.setAttribute("component", "body");
+    // }
     return widget;
 }
 export { Scaffold };

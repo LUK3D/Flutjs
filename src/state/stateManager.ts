@@ -18,14 +18,14 @@ class StateManager {
   initial: boolean = true;
   widget?: Widget;
 
-  Obx(widget: Widget) {
+  Bind(widget: Widget) {
     if (!this.widget) {
       this.widget = widget;
     }
     return widget;
   }
 
-  bind(state: State) {
+  obs(state: State) {
     this.state = state;
     return this;
   }
@@ -36,13 +36,18 @@ class StateManager {
         `{${this.state.key}}`,
         val.toString()
       );
-      this.widget!.tag!.innerHTML = htmlToElement(tmp).innerHTML;
-      this.widget!.render({
-        tagName: this.widget!.tagName!,
-        classes: this.widget!.classes,
-        text: this.widget!.text,
-        updating:true,
-      });
+        var html = htmlToElement(tmp);
+
+        this.widget!.tag!.innerText = '';
+        this.widget!.tag?.append(html);
+      
+      // this.widget!.tag!.innerHTML = htmlToElement(tmp).outerHTML;
+      // this.widget!.render({
+      //   tagName: this.widget!.tagName!,
+      //   classes: this.widget!.classes,
+      //   text: this.widget!.text,
+      //   updating:true,
+      // });
     } else {
       noStateExeption({
         message:

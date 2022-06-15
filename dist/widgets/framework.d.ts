@@ -71,6 +71,7 @@ export default class Widget {
         tagName: string;
         text?: string;
         classes?: Array<string>;
+        updating?: boolean;
     }): void;
     extactStyle(widget: Widget): void;
     addTextContent(args: {

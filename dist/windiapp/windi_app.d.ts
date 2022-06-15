@@ -9,5 +9,6 @@ declare function WindiApp(args: {
     title?: string;
     theme?: ThemeData;
     home: Widget;
+    mounted?: Function;
 }): string;
 export { ThemeMode, WindiApp };

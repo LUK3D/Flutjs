@@ -10,6 +10,7 @@ function WindiApp(args) {
         title: args.title,
         theme: args.theme,
         home: args.home,
+        mounted: args.mounted
     });
 }
 export { ThemeMode, WindiApp };

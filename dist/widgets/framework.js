@@ -102,6 +102,7 @@ var Widget = /** @class */ (function () {
     Widget.prototype.render = function (args) {
         var _a;
         var _this = this;
+        var _b;
         if (!this.tag) {
             this.tag = document.createElement(args.tagName);
         }
@@ -116,14 +117,25 @@ var Widget = /** @class */ (function () {
             this.appendChild(this.child.tag);
             this.extactStyle(this.child);
             this.child.bind();
+            /**Rerendering all child nodes */
+            if (args.updating) {
+                (_b = document.querySelector('[key="' + this.child.key + '"]')) === null || _b === void 0 ? void 0 : _b.remove();
+                this.child.render({ tagName: this.child.tagName, classes: this.child.classes, text: this.child.text, updating: args.updating });
+            }
         }
         if (this.children) {
             var ctx_1 = this;
             this.children.map(function (widget) {
+                var _a;
                 widget.parent = ctx_1.tag;
                 _this.extactStyle(widget);
                 _this.appendChild(widget.tag);
                 widget.bind();
+                /**Rerendering all child nodes */
+                if (args.updating) {
+                    (_a = document.querySelector('[key="' + widget.key + '"]')) === null || _a === void 0 ? void 0 : _a.remove();
+                    widget.render({ tagName: widget.tagName, classes: widget.classes, text: widget.text, updating: args.updating });
+                }
             });
         }
     };

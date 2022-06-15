@@ -7,5 +7,6 @@ declare function App(args: {
     width?: number | string;
     height?: number | string;
     classes?: Array<string>;
+    mounted?: Function;
 }): string;
 export { App };

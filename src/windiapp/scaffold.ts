@@ -39,11 +39,12 @@ function Scaffold(args: {
     }),
   });
 
-  if (args.body && args.appBar) {
-    widget.tag!.style.paddingTop =
-      args.appBar.tag!.offsetHeight +  "px" ?? "100px";
-    widget.tag!.setAttribute("component", "body");
-  }
+  /**Adds a padding top to the body of the page. */
+  // if (args.body && args.appBar) {
+  //   widget.tag!.style.paddingTop =
+  //     args.appBar.tag!.offsetHeight +  "px" ?? "100px";
+  //   widget.tag!.setAttribute("component", "body");
+  // }
 
   return widget;
 }

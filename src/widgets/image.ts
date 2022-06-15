@@ -67,7 +67,9 @@ class _Image extends Widget {
 }
 
 /**Creates a widget that displays an  obtained from the network. */
-var Image =  new _Image({});
+  function Image(){
+  return new _Image({});
+};
 
 
 export{

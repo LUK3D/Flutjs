@@ -12,8 +12,8 @@ declare class StateManager {
     element?: HTMLElement;
     initial: boolean;
     widget?: Widget;
-    Obx(widget: Widget): Widget;
-    bind(state: State): this;
+    Bind(widget: Widget): Widget;
+    obs(state: State): this;
     setState(val: string | number | Object): void;
 }
 export { State, StateManager };

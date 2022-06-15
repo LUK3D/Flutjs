@@ -11,25 +11,30 @@ var StateManager = /** @class */ (function () {
     function StateManager() {
         this.initial = true;
     }
-    StateManager.prototype.Obx = function (widget) {
+    StateManager.prototype.Bind = function (widget) {
         if (!this.widget) {
             this.widget = widget;
         }
         return widget;
     };
-    StateManager.prototype.bind = function (state) {
+    StateManager.prototype.obs = function (state) {
         this.state = state;
         return this;
     };
     StateManager.prototype.setState = function (val) {
+        var _a;
         if (this.state) {
             var tmp = window.flutjs[this.state.key].replace("{".concat(this.state.key, "}"), val.toString());
-            this.widget.tag.innerHTML = htmlToElement(tmp).innerHTML;
-            this.widget.render({
-                tagName: this.widget.tagName,
-                classes: this.widget.classes,
-                text: this.widget.text,
-            });
+            var html = htmlToElement(tmp);
+            this.widget.tag.innerText = '';
+            (_a = this.widget.tag) === null || _a === void 0 ? void 0 : _a.append(html);
+            // this.widget!.tag!.innerHTML = htmlToElement(tmp).outerHTML;
+            // this.widget!.render({
+            //   tagName: this.widget!.tagName!,
+            //   classes: this.widget!.classes,
+            //   text: this.widget!.text,
+            //   updating:true,
+            // });
         }
         else {
             noStateExeption({
