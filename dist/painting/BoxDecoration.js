@@ -3,6 +3,7 @@ var _BoxDecoration = /** @class */ (function () {
         var _a;
         this.color = (_a = args.color) === null || _a === void 0 ? void 0 : _a.value;
         this.borderRadius = args.borderRadius;
+        this.boxShadow = args.boxShadow;
     }
     return _BoxDecoration;
 }());

@@ -32,7 +32,7 @@ class Alignment extends AlignmentGeometry {
     /// Creates an alignment.
     ///
     /// The [x] and [y] arguments must not be null.
-    constructor(args:{x:number,y:number}){
+    constructor(args:{x?:number,y?:number}){
         super(args)
     }
   

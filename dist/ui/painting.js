@@ -124,5 +124,17 @@ var BlendMode;
     ///
     BlendMode["luminosity"] = "luminosity";
 })(BlendMode || (BlendMode = {}));
-export { BlendMode };
+/// Styles to use for blurs in [MaskFilter] objects.
+// These enum values must be kept in sync with SkBlurStyle.
+var BlurStyle;
+(function (BlurStyle) {
+    /// Nothing inside, fuzzy outside. This is useful for painting shadows for
+    /// partially transparent shapes, when they are painted separately but without
+    /// an offset, so that the shadow doesn't paint below the shape.
+    BlurStyle["outer"] = "";
+    /// Fuzzy inside, nothing outside. This can make shapes appear to be lit from
+    /// within.
+    BlurStyle["inner"] = "inset";
+})(BlurStyle || (BlurStyle = {}));
+export { BlendMode, BlurStyle };
 //# sourceMappingURL=painting.js.map

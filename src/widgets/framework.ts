@@ -31,7 +31,7 @@ export default class Widget {
     RelativeUnits["%"];
   tag?: HTMLElement;
   child?: Widget;
-  children?: Array<Widget>;
+  children?: Array<Widget|undefined>;
   parent?: HTMLElement;
   textContent?: string;
   decoration?: ThemeData;
@@ -48,7 +48,7 @@ export default class Widget {
     key?: _Key | string;
     tagName: string;
     child?: Widget;
-    children?: Array<Widget>;
+    children?: Array<Widget|undefined>;
     parent?: HTMLElement;
     text?: string;
     decoration?: ThemeData;
@@ -185,15 +185,18 @@ export default class Widget {
     if (this.children) {
       let ctx = this;
       this.children.map((widget) => {
-        widget.parent = ctx.tag;
-        this.extactStyle(widget);
-        this.appendChild(widget.tag!);
-        widget.bind();
-         /**Rerendering all child nodes */
-        if(args.updating){
-          document.querySelector('[key="'+widget.key+'"]')?.remove();
-          widget.render({tagName:widget.tagName!, classes:widget.classes,text:widget.text, updating:args.updating});
+        if(widget ){
+          widget.parent = ctx.tag;
+          this.extactStyle(widget);
+          this.appendChild(widget.tag!);
+          widget.bind();
+           /**Rerendering all child nodes */
+          if(args.updating){
+            document.querySelector('[key="'+widget.key+'"]')?.remove();
+            widget.render({tagName:widget.tagName!, classes:widget.classes,text:widget.text, updating:args.updating});
+          }
         }
+      
       });
     }
   }

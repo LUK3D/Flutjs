@@ -12,37 +12,45 @@ class State {
 }
 
 class StateManager {
+
+  /**Observes the state of a value and updates all elements binded    */
+  constructor(state: State){
+    this.state = state;
+
+    if(!(window as any).flutjs){
+      (window as any).flutjs = {};
+    }
+
+  }
   state?: State;
   element?: HTMLElement;
 
   initial: boolean = true;
   widget?: Widget;
 
-  Obx(widget: Widget) {
+  Bind(widget: Widget) {
     if (!this.widget) {
       this.widget = widget;
     }
+    
+    (window as any).flutjs[this.state!.key] = widget.tag?.outerHTML;
+    //Defining the initial value 
+    this.setState(this.state!.val);
     return widget;
-  }
-
-  bind(state: State) {
-    this.state = state;
-    return this;
   }
 
   setState(val: string | number | Object) {
     if (this.state) {
-      var tmp = (window as any).flutjs[this.state.key].replace(
-        `{${this.state.key}}`,
-        val.toString()
-      );
-      this.widget!.tag!.innerHTML = htmlToElement(tmp).innerHTML;
-      this.widget!.render({
-        tagName: this.widget!.tagName!,
-        classes: this.widget!.classes,
-        text: this.widget!.text,
-        updating:true,
-      });
+      this.state.val = val;
+      console.log(this.state.key,":", (window as any).flutjs[this.state.key])
+
+      var tmp = (window as any).flutjs[this.state.key].split(`{${this.state.key}}`).join(val.toString());
+        var html = htmlToElement(tmp);
+
+        this.widget!.tag!.innerText = '';
+        this.widget!.tag?.append(html);
+      
+
     } else {
       noStateExeption({
         message:

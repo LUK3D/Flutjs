@@ -6,7 +6,7 @@ class _Row extends Widget {
   constructor(args: { 
     mainAxisAlignment?:MainAxisAlignment,
     crossAxisAlignment?:CrossAxisAlignment,
-    children?: Array<Widget> }) {
+    children?: Array<Widget|undefined> }) {
     super({
       tagName: "div",
       children: args.children,
@@ -41,7 +41,7 @@ class _Row extends Widget {
 function Row(args: { 
   mainAxisAlignment?:MainAxisAlignment,
   crossAxisAlignment?:CrossAxisAlignment,
-  children?: Array<Widget> }) {
+  children?: Array<Widget|undefined> }) {
   return new _Row(args);
 }
 export { Row };

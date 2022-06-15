@@ -14,4 +14,8 @@ declare enum BlendMode {
     color = "color",
     luminosity = "luminosity"
 }
-export { BlendMode };
+declare enum BlurStyle {
+    outer = "",
+    inner = "inset"
+}
+export { BlendMode, BlurStyle };

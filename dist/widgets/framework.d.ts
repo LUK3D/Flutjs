@@ -23,7 +23,7 @@ export default class Widget {
     height_size_measurement_unit: AbsoluteUnits | RelativeUnits;
     tag?: HTMLElement;
     child?: Widget;
-    children?: Array<Widget>;
+    children?: Array<Widget | undefined>;
     parent?: HTMLElement;
     textContent?: string;
     decoration?: ThemeData;
@@ -39,7 +39,7 @@ export default class Widget {
         key?: _Key | string;
         tagName: string;
         child?: Widget;
-        children?: Array<Widget>;
+        children?: Array<Widget | undefined>;
         parent?: HTMLElement;
         text?: string;
         decoration?: ThemeData;
@@ -71,6 +71,7 @@ export default class Widget {
         tagName: string;
         text?: string;
         classes?: Array<string>;
+        updating?: boolean;
     }): void;
     extactStyle(widget: Widget): void;
     addTextContent(args: {

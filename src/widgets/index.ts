@@ -1,4 +1,5 @@
 import { App } from "./app.js";
+import { Button } from "./Button.js";
 import { Column } from "./column.js";
 import { Container } from "./container.js";
 import { Expanded } from "./expanded.js";
@@ -26,5 +27,6 @@ export{
     Stack,
     Positioned,
     _Image,
-    Image
+    Image,
+    Button
 }

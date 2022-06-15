@@ -156,7 +156,24 @@ enum BlendMode {
  
     luminosity = "luminosity",
   }
+
+
+  
+/// Styles to use for blurs in [MaskFilter] objects.
+// These enum values must be kept in sync with SkBlurStyle.
+enum BlurStyle {
+
+  /// Nothing inside, fuzzy outside. This is useful for painting shadows for
+  /// partially transparent shapes, when they are painted separately but without
+  /// an offset, so that the shadow doesn't paint below the shape.
+  outer="",
+
+  /// Fuzzy inside, nothing outside. This can make shapes appear to be lit from
+  /// within.
+  inner = "inset",
+}
   
   export{
-    BlendMode
+    BlendMode,
+    BlurStyle
   }

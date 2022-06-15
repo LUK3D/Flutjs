@@ -13,8 +13,8 @@ declare class AlignmentGeometry {
 }
 declare class Alignment extends AlignmentGeometry {
     constructor(args: {
-        x: number;
-        y: number;
+        x?: number;
+        y?: number;
     });
     /**The top left corner. */
     topLeft(): Alignment;

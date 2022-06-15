@@ -3,10 +3,14 @@ This version comes with Some Features, Updates and Enhancements
 * Added `Image` Widget.
 * Added `Painting` Class with `BlendMode` list.
 * Added `BoxFit` Class with `BoxFit` list.
+* Added `BoxShadow` Class.
+
+
+* Added `Offset` Class.
 
 ## Enhancements
-
-
+* Added `BoxShadow` List To `BoxDecoration`.
+* Added `BoxDecoration` To `Button` Widget.
 ## Bug Fixes
 
 

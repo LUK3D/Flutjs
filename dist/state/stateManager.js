@@ -8,28 +8,33 @@ var State = /** @class */ (function () {
     return State;
 }());
 var StateManager = /** @class */ (function () {
-    function StateManager() {
+    /**Observes the state of a value and updates all elements binded    */
+    function StateManager(state) {
         this.initial = true;
+        this.state = state;
+        if (!window.flutjs) {
+            window.flutjs = {};
+        }
     }
-    StateManager.prototype.Obx = function (widget) {
+    StateManager.prototype.Bind = function (widget) {
+        var _a;
         if (!this.widget) {
             this.widget = widget;
         }
+        window.flutjs[this.state.key] = (_a = widget.tag) === null || _a === void 0 ? void 0 : _a.outerHTML;
+        //Defining the initial value 
+        this.setState(this.state.val);
         return widget;
     };
-    StateManager.prototype.bind = function (state) {
-        this.state = state;
-        return this;
-    };
     StateManager.prototype.setState = function (val) {
+        var _a;
         if (this.state) {
-            var tmp = window.flutjs[this.state.key].replace("{".concat(this.state.key, "}"), val.toString());
-            this.widget.tag.innerHTML = htmlToElement(tmp).innerHTML;
-            this.widget.render({
-                tagName: this.widget.tagName,
-                classes: this.widget.classes,
-                text: this.widget.text,
-            });
+            this.state.val = val;
+            console.log(this.state.key, ":", window.flutjs[this.state.key]);
+            var tmp = window.flutjs[this.state.key].split("{".concat(this.state.key, "}")).join(val.toString());
+            var html = htmlToElement(tmp);
+            this.widget.tag.innerText = '';
+            (_a = this.widget.tag) === null || _a === void 0 ? void 0 : _a.append(html);
         }
         else {
             noStateExeption({

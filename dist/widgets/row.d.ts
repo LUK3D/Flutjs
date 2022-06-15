@@ -4,7 +4,7 @@ declare class _Row extends Widget {
     constructor(args: {
         mainAxisAlignment?: MainAxisAlignment;
         crossAxisAlignment?: CrossAxisAlignment;
-        children?: Array<Widget>;
+        children?: Array<Widget | undefined>;
     });
 }
 /**
@@ -26,6 +26,6 @@ declare class _Row extends Widget {
 declare function Row(args: {
     mainAxisAlignment?: MainAxisAlignment;
     crossAxisAlignment?: CrossAxisAlignment;
-    children?: Array<Widget>;
+    children?: Array<Widget | undefined>;
 }): _Row;
 export { Row };
