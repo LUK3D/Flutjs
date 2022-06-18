@@ -1,7 +1,7 @@
 import { Colors } from "../painting/colors.js";
 import { CssProperties } from "../utils/cssprops.js";
 import { Widget } from "../widgets/framework.js";
-import { _AppBar } from "./app_bar.js";
+import { _AppBar } from "./appBar.js";
 
 function Scaffold(args: {
   body?: Widget;

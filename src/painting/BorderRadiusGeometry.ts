@@ -104,6 +104,8 @@ class _BorderRadius extends BorderRadiusGeometry {
 
 }
 
-let BorderRadius = new _BorderRadius();
+function BorderRadius(){
+  return new _BorderRadius();
+};
 
 export { BorderRadiusGeometry,BorderRadius,_BorderRadius };

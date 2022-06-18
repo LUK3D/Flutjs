@@ -46,5 +46,5 @@ declare class _BorderRadius extends BorderRadiusGeometry {
         right?: _Radius;
     }): this;
 }
-declare let BorderRadius: _BorderRadius;
+declare function BorderRadius(): _BorderRadius;
 export { BorderRadiusGeometry, BorderRadius, _BorderRadius };

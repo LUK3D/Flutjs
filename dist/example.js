@@ -4,16 +4,16 @@ import { BoxShadow } from "./painting/boxShadow.js";
 import { State, StateManager } from "./state/stateManager.js";
 import { Offset } from "./utils/offset.js";
 import { Button } from "./widgets/Button.js";
-import { Scaffold, WindiApp, AppBar } from "./windiapp/index.js";
+import { Scaffold, FlutApp, AppBar } from "./flut/index.js";
 var counter = new StateManager(new State({ key: "counter", val: 1 }));
-WindiApp({
+FlutApp({
     title: "Flutjs test",
     home: Scaffold({
         appBar: AppBar({
-            backgroundColor: Colors.Blue[500],
-            foregroundColor: Colors.Gray[100],
+            backgroundColor: Colors.White,
+            foregroundColor: Colors.Gray[500],
             title: Text("Welcome to Flutjs"),
-            elevation: 2,
+            elevation: 3,
         }),
         body: Container({
             color: Colors.Gray[50],

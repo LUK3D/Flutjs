@@ -8,7 +8,11 @@ enum ThemeMode {
   dark,
 }
 
-function WindiApp(args: { title?: string; theme?: ThemeData; home: Widget ,mounted?:Function}) {
+/**
+ * Flutjs base App Scaffold 
+ * @returns Widget
+ */
+function FlutApp(args: { title?: string; theme?: ThemeData; home: Widget ,mounted?:Function}) {
   return App({
     title: args.title,
     theme: args.theme,
@@ -17,4 +21,4 @@ function WindiApp(args: { title?: string; theme?: ThemeData; home: Widget ,mount
   });
 }
 
-export { ThemeMode, WindiApp };
+export { ThemeMode,  FlutApp };

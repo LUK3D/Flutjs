@@ -25,19 +25,20 @@ import { Button } from "./widgets/Button.js";
 import { Image } from "./widgets/image.js";
 import { Positioned } from "./widgets/positioned.js";
 import { Stack } from "./widgets/stack.js";
-import { Scaffold, WindiApp, AppBar } from "./windiapp/index.js";
+import { Scaffold, FlutApp, AppBar } from "./flut/index.js";
 
 var counter = new StateManager(new State({key:"counter", val:1}));
 
-WindiApp({
+FlutApp({
   title: "Flutjs test",
 
   home: Scaffold({
     appBar: AppBar({
-      backgroundColor: Colors.Blue[500],
-      foregroundColor: Colors.Gray[100],
+      backgroundColor: Colors.White,
+      foregroundColor: Colors.Gray[500],
       title: Text("Welcome to Flutjs"),
-      elevation: 2,
+      elevation: 3,
+      
     }),
     body: Container({
         color: Colors.Gray[50],
@@ -55,9 +56,7 @@ WindiApp({
                 // @ts-ignore
                 ("{counter}" == '5')?
                    Text("🤩 {counter}", {textStyle: TextStyle({ fontSize: 20 })}):
-                   Text("😩 {counter}", {textStyle: TextStyle({ fontSize: 20 })})
-              
-              ,
+                   Text("😩 {counter}", {textStyle: TextStyle({ fontSize: 20 })}),
 
               Button({
                 padding:EdgeInsets.only({top:10,bottom:10, right:15,left:15}),

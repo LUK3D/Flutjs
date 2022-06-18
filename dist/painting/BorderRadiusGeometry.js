@@ -85,6 +85,9 @@ var _BorderRadius = /** @class */ (function (_super) {
     };
     return _BorderRadius;
 }(BorderRadiusGeometry));
-var BorderRadius = new _BorderRadius();
+function BorderRadius() {
+    return new _BorderRadius();
+}
+;
 export { BorderRadiusGeometry, BorderRadius, _BorderRadius };
 //# sourceMappingURL=BorderRadiusGeometry.js.map

@@ -1,6 +1,8 @@
+import { BoxDecoration } from "../painting/BoxDecoration.js";
 import { Color, Colors } from "../painting/colors.js";
 import { EdgeInsets } from "../painting/edge_insets.js";
 import { CssProperties } from "../utils/cssprops.js";
+import { Elevation } from "../utils/Elevations.js";
 import _Key from "../utils/uuid.js";
 import Widget from "../widgets/framework.js";
 import { Padding } from "../widgets/padding.js";
@@ -36,32 +38,22 @@ class _AppBar extends Widget {
     if (args.actions) {
       children = [...children, ...args.actions];
     }
-    let shadow = "shadow-none";
+    let shadow = Elevation[0];
     switch (args.elevation) {
       case 1:
-        shadow = "0 1px 2px 0 rgb(0 0 0 / 0.05)";
+        shadow = Elevation[1];
         break;
       case 2:
-        shadow =
-          "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)";
+        shadow = Elevation[2];
         break;
       case 3:
-        shadow =
-          "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)";
+        shadow = Elevation[3];
         break;
       case 4:
-        shadow =
-          "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)";
+        shadow = Elevation[4];
         break;
       case 5:
-        shadow =
-          "box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)";
-        break;
-      case 6:
-        shadow = "box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25)";
-        break;
-
-      default:
+        shadow = Elevation[5];
         break;
     }
 
@@ -74,7 +66,6 @@ class _AppBar extends Widget {
         }),
       ],
       css: new CssProperties({
-        boxShadow: shadow,
         height: "48px",
         width: "100%",
         backgroundColor: Colors.White.value,
@@ -84,6 +75,9 @@ class _AppBar extends Widget {
         display: "flex",
         alignItems: "center",
       }),
+      boxDecoration:BoxDecoration({
+        boxShadow:shadow
+      })
     });
     this.tag!.style.backgroundColor = args.backgroundColor?.value ?? "";
     this.tag!.style.color = args.foregroundColor?.value ?? "";

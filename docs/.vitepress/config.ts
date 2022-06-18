@@ -24,10 +24,10 @@ export default {
                 ]
             },
             {
-                text: 'Instalation',
+                text: 'Widget',
                 items: [
-                { text: 'With Npm', link: '/introduction' },
-                { text: 'Vanilla', link: '/getting-started' },
+                { text: 'Introduction', link: '/components/' },
+                { text: 'App', link: '/components/app.md' },
                 ]
             }
           ]

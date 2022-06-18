@@ -1,8 +1,8 @@
 /**Basic Flutjs App With Tailwind */
 import { Expanded, Padding, Row, Column, AbsoluteUnits, Container, Text, Colors, EdgeInsets, MainAxisAlignment, CrossAxisAlignment, TextStyle } from "./index.js";
 import { FontWeight } from "./ui/text.js";
-import { Scaffold, WindiApp, AppBar } from "./windiapp/index.js";
-WindiApp({
+import { Scaffold, FlutApp, AppBar } from "./flut/index.js";
+FlutApp({
     title: "Flutjs test",
     home: Scaffold({
         appBar: AppBar({
