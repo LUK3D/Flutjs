@@ -54,10 +54,7 @@ Add this link to the header tag of your html page:
 
 ```js
 /**Basic Flutjs App With Tailwind */
-// Stateful Variable 
-var counterState = new StateManager();
-//Defining an Observable State
-counterState.obs(new State({ key: "counter", val: 0 }));
+
 
 WindiApp({
   title: "Flutjs test",
@@ -121,18 +118,7 @@ WindiApp({
       ],
     }),
   }),
-  // Executed when the document finish rendering the page
-  mounted: () => {
-    var i = 0;
-    counterState.setState(`0`);
-    document
-      .querySelector('[key="addButton"]')
-      ?.addEventListener("click", () => {
-        //Updating the value of state
-        counterState.setState(`${i++}`);
-      });
-  },
-});
+ );
 
 ```
 
