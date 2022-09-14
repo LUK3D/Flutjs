@@ -34,6 +34,21 @@ export interface IWidget{
     children:Array<Widget>,
     /**⚠️ If not provided the element will be an html div */
     nativeEl?:INativeElement,
-    domElement?:HTMLElement
+    domElement?:HTMLElement,
+    isBase?:boolean,
+    className?:string,
+    style?:IWidgetResultStyle
+    
 }
 
+
+export interface IWidgetResult{
+    dom:HTMLElement,
+    styles:Array<IWidgetResultStyle>
+}
+
+export interface IWidgetResultStyle{
+    selector:string,
+    styles:Array<string>
+
+}
