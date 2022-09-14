@@ -28,4 +28,15 @@ export interface IWidget {
     /**⚠️ If not provided the element will be an html div */
     nativeEl?: INativeElement;
     domElement?: HTMLElement;
+    isBase?: boolean;
+    className?: string;
+    style?: IWidgetResultStyle;
+}
+export interface IWidgetResult {
+    dom: HTMLElement;
+    styles: Array<IWidgetResultStyle>;
+}
+export interface IWidgetResultStyle {
+    selector: string;
+    styles: Array<string>;
 }
